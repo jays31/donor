@@ -1,0 +1,8 @@
+function validate(){
+	if (document.getElementById("password").value!=document.getElementById("confirmPassword").value){
+		alert("Oops! Passwords do not match! Try again!");
+	}
+	else if (document.getElementById("password").value!=''&&document.getElementById("confirmPassword").value!=''&&document.getElementById("orgName").value!=''&&document.getElementById("email").value!=''&&document.getElementById("address").value!=''&&document.getElementById("phone").value!=''){
+		alert("Thank you for your interest in being a regular donor. We have received your form and will get in touch with you soon. Please look out for an email from us.")
+	}
+}
