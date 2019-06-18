@@ -87,7 +87,7 @@ $(document).ready(function () {
                 marker.setPosition(results[0].geometry.location);
                 $('.search_addr').val(results[0].formatted_address);
             } else {
-                alert("Unsuccessful: " + status);
+                // alert("Unsuccessful: " + status);
             }
         });
         e.preventDefault();
