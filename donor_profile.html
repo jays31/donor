@@ -11,6 +11,9 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/updateEmail_api.js"></script>
+		<script type="text/javascript" src="js/updatePassword_api.js"></script>
+		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		
 		<!-- Custom CSS--> 
@@ -20,29 +23,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet"> 
 		
 		<title>Edit Profile</title>
-		
-		<script>
-		
-		// This example was helpful in informing my approach here.
-		// https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_prompt
-		
-			function updateEmail(){
-				var newEmail = prompt("Please enter new email.", "");
-				if((newEmail != null) && (newEmail != "")){
-					document.getElementById("email").placeholder = newEmail;
-				}
-			}
-			
-			// This link was helpful re: the string.repeat() method:
-			// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
-			function updatePassword(){
-				var newPassword = prompt("Please enter new password.", "");
-				if((newPassword != null) && (newPassword != "")){
-					document.getElementById("password").placeholder = "*".repeat(newPassword.length);
-				}
-			}
-		
-		</script>
 		
 	  </head>
   
