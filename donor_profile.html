@@ -52,23 +52,40 @@
 		<!-- The following link was helpful in determining how to properly use bootstrap columns:
 		https://hackerthemes.com/bootstrap-cheatsheet/#col
 		-->
-		<div class = "container">
-		
-			<div class = "row">
-			
-				<div class = "col">
-					<a href = "./home.html"> <img class = "homeImage" src= "./loginPicture.jpg" alt = "Pears"> </a>
-				</div>
-				
-				<div class = "col">
-					<!-- The following link was helpful in reminding me how to make a clickable link:
-					https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_image -->
-					<a href = "./edit_profile.html"> <img class = "profileImage" src = "./profilePicture.png" alt="Profile"> </a>
-				</div>
-				
-			</div>
-			
-		</div>
+	  <div class="container">
+    <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/navbar/ -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Donor+</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          </div>
+          <div class="btn-group">
+            <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <form>
+                <div class="form-group">
+                  <h6>Username/Email</h6>
+                  <input type="email" class="form-control" id="dropemail" placeholder="email@example.com" required>
+                </div>
+                <div class="form-group">
+                  <h6>Password</h6>
+                  <input type="password" class="form-control" id="droppassword" placeholder="Password" required>
+                </div>
+                <div class="form-check">
+                  <center><input type="checkbox" class="form-check-input" id="dropdownCheck">
+                    <label class="form-check-label" for="dropdownCheck">Remember me</label></center><br>
+                  </div>
+                  <center><button onclick="login()" type="submit" class="btn btn-primary">&nbsp;&nbsp;Sign in&nbsp;&nbsp;</button></center><br>
+                </form>
+              </div>
+            </div>
+        </ul>
+    </nav>
+  </div>
 		
 		<div class = "home_div" style = "font-family: 'Roboto Slab', sans-serif;">
 		
@@ -119,15 +136,22 @@
 			</form>
 			
 			<!-- The style below comes from this link: https://hackerthemes.com/bootstrap-cheatsheet/#flex-row --> 
-			<div class = "footer"> 
-				<div class="d-flex flex-sm-row">
-					<div class="p-2">About</div>
-					<div class="p-2">Legal</div>
-					<div class="p-2">Privacy</div>
-					<div class="p-2">Instagram</div>
-					<div class="p-2">Twitter</div>
+			<footer id="footer" class="footer">
+				<div class="container">
+					<div class="row">
+					<div class="col-sm-8">
+					<br><span class="text-muted"><h5>Subscribe to Donor+ for weekly donations!</h5></span>
 				</div>
-			</div>
+	      	<div class="col-sm-4">
+	      		<form class="form-inline">
+	      			<br><br><br>
+	      			<input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
+	      			<button onclick="subscribe()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+	      		</form>
+	      	</div>
+      	</div>
+  	</div>
+    </footer>
 		</div>
 	
 	</body>
