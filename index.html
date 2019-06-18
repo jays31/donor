@@ -14,6 +14,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
 	<script type="text/javascript" src="js/validate_form.js"></script>
 	<script type="text/javascript" src="js/autoaddress_api.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<title>Donor+</title>
@@ -65,9 +66,6 @@
         	else
         		alert(email+" will be subscribed to weekly newsletter!");
         }
-        function login(){
-        	alert("The username or password you entered is incorrect");
-        }
     </script> 
 
 </head>
@@ -94,14 +92,14 @@
 				<div class="btn-group">
 					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
 					<div class="dropdown-menu dropdown-menu-right">
-						<form>
+						<form name="loginForm" action = "./donor_profile.html" onsubmit="return(login());" method = "post" >
 							<div class="form-group">
 								<h6>Username/Email</h6>
-								<input type="email" class="form-control" id="dropemail" placeholder="email@example.com" required>
+								<input name="username "type="email" class="form-control" id="dropemail" placeholder="email@example.com" required>
 							</div>
 							<div class="form-group">
 								<h6>Password</h6>
-								<input type="password" class="form-control" id="droppassword" placeholder="Password" required>
+								<input name = "password" type="password" class="form-control" id="droppassword" placeholder="Password" required>
 							</div>
 							<div class="form-check">
 								<center><input type="checkbox" class="form-check-input" id="dropdownCheck">

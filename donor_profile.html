@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+
+		<!-- Required metadata --> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap --> 
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		<!-- Custom CSS--> 
+		<link rel="stylesheet" href = "./style.css">
+		
+		<!-- This is a google font --> 
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet"> 
+		
+		<title>Edit Profile</title>
+		
+		<script>
+		
+		// This example was helpful in informing my approach here.
+		// https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_prompt
+		
+			function updateEmail(){
+				var newEmail = prompt("Please enter new email.", "");
+				if((newEmail != null) && (newEmail != "")){
+					document.getElementById("email").placeholder = newEmail;
+				}
+			}
+			
+			// This link was helpful re: the string.repeat() method:
+			// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
+			function updatePassword(){
+				var newPassword = prompt("Please enter new password.", "");
+				if((newPassword != null) && (newPassword != "")){
+					document.getElementById("password").placeholder = "*".repeat(newPassword.length);
+				}
+			}
+		
+		</script>
+		
+	  </head>
+  
+	<body >
+  
+		<!-- Header Images -->
+		<!-- The following link was helpful in determining how to properly use bootstrap columns:
+		https://hackerthemes.com/bootstrap-cheatsheet/#col
+		-->
+		<div class = "container">
+		
+			<div class = "row">
+			
+				<div class = "col">
+					<a href = "./home.html"> <img class = "homeImage" src= "./loginPicture.jpg" alt = "Pears"> </a>
+				</div>
+				
+				<div class = "col">
+					<!-- The following link was helpful in reminding me how to make a clickable link:
+					https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_image -->
+					<a href = "./edit_profile.html"> <img class = "profileImage" src = "./profilePicture.png" alt="Profile"> </a>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<div class = "home_div" style = "font-family: 'Roboto Slab', sans-serif;">
+		
+			<h1> Edit Profile </h1>
+			
+			<!-- The following link was helpful in determining how to properly work with bootstrap forms: -->
+			<!-- https://getbootstrap.com/docs/4.0/components/forms/ --> 
+			
+			<!-- This link was helpful in understanding how javascript can be used to update text fields -->
+			<!-- https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_prompt -->
+			<form>
+			
+				<div class = "form-group row">
+				
+					<label for="username" class="col-sm-2 col-form-label">Username</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control-plaintext" id="username" placeholder="CSCI5709Admin" readonly>
+					</div>
+				
+				</div>
+				
+				<div class = "form-group row">
+				
+					<label for="email" class="col-sm-2 col-form-label">Email</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="email" placeholder="CSCI5709Admin@gmail.com" readonly>
+					</div>
+					
+					<div>
+						<button type="button" class="btn btn-primary" onclick="updateEmail()">Udpate Email</button>
+					</div>
+				
+				</div>
+				
+				<div class = "form-group row">
+				
+					<label for="password" class="col-sm-2 col-form-label">Password</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="password" placeholder="**********" readonly>
+					</div>
+					
+					<div>
+						<button type="button" class="btn btn-primary" onclick="updatePassword()">Udpate Password</button>
+					</div>
+				
+				</div>			
+	
+			</form>
+			
+			<!-- The style below comes from this link: https://hackerthemes.com/bootstrap-cheatsheet/#flex-row --> 
+			<div class = "footer"> 
+				<div class="d-flex flex-sm-row">
+					<div class="p-2">About</div>
+					<div class="p-2">Legal</div>
+					<div class="p-2">Privacy</div>
+					<div class="p-2">Instagram</div>
+					<div class="p-2">Twitter</div>
+				</div>
+			</div>
+		</div>
+	
+	</body>
+</html>
