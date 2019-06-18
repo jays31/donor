@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="/styles/importer.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+	<!-- From Tutorial 2 -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
+	<script type="text/javascript" src="js/validate_form.js"></script>
+	<script type="text/javascript" src="js/autoaddress_api.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<title>Donor+</title>
+
+	<style type="text/css">
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		div {
+			padding-top:0px;
+			padding-right: 10px;
+			padding-bottom: 0px;
+			padding-left: 10px;
+		}
+		h5 {
+			color: #0e6382;
+		}
+		footer {
+			background-color: #dce7ea;
+			color: #000;
+		}
+		.dropdown-menu {
+			width: 250px !important;
+		}
+	</style>
+
+	<script> 
+		function popup(city) {
+			if (city==''){
+				var city2 = document.getElementById("address").value;
+				if (city2==''){}
+				else{
+					alert("Searching Food Banks near " + city2);
+					document.getElementById("address").value=city2;
+				}
+			}
+			else{
+				alert("Showing search results from " + city);
+				document.getElementById("address").value=city;
+
+			}
+        }
+        function rss(){
+        	alert("You will be subscribed to RSS feed!");
+        }
+        function subscribe(){
+        	var email = document.getElementById("email").value;
+        	if (email==''){}
+        	else
+        		alert(email+" will be subscribed to weekly newsletter!");
+        }
+        function login(){
+        	alert("The username or password you entered is incorrect");
+        }
+    </script> 
+
+</head>
+
+<body>
+	<div class="container">
+		<!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/navbar/ -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+			<a class="navbar-brand" href="#">Donor+</a>
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item active">
+						<a class="nav-link" href="signup.html">Sign-Up</a>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" id="address" type="text" placeholder="Search Location" required>
+					<button onclick="popup('')" class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+				</form>
+				<a class="nav-item active">
+					&nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
+				</a>
+				<!-- https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+				<div class="btn-group">
+					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
+					<div class="dropdown-menu dropdown-menu-right">
+						<form>
+							<div class="form-group">
+								<h6>Username/Email</h6>
+								<input type="email" class="form-control" id="dropemail" placeholder="email@example.com" required>
+							</div>
+							<div class="form-group">
+								<h6>Password</h6>
+								<input type="password" class="form-control" id="droppassword" placeholder="Password" required>
+							</div>
+							<div class="form-check">
+								<center><input type="checkbox" class="form-check-input" id="dropdownCheck">
+								<label class="form-check-label" for="dropdownCheck">Remember me</label></center><br>
+							</div>
+							<center><button onclick="login()" type="submit" class="btn btn-primary">&nbsp;&nbsp;Sign in&nbsp;&nbsp;</button></center><br>
+						</form>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div><br><br>
+
+	<!-- https://www.w3schools.com/bootstrap/bootstrap_grid_basic.asp -->
+	<div class="container-fluid">
+		<br>
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="row">
+					<h5>Nova Scotia</h5>
+				</div>
+
+				<div class="row">
+					<button onclick="popup('Halifax')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Halifax</button>
+					<button onclick="popup('Yarmouth')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Yarmouth</button>
+					<button onclick="popup('Dartmouth')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Dartmouth</button>
+					<button onclick="popup('Lunenburg')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Lunenburg</button>
+					<button onclick="popup('Truro')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Truro</button>
+					<button onclick="popup('Wolfville')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Wolfville</button>
+				</div>
+				<br>
+
+				<div class="row">
+					<h5>Ontario</h5>
+				</div>
+
+				<div class="row">
+					<button onclick="popup('Toronto')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Toronto</button>
+					<button onclick="popup('Mississauga')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Mississauga</button>
+					<button onclick="popup('Ottawa')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Ottawa</button>
+					<button onclick="popup('Kingston')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Kingston</button>
+					<button onclick="popup('Windsor')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Windsor</button>
+					<button onclick="popup('London')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">London</button>
+				</div>
+				<br>
+
+				<div class="row">
+					<h5>Alberta</h5>
+				</div>
+
+				<div class="row">
+					<button onclick="popup('Calgary')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Calgary</button>
+					<button onclick="popup('Edmonton')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Edmonton</button>
+				</div>
+				<br>
+
+				<div class="row">
+					<h5>British Columbia</h5>
+				</div>
+
+				<div class="row">
+					<button onclick="popup('Vancouver')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Vancouver</button>
+					<button onclick="popup('Kelowna')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Kelowna</button>
+					<button onclick="popup('Victoria')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Victoria</button>
+				</div>
+				<br>
+
+				<div class="row">
+					<h5>Quebec</h5>
+				</div>
+
+				<div class="row">
+					<button onclick="popup('Montreal')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Montreal</button>
+					<button onclick="popup('Quebec City')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Quebec City</button>
+					<button onclick="popup('Sherbrooke')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Sherbrooke</button>
+					<button onclick="popup('Trois-Rivières')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Trois-Rivières</button>
+				</div>
+				<br>
+
+				<div class="row">
+					<h5>Saskatchewan</h5>
+				</div>
+
+				<div class="row">
+					<button onclick="popup('Regina')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Regina</button>
+					<button onclick="popup('Saskatoon')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Saskatoon</button>
+					<button onclick="popup('Yorkton')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Yorkton</button>
+				</div>
+				<br>
+
+				<div class="row">
+					<h5>Manitoba</h5>
+				</div>
+
+				<div class="row">
+					<button onclick="popup('Winnipeg')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Winnipeg</button>
+					<button onclick="popup('Brandon')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Brandon</button>
+					<button onclick="popup('Thompson')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Thompson</button>
+				</div>
+				<br>
+
+				<div class="row">
+					<h5>New Brunswick</h5>
+				</div>
+
+				<div class="row">
+					<button onclick="popup('Fredericton')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Fredericton</button>
+					<button onclick="popup('Saint John')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Saint John</button>
+				</div>
+				<br>
+
+				<div class="row">
+					<h5>Newfoundland</h5>
+				</div>
+
+				<div class="row">
+					<button onclick="popup('St. Johns')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">St. John's</button>
+					<button onclick="popup('Labrador')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Labrador</button>
+				</div>
+				<br>
+
+			</div>
+			<div class="col-sm-8">
+
+				<br><h5 id="address-tag">Available Food Banks</h5><br>
+				
+				<div class="row">
+					<div class="card" style="width: auto;">
+						<div class="row no-gutters">
+							<div class="col-sm-3">
+								<img src="resources/atlantic.jpg" class="img-fluid" alt="">
+							</div>
+							<div class="col-auto">
+								<div class="card-body">
+									<br><h5 class="card-title">Superstore</h5>
+									<h6 class="card-subtitle mb-2 text-muted">Barrington St.</h6>
+									<p class="card-text">09:00 - 13:00</p>
+								</div>
+							</div>
+							<div class="col-auto">
+								<div class="card-body">
+									<br><br><h6 class="card-subtitle text-muted my-auto">577 Items Available</h6>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card-body">
+									<br><br><h6 class="card-subtitle my-auto">200 m</h6>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card-body"><br>
+									<form action="inventory.html">
+										<button type="submit" class="btn btn-warning mt-3">View</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+
+				<div class="row">
+					<div class="card" style="width: auto;">
+						<div class="row no-gutters">
+							<div class="col-sm-3">
+								<img src="resources/sobeys.jpg" class="img-fluid" alt="">
+							</div>
+							<div class="col-auto">
+								<div class="card-body">
+									<br><h5 class="card-title">Sobey's</h5>
+									<h6 class="card-subtitle mb-2 text-muted">Green St.</h6>
+									<p class="card-text">11:00 - 17:00</p>
+								</div>
+							</div>
+							<div class="col-auto">
+								<div class="card-body">
+									<br><br><h6 class="card-subtitle text-muted my-auto">321 Items Available</h6>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card-body">
+									<br><br><h6 class="card-subtitle my-auto">700 m</h6>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card-body"><br>
+									<form action="inventory.html">
+									<button type="submit" class="btn btn-warning mt-3">View</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<br>
+
+				<div class="row">
+					<div class="card" style="width: auto;">
+						<div class="row no-gutters">
+							<div class="col-sm-3">
+								<img src="resources/dal.jpg" class="img-fluid" alt="">
+							</div>
+							<div class="col-auto">
+								<div class="card-body">
+									<br><h5 class="card-title">Dal Food</h5>
+									<h6 class="card-subtitle mb-2 text-muted">South St.</h6>
+									<p class="card-text">09:00 - 13:00</p>
+								</div>
+							</div>
+							<div class="col-auto">
+								<div class="card-body">
+									<br><br><h6 class="card-subtitle text-muted my-auto">112 Items Available</h6>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card-body">
+									<br><br><h6 class="card-subtitle my-auto">2.0 km</h6>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card-body"><br>
+									<form action="inventory.html">
+										<button type="submit" class="btn btn-warning mt-3">View</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<br>
+
+				<div class="row">
+					<div class="card" style="width: auto;">
+						<div class="row no-gutters">
+							<div class="col-sm-3">
+								<img src="resources/walmart.jpg" class="img-fluid" alt="">
+							</div>
+							<div class="col-auto">
+								<div class="card-body">
+									<br><h5 class="card-title">Walmart</h5>
+									<h6 class="card-subtitle mb-2 text-muted">Chain Lake Dr.</h6>
+									<p class="card-text">09:00 - 13:00</p>
+								</div>
+							</div>
+							<div class="col-auto">
+								<div class="card-body">
+									<br><br><h6 class="card-subtitle text-muted my-auto">253 Items Available</h6>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card-body">
+									<br><br><h6 class="card-subtitle my-auto">7.3 km</h6>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card-body"><br>
+									<form action="inventory.html">
+										<button type="submit" class="btn btn-warning mt-3">View</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<br>
+
+				<div class="row">
+					<div class="card" style="width: auto;">
+						<div class="row no-gutters">
+							<div class="col-sm-3">
+								<img src="resources/smu.jpg" class="img-fluid" alt="">
+							</div>
+							<div class="col-auto">
+								<div class="card-body">
+									<br><h5 class="card-title">Saint Mary's</h5>
+									<h6 class="card-subtitle mb-2 text-muted">Tower Rd.</h6>
+									<p class="card-text">12:00 - 14:00</p>
+								</div>
+							</div>
+							<div class="col-auto">
+								<div class="card-body">
+									<br><br><h6 class="card-subtitle text-muted my-auto">293 Items Available</h6>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card-body">
+									<br><br><h6 class="card-subtitle my-auto">8.1 km</h6>
+								</div>
+							</div>
+							<div class="col">
+								<div class="card-body"><br>
+									<form action="inventory.html">
+										<button type="submit" class="btn btn-warning mt-3">View</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<br>
+
+			</div>
+		</div>
+	</div>
+
+	<footer id="footer" class="footer">
+      <div class="container">
+      	<div class="row">
+	      	<div class="col-sm-8">
+	      		<br><span class="text-muted"><h5>Subscribe to Donor+ for weekly donations!</h5></span>
+	      	</div>
+	      	<div class="col-sm-4">
+	      		<form class="form-inline">
+	      			<br><br><br>
+	      			<input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
+	      			<button onclick="subscribe()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+	      		</form>
+	      	</div>
+      	</div>
+  	</div>
+    </footer>
+	
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

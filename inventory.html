@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/importer.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+  <!-- From Tutorial 2 -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
+  <script type="text/javascript" src="js/validate_form.js"></script>
+  <script type="text/javascript" src="js/autoaddress_api.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <title>Inventory</title>
+
+  <style type="text/css">
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    h5 {
+      color: #0e6382;
+    }
+    h4 {
+      color: #0e6382;
+    }
+    h3 {
+      color: #0e6382;
+    }
+    h2 {
+      color: #0e6382;
+    }
+    footer {
+      background-color: #dce7ea;
+      color: #000;
+    }
+    .dropdown-menu {
+      width: 250px !important;
+    }
+    div {
+      padding-top:0px;
+      padding-right: 10px;
+      padding-bottom: 0px;
+      padding-left: 10px;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function reserve(){
+      alert("Sorry, Atlantic Superstore is currently not taking any reservations.");
+    }
+    function subscribe(){
+      var email = document.getElementById("email").value;
+      if (email==''){}
+        else
+          alert(email+" will be subscribed to weekly newsletter!");
+    }
+    function login(){
+      alert("The username or password you entered is incorrect");
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/navbar/ -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Donor+</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          </div>
+          <div class="btn-group">
+
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <form>
+                <div class="form-group">
+                  <h6>Username/Email</h6>
+                  <input type="email" class="form-control" id="dropemail" placeholder="email@example.com" required>
+                </div>
+                <div class="form-group">
+                  <h6>Password</h6>
+                  <input type="password" class="form-control" id="droppassword" placeholder="Password" required>
+                </div>
+                <div class="form-check">
+                  <center><input type="checkbox" class="form-check-input" id="dropdownCheck">
+                    <label class="form-check-label" for="dropdownCheck">Remember me</label></center><br>
+                  </div>
+                  <center><button onclick="login()" type="submit" class="btn btn-primary">&nbsp;&nbsp;Sign in&nbsp;&nbsp;</button></center><br>
+                </form>
+              </div>
+            </div>
+        </ul>
+    </nav>
+  </div><br><br><br>
+
+  <h2><center>Atlantic Superstore</center></h2><br>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-3">
+
+          <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="resources/item1.png" alt="Card image cap">
+            <div class="card-body">
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Sabra Hummus</h5></center>
+              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+            </div>
+          </div><br>
+
+          <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="resources/item5.png" alt="Card image cap">
+            <div class="card-body">
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Kurkure</h5></center>
+              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+            </div>
+          </div><br>
+
+          <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="resources/item9.png" alt="Card image cap">
+            <div class="card-body">
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Mama Noodles</h5></center>
+              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+            </div>
+          </div><br>
+
+        </div>
+
+        <div class="col-sm-3">
+
+          <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="resources/item2.png" alt="Card image cap">
+            <div class="card-body">
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Coconut Milk</h5></center>
+              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+            </div>
+          </div><br>
+
+          <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="resources/item6.png" alt="Card image cap">
+            <div class="card-body">
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Mango Tofu</h5></center>
+              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+            </div>
+          </div><br>
+
+          <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="resources/item10.png" alt="Card image cap">
+            <div class="card-body">
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Coconut Water</h5></center>
+              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+            </div>
+          </div><br>
+
+        </div>
+
+        <div class="col-sm-3">
+
+          <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="resources/item3.png" alt="Card image cap">
+            <div class="card-body">
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Shrimp Crackers</h5></center>
+              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+            </div>
+          </div><br>
+
+          <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="resources/item7.png" alt="Card image cap">
+            <div class="card-body">
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Chick Peas</h5></center>
+              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+            </div>
+          </div><br>
+
+          <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="resources/item11.png" alt="Card image cap">
+            <div class="card-body">
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Plantain Chips</h5></center>
+              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+            </div>
+          </div><br>
+
+        </div>
+
+        <div class="col-sm-3">
+
+          <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="resources/item4.png" alt="Card image cap">
+            <div class="card-body">
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Ginger Beer</h5></center>
+              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+            </div>
+          </div><br>
+
+          <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="resources/item8.png" alt="Card image cap">
+            <div class="card-body">
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">BillyBee Honey</h5></center>
+              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+            </div>
+          </div><br>
+
+          <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="resources/item12.png" alt="Card image cap">
+            <div class="card-body">
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Icelandic Water</h5></center>
+              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+            </div>
+          </div><br>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<footer id="footer" class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            <br><span class="text-muted"><h5>Subscribe to Donor+ for weekly donations!</h5></span>
+          </div>
+          <div class="col-sm-4">
+            <form class="form-inline">
+              <br><br><br>
+              <input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
+              <button onclick="subscribe()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+    </div>
+    </footer>
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
