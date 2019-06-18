@@ -72,37 +72,39 @@
 
 <body>
 
-  <div class="container">
-    <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/navbar/ -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Donor+</a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
 
-          <div class="btn-group nav navbar-right top-nav float-right">
-            <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
-            <button type="button" class="btn btn-info dropdown-toggle float-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</button>
-            <div class="dropdown-menu dropdown-menu-right">
-              <ul class="nav navbar-right top-nav">
-                <li class="dropdown show" style="margin-right: 56px;">
 
-                  <ul class="dropdown-menu show">
-                    <li><a href="#" style="text-decoration:none;"> Notification Settings</a></li>
-                    <li><a href="#" style="text-decoration:none;"> Change Password</a></li>
-                    <li><a href="index.html" style="text-decoration:none;"> Logout</a></li>
-                  </ul>
-                </li>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Donor+</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" style="padding-left: 0px; padding-right: 0px;" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+    </ul>
+      <button type="button" style="float:right; margin-top: 5px;" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</button>
+
+      <div class="btn-group nav top-nav">
+        <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+
+        <div class="dropdown-menu dropdown-menu-right">
+
+          <ul class="nav top-nav">
+            <li class="dropdown show" style="margin-right: 56px;">
+
+              <ul class="dropdown-menu show">
+                <li><a href="#" style="text-decoration:none;"> Notification Settings</a></li>
+                <li><a href="#" style="text-decoration:none;"> Change Password</a></li>
+                <li><a href="index.html" style="text-decoration:none;"> Logout</a></li>
               </ul>
-              </div>
-            </div>
-        </ul>
-      </div>
-    </nav>
-  </div><br><br><br>
+            </li>
+          </ul>
 
+        </div>
+      </div>
+    </div>
+  </nav>
+  <br><br><br>
   <h2><center>Dashboard</center></h2>
 
 <hr>
@@ -129,12 +131,14 @@
             <br><span class="text-muted"><h5>Questions? Drop in your email and we'll get in touch with you!</h5></span>
           </div>
           <div class="col-sm-4">
+            <div style="margin-top: 10px;">
             <form class="form-inline">
-              <br><br><br>
-              <div style="vertical-align: center">    <input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
-                <button onclick="contact()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+
+              <div style="vertical-align: center; float: left;">    <input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
+                <button onclick="contact()" style="float:right;" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
               </div>
             </form>
+            </div>
           </div>
         </div>
     </div>
