@@ -14,6 +14,10 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
 	<script type="text/javascript" src="js/validate_api.js"></script>
 	<script type="text/javascript" src="js/autoaddress_api.js"></script>
+
+	<script type="text/javascript" src="js/popup_api.js"></script>
+	<script type="text/javascript" src="js/rss_api.js"></script>
+	<script type="text/javascript" src="js/subscribe_api.js"></script>
 	<script type="text/javascript" src="js/login_api.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -40,33 +44,6 @@
 			width: 250px !important;
 		}
 	</style>
-
-	<script> 
-		function popup(city) {
-			if (city==''){
-				var city2 = document.getElementById("address").value;
-				if (city2==''){}
-				else{
-					alert("Searching Food Banks near " + city2);
-					document.getElementById("address").value=city2;
-				}
-			}
-			else{
-				alert("Showing search results from " + city);
-				document.getElementById("address").value=city;
-
-			}
-        }
-        function rss(){
-        	alert("You will be subscribed to RSS feed!");
-        }
-        function subscribe(){
-        	var email = document.getElementById("email").value;
-        	if (email==''){}
-        	else
-        		alert(email+" will be subscribed to weekly newsletter!");
-        }
-    </script> 
 
 </head>
 
