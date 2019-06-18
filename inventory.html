@@ -16,6 +16,10 @@
   <script type="text/javascript" src="js/autoaddress_api.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+  <script type="text/javascript" src="js/subscribe_api.js"></script>
+  <script type="text/javascript" src="js/login_api.js"></script>
+  <script type="text/javascript" src="js/reserve_api.js"></script>
+
   <title>Inventory</title>
 
   <style type="text/css">
@@ -48,21 +52,6 @@
       padding-left: 10px;
     }
   </style>
-
-  <script type="text/javascript">
-    function reserve(){
-      alert("Sorry, Atlantic Superstore is currently not taking any reservations.");
-    }
-    function subscribe(){
-      var email = document.getElementById("email").value;
-      if (email==''){}
-        else
-          alert(email+" will be subscribed to weekly newsletter!");
-    }
-    function login(){
-      alert("The username or password you entered is incorrect");
-    }
-  </script>
 
 </head>
 
