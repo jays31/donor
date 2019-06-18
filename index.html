@@ -69,20 +69,20 @@
 				<div class="btn-group">
 					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
 					<div class="dropdown-menu dropdown-menu-right">
-						<form>
+						<form name="loginForm" action = "./donor_profile.html" onsubmit="return(login());" method = "post" >
 							<div class="form-group">
 								<h6>Username/Email</h6>
-								<input type="email" class="form-control" id="dropemail" placeholder="email@example.com" required>
+								<input name="username" type="email" class="form-control mb-2 mr-sm-2" id="dropemail" placeholder="email@example.com" required>
 							</div>
 							<div class="form-group">
 								<h6>Password</h6>
-								<input type="password" class="form-control" id="droppassword" placeholder="Password" required>
+								<input name = "password" type="password" class="form-control mb-2 mr-sm-2" id="droppassword" placeholder="Password" required>
 							</div>
 							<div class="form-check">
 								<center><input type="checkbox" class="form-check-input" id="dropdownCheck">
 								<label class="form-check-label" for="dropdownCheck">Remember me</label></center><br>
 							</div>
-							<center><button onclick="login()" type="submit" class="btn btn-primary">&nbsp;&nbsp;Sign in&nbsp;&nbsp;</button></center><br>
+							<center><input type="submit" value = "Submit">&nbsp;&nbsp;Sign in&nbsp;&nbsp;</center><br>
 						</form>
 					</div>
 				</div>
