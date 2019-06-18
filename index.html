@@ -11,6 +11,17 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 	<link rel="stylesheet" href="css/geomap.css">
 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
+	<script type="text/javascript" src="js/validate_api.js"></script>
+	<script type="text/javascript" src="js/autoaddress_api.js"></script>
+
+	<script type="text/javascript" src="js/popup_api.js"></script>
+	<script type="text/javascript" src="js/rss_api.js"></script>
+	<script type="text/javascript" src="js/subscribe_api.js"></script>
+	<script type="text/javascript" src="js/login_api.js"></script>
+	<!-- <script type="text/javascript" src="js/initmap_api.js"></script> -->
+
+
 
 	<!-- From Tutorial 2 -->
 	<script type="text/javascript" src="js/validate_form.js"></script>
@@ -29,7 +40,7 @@
 		}
 		div {
 			padding-top:0px;
-			padding-right: 10px;
+			padding-right: 0px;
 			padding-bottom: 0px;
 			padding-left: 10px;
 		}
@@ -42,6 +53,15 @@
 		}
 		.dropdown-menu {
 			width: 250px !important;
+		}
+		#map {
+        height: 100%;
+		}
+		/* Optional: Makes the sample page fill the window. */
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
 		}
 	</style>
 
@@ -58,10 +78,7 @@
 						<a class="nav-link" href="signup.html">Sign-Up</a>
 					</li>
 				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" id="address" type="text" placeholder="Search Location" required>
-					<button onclick="popup('')" class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
-				</form>
+
 				<a class="nav-item active">
 					&nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
 				</a>
@@ -203,7 +220,9 @@
 				<div class="row">
 					<div class="card" id="geomap">
 						<div class="row no-gutters">
-							<div id="geomap"></div>
+							<!-- <div id="geomap"></div> -->
+							<script async defer
+							src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&callback=initMap">							</script>
 						</div>
 					</div>
 				</div> 
@@ -214,7 +233,7 @@
 							<div class="input-group">
 								<input class="form-control search_addr" style="border-radius: 4px" type="text" id="search_location"  placeholder="Search location">
 								<div class="input-group-btn">
-									<button value="Locate" type="button" class="btn btn-info my-2 my-sm-0 btn-default get_map" type="submit">
+									<button value="Locate" class="btn btn-info my-2 my-sm-0 btn-default get_map" type="submit">
 										Locate
 									</button>
 								</div>
