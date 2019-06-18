@@ -14,10 +14,12 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
   <script type="text/javascript" src="js/validate_form.js"></script>
   <script type="text/javascript" src="js/autoaddress_api.js"></script>
+  <script type="text/javascript" src="js/rss_api.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <script type="text/javascript" src="js/validate_api.js"></script>
   <script type="text/javascript" src="js/login_api.js"></script>
+  
 
   <title>Donor+ Sign-up</title>
 
@@ -44,9 +46,16 @@
     .dropdown-menu {
       width: 250px !important;
     }
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
     div {
       padding-top:0px;
-      padding-right: 10px;
+      padding-right: 0px;
       padding-bottom: 0px;
       padding-left: 10px;
     }
@@ -65,7 +74,14 @@
           <li class="nav-item active">
             <a class="nav-link" href="index.html">Home</a>
           </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+
           </div>
+          <a class="nav-item active">
+              &nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
+            </a>
           <div class="btn-group">
             <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
             <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
@@ -152,7 +168,7 @@
   <br><br><center><button onclick="validate()" class="btn btn-info my-2 my-sm-0" type="submit">Submit</button></center>
   </form>
 
-  <br><br><br><br><footer id="footer" class="footer">
+  <footer id="footer" class="footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-8">

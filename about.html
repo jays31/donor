@@ -17,6 +17,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
 	<script type="text/javascript" src="js/validate_form.js"></script>
 	<script type="text/javascript" src="js/autoaddress_api.js"></script>
+	<script type="text/javascript" src="js/rss_api.js"></script>
 
 	<script type="text/javascript" src="js/popup_api.js"></script>
 	<script type="text/javascript" src="js/rss_api.js"></script>
@@ -32,14 +33,19 @@
 		}
 		div {
 			padding-top:0px;
-			padding-right: 10px;
+			padding-right: 0px;
 			padding-bottom: 0px;
 			padding-left: 10px;
 		}
 		h5 {
 			color: #0e6382;
 		}
-		footer {
+		.footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
 			background-color: #dce7ea;
 			color: #000;
 		}
@@ -58,13 +64,13 @@
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 					<li class="nav-item active">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item active">
 						<a class="nav-link" href="signup.html">Sign-Up</a>
 					</li>
 				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" id="address" type="text" placeholder="Search Location" required>
-					<button onclick="popup('')" class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
-				</form>
+				
 				<a class="nav-item active">
 					&nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
 				</a>
@@ -158,22 +164,22 @@
     </div>
   </div>
 
-	<footer id="footer" class="footer">
-      <div class="container">
-      	<div class="row">
-	      	<div class="col-sm-8">
-	      		<br><span class="text-muted"><h5>Subscribe to Donor+ for weekly donations!</h5></span>
-	      	</div>
-	      	<div class="col-sm-4">
-	      		<form class="form-inline">
-	      			<br><br><br>
-	      			<input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
-	      			<button onclick="subscribe()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
-	      		</form>
-	      	</div>
-      	</div>
-  	</div>
-    </footer>
+  <footer id="footer" class="footer">
+		<div class="container">
+		  <div class="row">
+			<div class="col-sm-8">
+			  <br><span class="text-muted"><h5>Questions? Drop in your email and we'll get in touch with you!</h5></span>
+			</div>
+			<div class="col-sm-4">
+			  <form class="form-inline">
+				<br><br><br>
+				<input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
+				<button onclick="contact()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+			  </form>
+			</div>
+		  </div>
+	  </div>
+	  </footer>
 	
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 	
