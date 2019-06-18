@@ -1,0 +1,36 @@
+#about img,.banner img{
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+}
+#about {
+    padding:40px;
+    background:#fff;
+}
+#about h4{
+    margin-top:0px;
+}
+.mg-20{
+    margin-bottom:40px;
+}
+#about h1{
+    padding-bottom: 30px;
+    font-size: 56px;
+    letter-spacing: 1px;
+    color:#ff3266;
+	font-weight: bold;
+}
+.banner{ position: relative;}
+.banner .banner_text{    
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    /* -webkit-transform: translateX(-50%); */
+    /* transform: translateX(-50%); */
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 56px;
+}
