@@ -9,9 +9,9 @@ var marker;
  */
 function initialize() {
     
-    var latlng = new google.maps.LatLng(44.6488, -63.5752);
+    var latlng = new google.maps.LatLng(44.6374247, -63.5872094);
     var options = {
-        zoom: 16,
+        zoom: 15,
         center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         disableDefaultUI: true
@@ -87,7 +87,7 @@ $(document).ready(function () {
                 marker.setPosition(results[0].geometry.location);
                 $('.search_addr').val(results[0].formatted_address);
             } else {
-                alert("Unsuccessful: " + status);
+                // alert("Unsuccessful: " + status);
             }
         });
         e.preventDefault();
