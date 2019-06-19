@@ -63,31 +63,42 @@
       <a class="navbar-brand" href="#">Donor+</a>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          </div>
-          <div class="btn-group">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="signup.html">Signup</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="help.html">Help</a>
+            </li>
 
-            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
-            <div class="dropdown-menu dropdown-menu-right">
-              <form>
-                <div class="form-group">
-                  <h6>Username/Email</h6>
-                  <input type="email" class="form-control" id="dropemail" placeholder="email@example.com" required>
-                </div>
-                <div class="form-group">
-                  <h6>Password</h6>
-                  <input type="password" class="form-control" id="droppassword" placeholder="Password" required>
-                </div>
-                <div class="form-check">
-                  <center><input type="checkbox" class="form-check-input" id="dropdownCheck">
-                    <label class="form-check-label" for="dropdownCheck">Remember me</label></center><br>
-                  </div>
-                  <center><button onclick="login()" type="submit" class="btn btn-primary">&nbsp;&nbsp;Sign in&nbsp;&nbsp;</button></center><br>
-                </form>
-              </div>
+          </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <form name="loginForm" action = "./dashboard.html" onsubmit="return(login());" method = "post" >
+            <div class="form-group">
+              <h6>Username/Email</h6>
+              <input name="username" type="email" class="form-control mb-2 mr-sm-2" id="dropemail" placeholder="email@example.com" required>
             </div>
+            <div class="form-group">
+              <h6>Password</h6>
+              <input name = "password" type="password" class="form-control mb-2 mr-sm-2" id="droppassword" placeholder="Password" required>
+            </div>
+            <div class="form-check">
+              <center><input type="checkbox" class="form-check-input" id="dropdownCheck">
+                <label class="form-check-label" for="dropdownCheck">Remember me</label></center><br>
+            </div>
+            <center><input class="btn btn-primary" type="submit" value = "Sign in"></center>
+            <!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
+            <center><button type="button" onclick="window.location.href = './forgot.html';" class="btn btn-warning mt-3">Forgot Password? </button><center><br>
+          </form>
+        </div>
+      </div>
         </ul>
     </nav>
   </div><br><br><br>

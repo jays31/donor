@@ -12,7 +12,7 @@ function login(){
 
 	if((usernameVar == "admin@fake.com") && (passwordVar == "admin")){
 
-		return true;
+		window.location.href = "dashboard.html";
 	}
 	else{
 
