@@ -23,6 +23,15 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet"> 
 		
 		<title>Edit Profile</title>
+
+		<style type="text/css">
+
+			footer {
+				background-color: #dce7ea;
+				color: #000;
+			}
+
+		</style>
 		
 	</head>
   
@@ -42,27 +51,28 @@
             <a class="nav-link" href="index.html">Home</a>
           </li>
           </div>
-          <div class="btn-group">
-            <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
-            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
-            <div class="dropdown-menu dropdown-menu-right">
-              <form>
-                <div class="form-group">
-                  <h6>Username/Email</h6>
-                  <input type="email" class="form-control" id="dropemail" placeholder="email@example.com" required>
-                </div>
-                <div class="form-group">
-                  <h6>Password</h6>
-                  <input type="password" class="form-control" id="droppassword" placeholder="Password" required>
-                </div>
-                <div class="form-check">
-                  <center><input type="checkbox" class="form-check-input" id="dropdownCheck">
-                    <label class="form-check-label" for="dropdownCheck">Remember me</label></center><br>
-                  </div>
-                  <center><button onclick="login()" type="submit" class="btn btn-primary">&nbsp;&nbsp;Sign in&nbsp;&nbsp;</button></center><br>
-                </form>
-              </div>
-            </div>
+			<div class="btn-group">
+				<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
+				<div class="dropdown-menu dropdown-menu-right">
+					<form name="loginForm" action = "./dashboard.html" onsubmit="return(login());" method = "post" >
+						<div class="form-group">
+							<h6>Username/Email</h6>
+							<input name="username" type="email" class="form-control mb-2 mr-sm-2" id="dropemail" placeholder="email@example.com" required>
+						</div>
+						<div class="form-group">
+							<h6>Password</h6>
+							<input name = "password" type="password" class="form-control mb-2 mr-sm-2" id="droppassword" placeholder="Password" required>
+						</div>
+						<div class="form-check">
+							<center><input type="checkbox" class="form-check-input" id="dropdownCheck">
+								<label class="form-check-label" for="dropdownCheck">Remember me</label></center><br>
+						</div>
+						<center><input class="btn btn-primary" type="submit" value = "Sign in"></center>
+						<!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
+						<center><button type="button" onclick="window.location.href = './forgot.html';" class="btn btn-warning mt-3">Forgot Password? </button><center><br>
+					</form>
+				</div>
+			</div>
         </ul>
     </nav>
   </div>
@@ -71,7 +81,7 @@
 		<div class="row">
 			<h1 class="display-4 mx-auto" id="lblSignupHeading">Forgot your password</h1>
 		</div>
-		<br>
+		<hr>
 		<div class="row" id="step1">
 			<div class="col-md-6 mx-auto">
 				<form id="frmGetSecurityCode">
@@ -96,7 +106,7 @@
 				</form>
 			</div>
 		</div>
-		<div class="row hide" id="step2">
+	<!--	<div class="row hide" id="step2">
 			<div class="col-md-6 mx-auto">
 				<form id="frmSubmitNewPassword">
 					<div class="form-group">
@@ -110,7 +120,7 @@
 					</div>
 				</form>
 			</div>
-		</div>
+		</div>-->
 		<!--https://getbootstrap.com/docs/4.0/components/modal/ -->
 		<div class="modal fade" id="ForgetSuccessModal" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -156,30 +166,35 @@
 				</div>
 			</div>
 		</div>
-		<hr>
+
 		<br>
 		<br>
 		<br>
 		<br>
 	</div>
 			
-			<!-- The style below comes from this link: https://hackerthemes.com/bootstrap-cheatsheet/#flex-row --> 
-			<footer id="footer" class="footer">
-				<div class="container">
-					<div class="row">
-					<div class="col-sm-8">
-					<br><span class="text-muted"><h5>Subscribe to Donor+ for weekly donations!</h5></span>
+			<!-- The style below comes from this link: https://hackerthemes.com/bootstrap-cheatsheet/#flex-row -->
+	<br><br><br><br>
+
+	<footer id="footer" class="footer" style="position:fixed; overflow: hidden; bottom: 0; width:100%;">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-7">
+					<br><span class="text-muted"><h5>Questions? Drop in your email and we'll get in touch with you!</h5></span>
 				</div>
-	      	<div class="col-sm-4">
-	      		<form class="form-inline">
-	      			<br><br><br>
-	      			<input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
-	      			<button onclick="subscribe()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
-	      		</form>
-	      	</div>
-      	</div>
+				<div class="col-sm-5">
+					<div style="margin-top: 10px;">
+						<form class="form-inline">
+
+							<div style="float: left; width: 100%">       <input style="" class="form-control" id="email" type="email" placeholder="Enter Email" required>  <button onclick="contact()" style="" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+
+							</div>
+						</form>
+					</div>
 				</div>
-    </footer>
+			</div>
+		</div>
+	</footer>
 		</div>
 	
 	</body>
