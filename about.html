@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="/styles/importer.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	<link href="css/about.css" rel="stylesheet">
+
+	<!-- From Tutorial 2 -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
+	<script type="text/javascript" src="js/validate_form.js"></script>
+	<script type="text/javascript" src="js/autoaddress_api.js"></script>
+	<script type="text/javascript" src="js/rss_api.js"></script>
+
+	<script type="text/javascript" src="js/popup_api.js"></script>
+	<script type="text/javascript" src="js/rss_api.js"></script>
+	<script type="text/javascript" src="js/subscribe_api.js"></script>
+	<script type="text/javascript" src="js/login_api.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<title>Donor+</title>
+
+	<style type="text/css">
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		h5 {
+			color: #0e6382;
+		}
+		.footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+			background-color: #dce7ea;
+			color: #000;
+		}
+		.dropdown-menu {
+			width: 250px !important;
+		}
+		.img{
+			width: 100%;
+			padding-left: 0px;
+		}
+		#NavBar{
+			padding-left: 10px;
+		}
+		#NavBar2{
+			padding-right: 10px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="container">
+		<!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/navbar/ -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+			<a class="navbar-brand" href="#">Donor+</a>
+			<div id="NavBar" class="collapse navbar-collapse">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item active">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="signup.html">Sign-Up</a>
+					</li>
+				</ul>
+				
+				<a id="NavBar2" class="nav-item active">
+					&nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
+				</a>
+				<!-- https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+				<div class="btn-group">
+					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
+					<div class="dropdown-menu dropdown-menu-right">
+						<form>
+							<div class="form-group">
+								<h6>Username/Email</h6>
+								<input type="email" class="form-control" id="dropemail" placeholder="email@example.com" required>
+							</div>
+							<div class="form-group">
+								<h6>Password</h6>
+								<input type="password" class="form-control" id="droppassword" placeholder="Password" required>
+							</div>
+							<div class="form-check">
+								<center><input type="checkbox" class="form-check-input" id="dropdownCheck">
+								<label class="form-check-label" for="dropdownCheck">Remember me</label></center><br>
+							</div>
+							<center><button onclick="login()" type="submit" class="btn btn-primary">&nbsp;&nbsp;Sign in&nbsp;&nbsp;</button></center><br>
+						</form>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div><br><br>
+
+<body class="">
+  <div class="wrapper ">
+    
+
+    <div class="main_body" id="main_body">
+
+      <div id="banner" class="banner">
+          <img src="./resources/about_banner.png">
+       </div>
+        <div id="about">
+            <!-- <h1 class="text-center hide">About Us</h1> -->
+            <div class="row mg-20">
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                        <img src="./resources/about_subtitle1.jpg">
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <h3>Donor Plus</h3>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        <br>
+                        <br>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        <br>
+                        
+                </div>
+            </div>
+			
+            <div class="row mg-20">
+			<div class="col-lg-5 col-md-5 col-sm-12">
+                            <img src="./resources/about_subtitle2.jpg">
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-12">
+                            <h4>sub title</h4>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            <br>
+                            <br>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            <br>
+                           
+                   
+            </div>
+            <div class="row mg-20">
+                <div class="col">
+                <h4>sub title</h4>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <br>
+                <br>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <br>
+               
+                </div>
+            </div>
+            <div class="row mg-20">
+                <div class="col">
+                    
+                </div> 
+			</div>
+			
+        </div>
+    </div>
+  </div>
+  
+  <div class="banner">
+	  <img src="./resources/about_subtitle.png"><br><br><br><br>
+  </div>
+
+  <footer id="footer" class="footer">
+		<div class="container">
+		  <div class="row">
+			<div class="col-sm-8">
+			  <br><span class="text-muted"><h5>Questions? Drop in your email and we'll get in touch with you!</h5></span>
+			</div>
+			<div class="col-sm-4">
+			  <form class="form-inline">
+				<br><br><br>
+				<input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
+				<button onclick="contact()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+			  </form>
+			</div>
+		  </div>
+	  </div>
+	  </footer>
+	
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -9,11 +9,27 @@
 	<link rel="stylesheet" href="/styles/importer.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="css/geomap.css">
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
+	<script type="text/javascript" src="js/validate_api.js"></script>
+	<script type="text/javascript" src="js/autoaddress_api.js"></script>
+
+	<script type="text/javascript" src="js/popup_api.js"></script>
+	<script type="text/javascript" src="js/rss_api.js"></script>
+	<script type="text/javascript" src="js/subscribe_api.js"></script>
+	<script type="text/javascript" src="js/login_api.js"></script>
+	<!-- <script type="text/javascript" src="js/initmap_api.js"></script> -->
+
+
 
 	<!-- From Tutorial 2 -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
 	<script type="text/javascript" src="js/validate_form.js"></script>
 	<script type="text/javascript" src="js/autoaddress_api.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtAXnSywh7PyS0VXU-HlFQF8kb4jg2u2I"></script>
+	<script type="text/javascript" src="js/geomap.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<title>Donor+</title>
@@ -24,51 +40,35 @@
 		}
 		div {
 			padding-top:0px;
-			padding-right: 10px;
+			padding-right: 0px;
 			padding-bottom: 0px;
 			padding-left: 10px;
 		}
 		h5 {
 			color: #0e6382;
 		}
-		footer {
+		.footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
 			background-color: #dce7ea;
 			color: #000;
 		}
 		.dropdown-menu {
 			width: 250px !important;
 		}
+		#map {
+        height: 100%;
+		}
+		/* Optional: Makes the sample page fill the window. */
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
 	</style>
-
-	<script> 
-		function popup(city) {
-			if (city==''){
-				var city2 = document.getElementById("address").value;
-				if (city2==''){}
-				else{
-					alert("Searching Food Banks near " + city2);
-					document.getElementById("address").value=city2;
-				}
-			}
-			else{
-				alert("Showing search results from " + city);
-				document.getElementById("address").value=city;
-
-			}
-        }
-        function rss(){
-        	alert("You will be subscribed to RSS feed!");
-        }
-        function subscribe(){
-        	var email = document.getElementById("email").value;
-        	if (email==''){}
-        	else
-        		alert(email+" will be subscribed to weekly newsletter!");
-        }
-        function login(){
-        	alert("The username or password you entered is incorrect");
-        }
-    </script> 
 
 </head>
 
@@ -80,13 +80,13 @@
 			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 					<li class="nav-item active">
+						<a class="nav-link" href="about.html">About Us</a>
+					</li>
+					<li class="nav-item active">
 						<a class="nav-link" href="signup.html">Sign-Up</a>
 					</li>
 				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" id="address" type="text" placeholder="Search Location" required>
-					<button onclick="popup('')" class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
-				</form>
+
 				<a class="nav-item active">
 					&nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
 				</a>
@@ -94,20 +94,22 @@
 				<div class="btn-group">
 					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
 					<div class="dropdown-menu dropdown-menu-right">
-						<form>
+						<form name="loginForm" action = "./donor_profile.html" onsubmit="return(login());" method = "post" >
 							<div class="form-group">
 								<h6>Username/Email</h6>
-								<input type="email" class="form-control" id="dropemail" placeholder="email@example.com" required>
+								<input name="username" type="email" class="form-control mb-2 mr-sm-2" id="dropemail" placeholder="email@example.com" required>
 							</div>
 							<div class="form-group">
 								<h6>Password</h6>
-								<input type="password" class="form-control" id="droppassword" placeholder="Password" required>
+								<input name = "password" type="password" class="form-control mb-2 mr-sm-2" id="droppassword" placeholder="Password" required>
 							</div>
 							<div class="form-check">
 								<center><input type="checkbox" class="form-check-input" id="dropdownCheck">
 								<label class="form-check-label" for="dropdownCheck">Remember me</label></center><br>
 							</div>
-							<center><button onclick="login()" type="submit" class="btn btn-primary">&nbsp;&nbsp;Sign in&nbsp;&nbsp;</button></center><br>
+							<center><input type="submit" value = "Submit">&nbsp;&nbsp;Sign in&nbsp;&nbsp;</center>
+							<!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
+							<center><button type="button" onclick="window.location.href = './forgot.html';" class="btn btn-warning mt-3">Forgot Password? </button><center><br>
 						</form>
 					</div>
 				</div>
@@ -225,8 +227,34 @@
 
 			</div>
 			<div class="col-sm-8">
+				<div class="row">
+					<div class="card" id="geomap">
+						<div class="row no-gutters">
+							<!-- <div id="geomap"></div> -->
+							<script async defer
+							src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&callback=initMap"></script>
+						</div>
+					</div>
+				</div> 
+				<br>
+				<div class="row">
+					<div class="col-md-12">
+						<form action="" accept-charset="UTF-8" method="get">
+							<div class="input-group">
+								<input class="form-control search_addr" style="border-radius: 4px" type="text" id="search_location"  placeholder="Search Location" required>
+								<div class="input-group-btn">
+									<button value="Locate" id="locate" class="btn btn-info my-2 my-sm-0 btn-default get_map" type="submit">Locate</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<br>
+
 
 				<br><h5 id="address-tag">Available Food Banks</h5><br>
+
+
 				
 				<div class="row">
 					<div class="card" style="width: auto;">
@@ -405,7 +433,7 @@
 					</div>
 				</div>
 
-				<br>
+				<br><br><br><br><br><br>
 
 			</div>
 		</div>
