@@ -12,17 +12,17 @@
 
   <!-- From Tutorial 2 -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
-  <script type="text/javascript" src="js/validate_form.js"></script>
-  <script type="text/javascript" src="js/autoaddress_api.js"></script>
+  <script  src="js/validate_form.js"></script>
+  <script  src="js/autoaddress_api.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <script type="text/javascript" src="js/subscribe_api.js"></script>
-  <script type="text/javascript" src="js/login_api.js"></script>
-  <script type="text/javascript" src="js/reserve_api.js"></script>
+  <script  src="js/subscribe_api.js"></script>
+  <script  src="js/login_api.js"></script>
+  <script  src="js/reserve_api.js"></script>
 
   <title>Inventory</title>
 
-  <style type="text/css">
+  <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
     }
@@ -62,48 +62,52 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <a class="navbar-brand" href="#">Donor+</a>
       <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="signup.html">Signup</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="help.html">Help</a>
-            </li>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup.html">Signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="help.html">Help</a>
+          </li>
+        </ul>
 
+
+        &nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
+
+        <!-- https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+        <div class="btn-group">
+          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <form name="loginForm" action = "./dashboard.html" onsubmit="return(login());" method = "post" >
+              <div class="form-group">
+                <h6>Username/Email</h6>
+                <input name="username" type="email" class="form-control mb-2 mr-sm-2" id="dropemail" placeholder="email@example.com" required>
+              </div>
+              <div class="form-group">
+                <h6>Password</h6>
+                <input name = "password" type="password" class="form-control mb-2 mr-sm-2" id="droppassword" placeholder="Password" required>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="mr-auto form-check-input" id="dropdownCheck">
+                <label class="form-check-label mr-auto" for="dropdownCheck">Remember me</label><br>
+              </div>
+              <input class="btn btn-primary mr-auto" type="submit" value = "Sign in">
+              <!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
+              <button type="button" onclick="window.location.href = './forgot.html';" class="btn mr-auto btn-warning mt-3">Forgot Password? </button><br>
+            </form>
           </div>
-      <div class="btn-group">
-        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
-        <div class="dropdown-menu dropdown-menu-right">
-          <form name="loginForm" action = "./dashboard.html" onsubmit="return(login());" method = "post" >
-            <div class="form-group">
-              <h6>Username/Email</h6>
-              <input name="username" type="email" class="form-control mb-2 mr-sm-2" id="dropemail" placeholder="email@example.com" required>
-            </div>
-            <div class="form-group">
-              <h6>Password</h6>
-              <input name = "password" type="password" class="form-control mb-2 mr-sm-2" id="droppassword" placeholder="Password" required>
-            </div>
-            <div class="form-check">
-              <center><input type="checkbox" class="form-check-input" id="dropdownCheck">
-                <label class="form-check-label" for="dropdownCheck">Remember me</label></center><br>
-            </div>
-            <center><input class="btn btn-primary" type="submit" value = "Sign in"></center>
-            <!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
-            <center><button type="button" onclick="window.location.href = './forgot.html';" class="btn btn-warning mt-3">Forgot Password? </button><center><br>
-          </form>
         </div>
       </div>
-        </ul>
     </nav>
   </div><br><br><br>
 
-  <h2><center>Atlantic Superstore</center></h2><br>
+  <div class="mr-auto"><h2 class="mr-auto" style="text-align: center;">Atlantic Superstore</h2><br></div>
 
     <div class="container">
       <div class="row">
@@ -113,27 +117,27 @@
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="resources/item1.png" alt="Card image cap">
             <div class="card-body">
-              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
-              <center><h5 class="card-title mt-2">Sabra Hummus</h5></center>
-              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
+              <h5 class="card-title mt-2">Sabra Hummus</h5>
+              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="resources/item5.png" alt="Card image cap">
             <div class="card-body">
-              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
-              <center><h5 class="card-title mt-2">Kurkure</h5></center>
-              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
+              <h5 class="card-title mt-2">Kurkure</h5>
+              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="resources/item9.png" alt="Card image cap">
             <div class="card-body">
-              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
-              <center><h5 class="card-title mt-2">Mama Noodles</h5></center>
-              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
+              <h5 class="card-title mt-2">Mama Noodles</h5>
+              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
             </div>
           </div><br>
 
@@ -144,27 +148,27 @@
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="resources/item2.png" alt="Card image cap">
             <div class="card-body">
-              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
-              <center><h5 class="card-title mt-2">Coconut Milk</h5></center>
-              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
+              <h5 class="card-title mt-2">Coconut Milk</h5>
+              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="resources/item6.png" alt="Card image cap">
             <div class="card-body">
-              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
-              <center><h5 class="card-title mt-2">Mango Tofu</h5></center>
-              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
+              <h5 class="card-title mt-2">Mango Tofu</h5>
+              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="resources/item10.png" alt="Card image cap">
             <div class="card-body">
-              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
-              <center><h5 class="card-title mt-2">Coconut Water</h5></center>
-              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
+              <h5 class="card-title mt-2">Coconut Water</h5>
+              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
             </div>
           </div><br>
 
@@ -175,27 +179,27 @@
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="resources/item3.png" alt="Card image cap">
             <div class="card-body">
-              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
-              <center><h5 class="card-title mt-2">Shrimp Crackers</h5></center>
-              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
+              <h5 class="card-title mt-2">Shrimp Crackers</h5>
+              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="resources/item7.png" alt="Card image cap">
             <div class="card-body">
-              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
-              <center><h5 class="card-title mt-2">Chick Peas</h5></center>
-              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
+              <h5 class="card-title mt-2">Chick Peas</h5>
+              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="resources/item11.png" alt="Card image cap">
             <div class="card-body">
-              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
-              <center><h5 class="card-title mt-2">Plantain Chips</h5></center>
-              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
+              <h5 class="card-title mt-2">Plantain Chips</h5>
+              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
             </div>
           </div><br>
 
@@ -206,27 +210,27 @@
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="resources/item4.png" alt="Card image cap">
             <div class="card-body">
-              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
-              <center><h5 class="card-title mt-2">Ginger Beer</h5></center>
-              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
+              <h5 class="card-title mt-2">Ginger Beer</h5>
+              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="resources/item8.png" alt="Card image cap">
             <div class="card-body">
-              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
-              <center><h5 class="card-title mt-2">BillyBee Honey</h5></center>
-              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
+              <h5 class="card-title mt-2">BillyBee Honey</h5>
+              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="resources/item12.png" alt="Card image cap">
             <div class="card-body">
-              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
-              <center><h5 class="card-title mt-2">Icelandic Water</h5></center>
-              <center><a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a></center>
+              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
+              <h5 class="card-title mt-2">Icelandic Water</h5>
+              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
             </div>
           </div><br>
 
@@ -234,13 +238,13 @@
 
       </div>
     </div>
-  </div>
+
 
 <footer id="footer" class="footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-8">
-            <br><span class="text-muted"><h5>Subscribe to Donor+ for weekly donations!</h5></span>
+            <br><h5>Subscribe to Donor+ for weekly donations!</h5>
           </div>
           <div class="col-sm-4">
             <form class="form-inline">
