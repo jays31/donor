@@ -11,8 +11,8 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="js/updateEmail_api.js"></script>
-		<script type="text/javascript" src="js/updatePassword_api.js"></script>
+		<script  src="js/updateEmail_api.js"></script>
+		<script  src="js/updatePassword_api.js"></script>
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		
@@ -24,7 +24,7 @@
 		
 		<title>Edit Profile</title>
 
-		<style type="text/css">
+		<style>
 
 			footer {
 				background-color: #dce7ea;
@@ -43,38 +43,52 @@
 		-->
 		<div class="container">
 		<!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/navbar/ -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-			<a class="navbar-brand" href="#">Donor+</a>
-		<div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          </div>
-			<div class="btn-group">
-				<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
-				<div class="dropdown-menu dropdown-menu-right">
-					<form name="loginForm" action = "./dashboard.html" onsubmit="return(login());" method = "post" >
-						<div class="form-group">
-							<h6>Username/Email</h6>
-							<input name="username" type="email" class="form-control mb-2 mr-sm-2" id="dropemail" placeholder="email@example.com" required>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+				<a class="navbar-brand" href="#">Donor+</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" style="padding-left: 0px; padding-right: 0px;" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="signup.html">Signup</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="about.html">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="help.html">Help</a>
+						</li>
+					</ul>
+					&nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
+					<!-- https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+					<div class="btn-group">
+						<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<form name="loginForm" action = "./dashboard.html" onsubmit="return(login());" method = "post" >
+								<div class="form-group">
+									<h6>Username/Email</h6>
+									<input name="username" type="email" class="form-control mb-2 mr-sm-2" id="dropemail" placeholder="email@example.com" required>
+								</div>
+								<div class="form-group">
+									<h6>Password</h6>
+									<input name = "password" type="password" class="form-control mb-2 mr-sm-2" id="droppassword" placeholder="Password" required>
+								</div>
+								<div class="form-check">
+									<input type="checkbox" class="form-check-input" id="dropdownCheck">
+									<label class="form-check-label" for="dropdownCheck">Remember me</label><br>
+								</div>
+								<input class="btn btn-primary" type="submit" value = "Sign in">
+								<!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
+								<button type="button" onclick="window.location.href = './forgot.html';" class="btn btn-warning mt-3">Forgot Password? </button><br>
+							</form>
 						</div>
-						<div class="form-group">
-							<h6>Password</h6>
-							<input name = "password" type="password" class="form-control mb-2 mr-sm-2" id="droppassword" placeholder="Password" required>
-						</div>
-						<div class="form-check">
-							<center><input type="checkbox" class="form-check-input" id="dropdownCheck">
-								<label class="form-check-label" for="dropdownCheck">Remember me</label></center><br>
-						</div>
-						<center><input class="btn btn-primary" type="submit" value = "Sign in"></center>
-						<!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
-						<center><button type="button" onclick="window.location.href = './forgot.html';" class="btn btn-warning mt-3">Forgot Password? </button><center><br>
-					</form>
+					</div>
 				</div>
-			</div>
-        </ul>
-    </nav>
+			</nav>
   </div>
 		
 	<div class="container mainContent">
@@ -180,7 +194,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-7">
-					<br><span class="text-muted"><h5>Questions? Drop in your email and we'll get in touch with you!</h5></span>
+					<br><h5>Questions? Drop in your email and we'll get in touch with you!</h5>
 				</div>
 				<div class="col-sm-5">
 					<div style="margin-top: 10px;">
@@ -195,7 +209,7 @@
 			</div>
 		</div>
 	</footer>
-		</div>
+
 	
 	</body>
 </html>

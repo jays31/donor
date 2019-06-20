@@ -12,18 +12,18 @@
 
   <!-- From Tutorial 2 -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
-  <script type="text/javascript" src="js/validate_form.js"></script>
-  <script type="text/javascript" src="js/autoaddress_api.js"></script>
-  <script type="text/javascript" src="js/rss_api.js"></script>
+  <script  src="js/validate_form.js"></script>
+  <script  src="js/autoaddress_api.js"></script>
+  <script  src="js/rss_api.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <script type="text/javascript" src="js/validate_api.js"></script>
-  <script type="text/javascript" src="js/login_api.js"></script>
+  <script  src="js/validate_api.js"></script>
+  <script  src="js/login_api.js"></script>
   
 
   <title>Donor+ Sign-up</title>
 
-  <style type="text/css">
+  <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
     }
@@ -65,31 +65,30 @@
 
 <body>
 
-  <div class="container">
-    <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/navbar/ -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Donor+</a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
+<div class="container">
+  <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/navbar/ -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Donor+</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="signup.html">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="help.html">Help</a>
+        </li>
+      </ul>
 
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="signup.html">Signup</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="help.html">Help</a>
-            </li>
 
+      &nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
 
-          </div>
-          <a class="nav-item active">
-              &nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
-            </a>
+      <!-- https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
       <div class="btn-group">
         <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
         <div class="dropdown-menu dropdown-menu-right">
@@ -103,42 +102,46 @@
               <input name = "password" type="password" class="form-control mb-2 mr-sm-2" id="droppassword" placeholder="Password" required>
             </div>
             <div class="form-check">
-              <center><input type="checkbox" class="form-check-input" id="dropdownCheck">
-                <label class="form-check-label" for="dropdownCheck">Remember me</label></center><br>
+              <input type="checkbox" class="mr-auto form-check-input" id="dropdownCheck">
+              <label class="form-check-label mr-auto" for="dropdownCheck">Remember me</label><br>
             </div>
-            <center><input class="btn btn-primary" type="submit" value = "Sign in"></center>
+            <input class="btn btn-primary mr-auto" type="submit" value = "Sign in">
             <!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
-            <center><button type="button" onclick="window.location.href = './forgot.html';" class="btn btn-warning mt-3">Forgot Password? </button><center><br>
+            <button type="button" onclick="window.location.href = './forgot.html';" class="btn mr-auto btn-warning mt-3">Forgot Password? </button><br>
           </form>
         </div>
       </div>
-        </ul>
-    </nav>
-  </div><br><br><br>
+    </div>
+  </nav>
+</div><br><br>
 
-  <h2><center>Sign Up</center></h2><br>
+  <br>
 
   <form name="donorForm">
     <div class="container">
+      <div><h2 class="mr-auto" style="text-align: center;">Sign Up</h2>
+
+      </div>
+      <hr>
       <div class="row">
 
         <div class="col-sm">
 
-          <h5>Organization's Name</h4>
+          <h5>Organization's Name</h5>
           <div class="input-group">
-            <input type="name" name="orgName"id="orgName" placeholder="Full Name" class="form-control" required>
+            <input type="text" name="orgName" id="orgName" placeholder="Full Name" class="form-control" required>
             <div class="input-group-append">
             </div>
           </div><br>
 
-          <h5>Organization's Email</h4>
+          <h5>Organization's Email</h5>
           <div class="input-group">
             <input type="email" name="email" id="email" placeholder="Organization's Email" class="form-control" required>
             <div class="input-group-append">
             </div>
           </div><br>
 
-          <h5>Address</h4>
+          <h5>Address</h5>
           <div class="input-group">
             <input type="text" name="search_location" id="search_location" placeholder="Search an address" class="form-control" required>
             <div class="input-group-append">
@@ -149,44 +152,44 @@
 
         <div class="col-sm">
 
-          <h5>Password</h4>
+          <h5>Password</h5>
           <div class="input-group">
             <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
             <div class="input-group-append">
             </div>
           </div><br>
 
-          <h5>Confirm Password</h4>
+          <h5>Confirm Password</h5>
           <div class="input-group">
             <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Re-enter your Password" class="form-control" required>
             <div class="input-group-append">
             </div>
           </div><br>
 
-          <h5>Phone Number</h4>
+          <h5>Phone Number</h5>
           <div class="input-group">
             <input type="number" name="phone" id="phone" placeholder="Enter a 10 digit number" class="form-control" required>
             <div class="input-group-append">
             </div>
           </div>
-
+          <br>
+          <button onclick="validate()" class="mr-auto btn btn-info my-2 my-lg-3" type="submit">Submit</button>
         </div>
       </div>
     </div>
-  </div>
-  <br><br><center><button onclick="validate()" class="btn btn-info my-2 my-sm-0" type="submit">Submit</button></center>
+    <br><br>
   </form>
 
   <footer id="footer" class="footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-8">
-            <br><span class="text-muted"><h5>Questions? Drop in your email and we'll get in touch with you!</h5></span>
+            <br><h5>Questions? Drop in your email and we'll get in touch with you!</h5>
           </div>
           <div class="col-sm-4">
             <form class="form-inline">
               <br><br><br>
-              <input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
+              <input class="form-control mr-sm-2" type="email" placeholder="Enter Email" required>
               <button onclick="contact()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
             </form>
           </div>

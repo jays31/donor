@@ -12,29 +12,29 @@
 	<link rel="stylesheet" href="css/geomap.css">
 
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
-	<script type="text/javascript" src="js/validate_api.js"></script>
-	<script type="text/javascript" src="js/autoaddress_api.js"></script>
+	<script  src="js/validate_api.js"></script>
+	<script  src="js/autoaddress_api.js"></script>
 
-	<script type="text/javascript" src="js/popup_api.js"></script>
-	<script type="text/javascript" src="js/rss_api.js"></script>
-	<script type="text/javascript" src="js/subscribe_api.js"></script>
-	<script type="text/javascript" src="js/login_api.js"></script>
+	<script  src="js/popup_api.js"></script>
+	<script  src="js/rss_api.js"></script>
+	<script  src="js/subscribe_api.js"></script>
+	<script  src="js/login_api.js"></script>
 	<!-- <script type="text/javascript" src="js/initmap_api.js"></script> -->
 
 
 
 	<!-- From Tutorial 2 -->
-	<script type="text/javascript" src="js/validate_form.js"></script>
-	<script type="text/javascript" src="js/autoaddress_api.js"></script>
+	<script  src="js/validate_form.js"></script>
+	<script  src="js/autoaddress_api.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtAXnSywh7PyS0VXU-HlFQF8kb4jg2u2I"></script>
-	<script type="text/javascript" src="js/geomap.js"></script>
+	<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtAXnSywh7PyS0VXU-HlFQF8kb4jg2u2I"></script>
+	<script  src="js/geomap.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<title>Donor+</title>
 
-	<style type="text/css">
+	<style>
 		body {
 			font-family: Arial, Helvetica, sans-serif;
 		}
@@ -93,9 +93,9 @@
 					</li>
 				</ul>
 
-				<a class="nav-item active">
+
 					&nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
-				</a>
+
 				<!-- https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
 				<div class="btn-group">
 					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
@@ -110,12 +110,12 @@
 								<input name = "password" type="password" class="form-control mb-2 mr-sm-2" id="droppassword" placeholder="Password" required>
 							</div>
 							<div class="form-check">
-								<center><input type="checkbox" class="form-check-input" id="dropdownCheck">
-								<label class="form-check-label" for="dropdownCheck">Remember me</label></center><br>
+								<input type="checkbox" class="mr-auto form-check-input" id="dropdownCheck">
+								<label class="form-check-label mr-auto" for="dropdownCheck">Remember me</label><br>
 							</div>
-							<center><input class="btn btn-primary" type="submit" value = "Sign in"></center>
+						<input class="btn btn-primary mr-auto" type="submit" value = "Sign in">
 							<!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
-							<center><button type="button" onclick="window.location.href = './forgot.html';" class="btn btn-warning mt-3">Forgot Password? </button><center><br>
+							<button type="button" onclick="window.location.href = './forgot.html';" class="btn mr-auto btn-warning mt-3">Forgot Password? </button><br>
 						</form>
 					</div>
 				</div>
@@ -245,7 +245,7 @@
 				<br>
 				<div class="row">
 					<div class="col-md-12">
-						<form action="" accept-charset="UTF-8" method="get">
+						<form accept-charset="UTF-8" method="get">
 							<div class="input-group">
 								<input class="form-control search_addr" style="border-radius: 4px" type="text" id="search_location"  placeholder="Search Location" required>
 								<div class="input-group-btn">
@@ -449,7 +449,7 @@
       <div class="container">
       	<div class="row">
 	      	<div class="col-sm-8">
-	      		<br><span class="text-muted"><h5>Subscribe to Donor+ for weekly donations!</h5></span>
+	      		<br><h5>Subscribe to Donor+ for weekly donations!</h5>
 	      	</div>
 	      	<div class="col-sm-4">
 	      		<form class="form-inline">
