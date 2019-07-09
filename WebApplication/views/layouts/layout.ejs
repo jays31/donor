@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/Chart.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="/styles/importer.css">
+  <title>Donor+ Reports</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    h5 {
+      color: #0e6382;
+    }
+    h4 {
+      color: #0e6382;
+    }
+    h3 {
+      color: #0e6382;
+    }
+    h2 {
+      color: #0e6382;
+    }
+    footer {
+      background-color: #dce7ea;
+      color: #000;
+    }
+    .dropdown-menu {
+      width: 250px !important;
+      width: 250px !important;
+    }
+    div {
+      padding-top:0px;
+      padding-right: 10px;
+      padding-bottom: 0px;
+      padding-left: 10px;
+    }
+  </style>
+
+
+  <script src="js/Chart.bundle.min.js"></script>
+  <script src="js/Chart.min.js"></script>
+
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+      integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+      crossorigin="anonymous"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+  
+    <script type="text/javascript"
+      src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Donor+</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" style="padding-left: 0px; padding-right: 0px;" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+        </ul>
+          <button type="button" style="float:right; margin-top: 5px;" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</button>
+    
+          <div class="btn-group nav top-nav" style="padding-top:40px">
+            <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+    
+            <div class="dropdown-menu dropdown-menu-right">
+    
+              <ul class="nav top-nav">
+                <li class="dropdown show" style="margin-right: 56px;">
+    
+                  <ul class="dropdown-menu show">
+                    <li><a href="#" style="text-decoration:none;"> Notification Settings</a></li>
+                    <li><a href="#" style="text-decoration:none;"> Change Password</a></li>
+                    <li><a href="index.html" style="text-decoration:none;"> Logout</a></li>
+                  </ul>
+                </li>
+              </ul>
+    
+            </div>
+          </div>
+        </div>
+      </nav>
+      <br><br><br>
+  <%- body %>
+
+
+  
+   <br><br><br><br>
+
+  <footer id="footer" class="footer" style="position:fixed; overflow: hidden; bottom: 0; width:100%;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-7">
+            <br><h5>Questions? Drop in your email and we'll get in touch with you!</h5>
+          </div>
+          <div class="col-sm-5">
+            <div style="margin-top: 10px;">
+            <form class="form-inline">
+
+              <div style="float: left; width: 100%">       <input style="" class="form-control" id="email" type="email" placeholder="Enter Email" required>  <button onclick="contact()" style="" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+    </div>
+    </footer>
+
+    <script src="/dependencies/sails.io.js"></script>
+     
+</body>
+
+
+</html>
