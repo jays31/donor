@@ -50,7 +50,7 @@ $('#formReport').submit(function (e) {
             reportName = 'InventoryReport';
             $.ajax({
                 type: "POST",
-                url: document.location.href + "inventoryReport",
+                url: "http://129.173.22.35:20008/inventoryReport",
                 data: JSON.stringify({ "fromDate": $('#fromDate').val(), "toDate": $('#toDate').val() }),
                 dataType: "json",
                 contentType: "application/json",
@@ -107,7 +107,7 @@ $('#formReport').submit(function (e) {
             reportName = "ReservationReport";
             $.ajax({
                 type: "POST",
-                url: document.location.href + "reservationReport",
+                url: "http://129.173.22.35:20008/reservationReport",
                 data: JSON.stringify({ "fromDate": $('#fromDate').val(), "toDate": $('#toDate').val() }),
                 dataType: "json",
                 contentType: "application/json",
