@@ -1,7 +1,7 @@
 // Amirul Sunesara B00813456
 //-------------------------------
-//-------------------------------
 
+//Reference: https://sailsjs.com/documentation/concepts/models-and-orm/models
 module.exports = {
 
   attributes: {

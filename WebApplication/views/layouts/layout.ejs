@@ -1,3 +1,17 @@
+<!--
+ Amirul Sunesara B00813456
+
+References:
+JqueryUI Date Picker: https://jqueryui.com/datepicker/
+JsPDF for converting HTML to pdf report: https://github.com/MrRio/jsPDF
+Js-PDF Autotable to beautify the report tables: https://github.com/simonbengtsson/jsPDF-AutoTable.
+Bootstrap Modal for validation popup: https://getbootstrap.com/docs/4.0/components/modal/
+Bootstrap navigation bar: https://getbootstrap.com/docs/4.0/components/navbar/
+Bootstrap Dropdown:  https://getbootstrap.com/docs/4.0/components/dropdowns/
+
+  
+-->
+
 <!DOCTYPE html>
 <html lang=en>
 
@@ -12,43 +26,9 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="/styles/importer.css">
+  <link rel="stylesheet" href="/styles/style.css">
   <title>Donor+ Reports</title>
 
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    h5 {
-      color: #0e6382;
-    }
-    h4 {
-      color: #0e6382;
-    }
-    h3 {
-      color: #0e6382;
-    }
-    h2 {
-      color: #0e6382;
-    }
-    footer {
-      background-color: #dce7ea;
-      color: #000;
-    }
-    .dropdown-menu {
-      width: 250px !important;
-      width: 250px !important;
-    }
-    div {
-      padding-top:0px;
-      padding-right: 10px;
-      padding-bottom: 0px;
-      padding-left: 10px;
-    }
-  </style>
-
-
-  <script src="js/Chart.bundle.min.js"></script>
-  <script src="js/Chart.min.js"></script>
 
 </head>
 
@@ -63,7 +43,7 @@
       crossorigin="anonymous"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
   
-    <script type="text/javascript"
+    <script
       src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -85,7 +65,7 @@
           <button type="button" style="float:right; margin-top: 5px;" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</button>
     
           <div class="btn-group nav top-nav" style="padding-top:40px">
-            <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+          
     
             <div class="dropdown-menu dropdown-menu-right">
     
@@ -121,7 +101,7 @@
             <div style="margin-top: 10px;">
             <form class="form-inline">
 
-              <div style="float: left; width: 100%">       <input style="" class="form-control" id="email" type="email" placeholder="Enter Email" required>  <button onclick="contact()" style="" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+              <div style="float: left; width: 100%">       <input class="form-control" id="email" type="email" placeholder="Enter Email" required>  <button onclick="contact()" style="" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
 
               </div>
             </form>

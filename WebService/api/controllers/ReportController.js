@@ -1,6 +1,7 @@
 // Amirul Sunesara B00813456
-//-------------------------------
-//-------------------------------
+
+//References: https://sailsjs.com/documentation/reference/waterline-orm/models/find
+//https://sailsjs.com/documentation/concepts/actions-and-controllers
 
 module.exports = {
   

@@ -1,39 +1,31 @@
+/*Amirul Sunesara B00813456*/
 
-.hide
-{
-    display: none;
-
-}
-.twidth
-{
-    width:100px;
-}
-.help-block{
-    color:#a94442;
-}
-.has-error .form-control {
-    border-color: #a94442;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-}
-#map {
-    height: 400px;
-    width: 100%;
-}
-.userprofile:hover
-{
-    color:#d8d6d6;
-}
-.selecteditem
-{
-
-   background-color: #E6E4E4
-}
-.bottomAlign
-{
-    vertical-align:-moz-middle-with-baseline;
-}
-.cicon
-{
-    border: 1px solid #ced4da;
-}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  h5 {
+    color: #0e6382;
+  }
+  h4 {
+    color: #0e6382;
+  }
+  h3 {
+    color: #0e6382;
+  }
+  h2 {
+    color: #0e6382;
+  }
+  footer {
+    background-color: #dce7ea;
+    color: #000;
+  }
+  .dropdown-menu {
+    width: 250px !important;
+    width: 250px !important;
+  }
+  div {
+    padding-top:0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+  }
