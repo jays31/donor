@@ -1,3 +1,4 @@
+<!-- Author: Jay Sharma (B00824331) -->
 <!DOCTYPE html>
 <html lang=en>
 
@@ -64,16 +65,16 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="index.ejs">Home</a>
+            <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="signup.ejs">Signup</a>
+            <a class="nav-link" href="signup">Signup</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.ejs">About</a>
+            <a class="nav-link" href="about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="help.ejs">Help</a>
+            <a class="nav-link" href="help">Help</a>
           </li>
         </ul>
 
@@ -84,7 +85,7 @@
         <div class="btn-group">
           <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
           <div class="dropdown-menu dropdown-menu-right">
-            <form name="loginForm" action = "./dashboard.ejs" onsubmit="return(login());" method = "post" >
+            <form name="loginForm" action = "./dashboard" onsubmit="return(login());" method = "post" >
               <div class="form-group">
                 <h6>Username/Email</h6>
                 <input name="username" type="email" class="form-control mb-2 mr-sm-2" id="dropemail" placeholder="email@example.com" required>
@@ -99,7 +100,7 @@
               </div>
               <input class="btn btn-primary mr-auto" type="submit" value = "Sign in">
               <!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
-              <button type="button" onclick="window.location.href = './forgot.ejs';" class="btn mr-auto btn-warning mt-3">Forgot Password? </button><br>
+              <button type="button" onclick="window.location.href = './forgot';" class="btn mr-auto btn-warning mt-3">Forgot Password? </button><br>
             </form>
           </div>
         </div>
