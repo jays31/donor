@@ -48,9 +48,9 @@ module.exports.datastores = {
     *    (See https://sailsjs.com/config/datastores for help.)                 *
     *                                                                          *
     ***************************************************************************/
-    // adapter: 'sails-mysql',
-    // url: 'mysql://user:password@host:port/database',
-
+   
+    adapter: 'sails-mysql',
+   url: 'mysql://jays@dal-fcs:Test1234@dal-fcs.mysql.database.azure.com:3306/donor_app',
   },
 
 
