@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/Chart.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+  <!-- From Tutorial 2 -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
+  <script src="js/validate_form.js"></script>
+  <script src="js/autoaddress_api.js"></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <title>Donor+ Help</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    h5 {
+      color: #0e6382;
+    }
+    h4 {
+      color: #0e6382;
+    }
+    h3 {
+      color: #0e6382;
+    }
+    h2 {
+      color: #0e6382;
+    }
+    footer {
+      background-color: #dce7ea;
+      color: #000;
+    }
+    .dropdown-menu {
+      width: 250px !important;
+      width: 250px !important;
+    }
+    div {
+      padding-top:0px;
+      padding-right: 10px;
+      padding-bottom: 0px;
+      padding-left: 10px;
+    }
+  </style>
+
+  <script>
+    function validate(){
+      if (document.getElementById("password").value!=document.getElementById("confirmPassword").value){
+        alert("Oops! Passwords do not match! Try again!");
+      }
+      else if (document.getElementById("password").value!=''&&document.getElementById("confirmPassword").value!=''&&document.getElementById("orgName").value!=''&&document.getElementById("email").value!=''&&document.getElementById("address").value!=''&&document.getElementById("phone").value!=''){
+        alert("Thank you for your interest in being a regular donor. We have received your form and will get in touch with you soon. Please look out for an email from us.")
+      }
+    }
+    function login(){
+      alert("The username or password you entered is incorrect");
+    }
+  </script>
+  <script src="js/Chart.bundle.min.js"></script>
+  <script src="js/Chart.min.js"></script>
+
+</head>
+
+<body>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Donor+</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" style="padding-left: 0px; padding-right: 0px;" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signup">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about">About</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="help">Help</a>
+        </li>
+      </ul>
+        &nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
+      <!-- https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+      <div class="btn-group">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <form name="loginForm" action = "./dashboard" onsubmit="return(login());" method = "post" >
+            <div class="form-group">
+              <h6>Username/Email</h6>
+              <input name="username" type="email" class="form-control mb-2 mr-sm-2" id="dropemail" placeholder="email@example.com" required>
+            </div>
+            <div class="form-group">
+              <h6>Password</h6>
+              <input name = "password" type="password" class="form-control mb-2 mr-sm-2" id="droppassword" placeholder="Password" required>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                <label class="form-check-label" for="dropdownCheck">Remember me</label><br>
+            </div>
+            <input class="btn btn-primary" type="submit" value = "Sign in">
+            <!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
+            <button type="button" onclick="window.location.href = './forgot';" class="btn btn-warning mt-3">Forgot Password? </button><br>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <br><br><br>
+  <h2 style="text-align: center;">Help</h2>
+
+<hr>
+  <div class="container">
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Can't access my account
+            </button>
+          </h5>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Add items to inventory
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Reserve food items
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <br><br><br><br>
+
+  <footer id="footer" class="footer" style="position:fixed; overflow: hidden; bottom: 0; width:100%;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-7">
+            <br><h5>Questions? Drop in your email and we'll get in touch with you!</h5>
+          </div>
+          <div class="col-sm-5">
+            <div style="margin-top: 10px;">
+            <form class="form-inline">
+
+              <div style="float: left; width: 100%">       <input class="form-control" id="email" type="email" placeholder="Enter Email" required>  <button onclick="contact()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+    </div>
+    </footer>
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script  src="js/Chart.min.js"></script>
+  <script  src="js/Chart.bundle.min.js"></script>
+  <script  src="js/graphs.js"></script>
+</body>
+
+
+</html>
