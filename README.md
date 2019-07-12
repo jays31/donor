@@ -3,7 +3,7 @@
 ## Features
 There were two features choosed in assignment 3
 1) Dashboard.
-2) Reports: (View report and download). \
+2) Reports: (View report and download).
 
 In assignment 4, for back-end implementation, report feature is selected.
 
@@ -119,7 +119,20 @@ function showModal(title, body) {
 This source provides template for sample navigation bar. This code is not entirely used. However, the code of navigation items is customized and implemented in layout.ejs file.
 
 ````
-
+ <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Inventory</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reservation</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Reports <span class="sr-only">(current)</span></a>
+              </li>
+  </ul>
 ````
 - HTML date pattern (YYYY-MM-DD) : http://html5pattern.com/Dates
 This source does not provide any source code but provides a guide to implement date pattern in HTML form.
