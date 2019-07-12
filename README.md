@@ -47,7 +47,7 @@ Web service and web application are standalone and deployed separately on blueno
 
 
 ----
-### Database
+## Database
 
 A centralized MySQL database is hosted on Azure cloud platform. 
 
