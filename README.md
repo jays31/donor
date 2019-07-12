@@ -1,9 +1,21 @@
 # Assignment 4 (Amirul Sunesara B00813456)
 
-## View Report and Download Feature
+## Features
+There were two features choosed in assignment 3
+1) Dashboard.
+2) Reports: (View report and download). \
+
+In assignment 4, for back-end implementation, report feature is selected.
+
+## Feature Completeness
+
+The report feature provides user with a mechanism to view report and download. User can view report by specifying 'from date' and 'to date' then pressing view report button. User can either choose to view inventory report or reservation report between these two dates. Once user viewed the choosen report, user will then able to download this report.
+
+All functions specified above are implemented including form validation and validation messages.
+
 ----
 ## Deployment Description
-The application is hosted on bluenose with following URL
+The application is based on Node.js hosted on bluenose with following URL
 > http://129.173.22.35:20011/
 
 ----
@@ -35,7 +47,8 @@ Web service and web application are standalone and deployed separately on blueno
 
 
 ----
-## Code Sources 
+## Code Sources
+- Donor+ theme (layout): To make overall design of application consistent, our team agreed upon using Jay Sharma's theme which he implemented in assignment 2. We will be using this theme in every page with slight modifications in screens after login success. 
 - JqueryUI Date Picker: https://jqueryui.com/datepicker/ \
 This source was used to check the syntax of jquery UI datepicker. The line is modified with 'from date' and 'to date' fields.
 
@@ -145,16 +158,16 @@ This source was used to implement dropdown for account setting, forgot your pass
 </div>
 ````
 - HTML date pattern (YYYY-MM-DD) : http://html5pattern.com/Dates
-This source does not provide any source code but provides a guide to implement date pattern.
+This source does not provide any source code but provides a guide to implement date pattern in HTML form.
 
 - Sails.js - Models: https://sailsjs.com/documentation/concepts/models-and-orm/models
-This source was only used to get to know the syntax of models in sails.js. The code was written then from the scratch.
+This source was only used to get to know the syntax of models in sails.js. The code was then written from scratch.
 
 - Sails.js - Controllers: https://sailsjs.com/documentation/concepts/actions-and-controllers
-This source was only used to learn the syntax of controllers in sails.js. The code was then written from the scratch.
+This source was only used to learn the syntax of controllers in sails.js. The code was then written from scratch.
 
 - Sails.js - Find() function: https://sailsjs.com/documentation/reference/waterline-orm/models/find
-This source was only used to learn the syntax of find function in sails.js. The code was then written from the scratch.
+This source was only used to learn the syntax of find function in sails.js. The code was then written from scratch.
 
 
 
