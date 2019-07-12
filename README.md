@@ -47,6 +47,11 @@ Web service and web application are standalone and deployed separately on blueno
 
 
 ----
+### Database
+
+A centralized MySQL database is hosted on Azure cloud platform. 
+
+----
 ## Code Sources
 - Donor+ theme (layout): To make overall design of application consistent, our team agreed upon using Jay Sharma's theme which he implemented in assignment 2. We will be using this theme in every page with slight modifications in screens after login success. 
 - JqueryUI Date Picker: https://jqueryui.com/datepicker/ \
