@@ -74,8 +74,8 @@ $('#formReport').submit(function (e) {
                                 obj[i].weight = 'Not Applicable'
                             }
                             obj[i].date_added = obj[i].date_added.split('T')[0];
-                            html = html + '<tr><th>' + obj[i].item_number + '</th><td>' + obj[i].item_name + '</td><td>' + obj[i].category + '</td><td>' + obj[0].quantity + '</td><td>' + obj[0].weight + '</td><td>' + obj[0].date_added + '</td></tr>';
-                            currArr = [obj[i].item_number, obj[i].item_name, obj[i].category, obj[0].quantity, obj[0].weight, obj[0].date_added];
+                            html = html + '<tr><th>' + obj[i].item_number + '</th><td>' + obj[i].item_name + '</td><td>' + obj[i].category + '</td><td>' + obj[i].quantity + '</td><td>' + obj[i].weight + '</td><td>' + obj[i].date_added + '</td></tr>';
+                            currArr = [obj[i].item_number, obj[i].item_name, obj[i].category, obj[i].quantity, obj[i].weight, obj[i].date_added];
                             arrBody.push(currArr);
                             $('#dlReport').show();
                         }
@@ -131,8 +131,8 @@ $('#formReport').submit(function (e) {
                                 obj[i].weight = 'Not Applicable'
                             }
                             obj[i].reserved_on = obj[i].reserved_on.split('T')[0];
-                            html = html + '<tr><th>' + obj[i].reservation_number + '</th><td>' + obj[i].reserved_by + '</td><td>' + obj[i].reserved_items + '</td><td>' + obj[0].reserved_on + '</td></tr>';
-                            currArr = [obj[i].reservation_number, obj[i].reserved_by, obj[i].reserved_items, obj[0].reserved_on];
+                            html = html + '<tr><th>' + obj[i].reservation_number + '</th><td>' + obj[i].reserved_by + '</td><td>' + obj[i].reserved_items + '</td><td>' + obj[i].reserved_on + '</td></tr>';
+                            currArr = [obj[i].reservation_number, obj[i].reserved_by, obj[i].reserved_items, obj[i].reserved_on];
                             arrBody.push(currArr);
                             $('#dlReport').show();
                         }
