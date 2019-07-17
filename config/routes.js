@@ -10,4 +10,8 @@ module.exports.routes = {
   '/help': { view: 'pages/help' },
   '/inventory': { view: 'pages/inventory' },
   '/signup': { view: 'pages/signup' },
+  '/report': { view: 'pages/reports' },
+  '/inventoryReport':'ReportController.getInventoryReport',
+  '/reservationReport':'ReportController.getReservationReport',
+  
 };
