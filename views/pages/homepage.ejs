@@ -33,6 +33,11 @@
 	<script  src="js/geomap.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+	<!-- Added by Jonathan Harris B00418947 --> 
+	<!-- https://code.tutsplus.com/tutorials/working-with-data-in-sailsjs--net-31525 -->
+	
+	
+
 	<title>Donor+</title>
 
 	<style>
@@ -254,6 +259,18 @@
 								</div>
 							</div>
 						</form>
+						
+						<!-- START: Added by Jonathan Harris B00418947 -->
+						<form accept-charset="UTF-8" method="GET" action="results">
+							<div class="input-group">
+								<input class="form-control" style="border-radius: 4px" type="text" id="query" placeholder="Search Food" required>
+								<div class="input-group-btn">
+									<button value="search" id="search" class="btn btn-info" type="submit">Search</button>
+								</div>
+							</div>
+						</form>
+						<!-- END: Added by Jonathan Harris B00418947 -->
+						
 					</div>
 				</div>
 				<br>
