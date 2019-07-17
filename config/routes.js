@@ -10,5 +10,4 @@ module.exports.routes = {
   '/help': { view: 'pages/help' },
   '/inventory': { view: 'pages/inventory' },
   '/signup': { view: 'pages/signup' },
-
 };
