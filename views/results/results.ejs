@@ -123,22 +123,33 @@
   </nav>
   <br><br><br>
   
-  <!-- Added by: Jonathan Harris B00418947 -->
+  <!-- START Added by: Jonathan Harris B00418947 -->
   <h2 style="text-align: center;"> Search Results for <%= query %> </h2>
   
   <!-- This link was helpful for determining how to iterate through multiple table rows and present them on the results page. -->
   <!-- https://ionicabizau.github.io/ejs-playground/ -->
+  <table class="table">
+  <tr>
+	<th>Name</th>
+	<th>Description</th>
+	<th>Quantity</th>
+	<th>Alert Email Address</th>
+  </tr>
   <% for(var i = 0; i < donations.length; ++i) {%>
   <form action="/alerts" method="post">
-	<%=donations[i].name%>
+	<tr>
+	<td><%=donations[i].name%></td>
 	<input type="hidden" value="<%=donations[i].name%>" name="name">
-	<%=donations[i].description%>
-	<%=donations[i].quantity%>
-	<input  name="emailAddress" class="form-control" style="border-radius: 4px" type="text" placeholder="Enter alert email address" required>
-	<button type="submit"> Set Alert </button>
+	<td><%=donations[i].description%></td>
+	<td><%=donations[i].quantity%></td>
+	<td><input  name="emailAddress" class="form-control" style="border-radius: 4px" type="text" placeholder="Enter alert email address" required></td>
+	<td><button type="submit" class="btn btn-info my-2 my-sm-0"> Set Alert </button></td>
+  </tr>
   </form>
   <% } %>
-
+  </table>
+  <!-- END Added by: Jonathan Harris B00418947 -->
+  
   <br><br><br><br>
 
   <footer id="footer" class="footer" style="position:fixed; overflow: hidden; bottom: 0; width:100%;">
