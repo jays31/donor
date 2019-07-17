@@ -1,0 +1,84 @@
+<!--
+Amirul Sunesara B00813456
+
+References:
+JqueryUI Date Picker: https://jqueryui.com/datepicker/
+JsPDF for converting HTML to pdf report: https://github.com/MrRio/jsPDF
+Js-PDF Autotable to beautify the report tables: https://github.com/simonbengtsson/jsPDF-AutoTable.
+Bootstrap Modal for validation popup: https://getbootstrap.com/docs/4.0/components/modal/
+Bootstrap navigation bar: https://getbootstrap.com/docs/4.0/components/navbar/
+Bootstrap Dropdown:  https://getbootstrap.com/docs/4.0/components/dropdowns/
+HTML date pattern (YYYY-MM-DD) : http://html5pattern.com/Dates
+
+
+  
+-->
+
+<script src="https://unpkg.com/jspdf@1.5.3/dist/jspdf.min.js"></script>
+<script src="https://unpkg.com/jspdf-autotable@3.1.1/dist/jspdf.plugin.autotable.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<h2 style="text-align: center;">Reports</h2>
+<hr>
+<div class="container">
+        <form id="formReport">
+                <div class="container">
+                    <div class="row">
+                        <div class='col-md-5 mx-auto'>
+                            <div class="form-group">
+                                <label>From Date: </label>
+                                <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
+                                    <input id="fromDate" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" class="form-control" type="text" placeholder="yyyy-mm-dd" required="required"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='col-md-5 mx-auto'>
+                            <label>To Date: </label>
+                            <div id="datepicker1" class="input-group date" data-date-format="mm-dd-yyyy">
+                                <input id="toDate" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" class="form-control" placeholder="yyyy-mm-dd" type="text" required="required"/>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                            <div class="col-md-6 mx-auto">
+                                    <input type="submit" id="btnReservationReport" class="btn btn-primary btn-lg" value="View Reservation Report"/>
+                                    <input type="submit" id="btnViewInventory" style="margin-left: 10px;" class="btn btn-primary btn-lg" value="View Inventory Report"/>
+                            </div>
+                            
+                    </div>
+                    <br>
+                    <div class="row" id="tableData">
+                         
+
+                    </div>
+                    <div class="row">
+                            <input style="display: none;" id='dlReport'  type="button" class="mx-auto btn btn-success btn-lg" value="Download Report"/>
+                    </div>
+                    
+                </div>
+        </form>
+        
+</div>
+<div class="modal fade" id="validationModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">title</h5>
+                </div>
+                <div class="modal-body" id="modalBody">
+                 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-primary">Ok</button>
+                </div>
+            </div>
+        </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<script src="/js/report.js?ver=1.2"></script>
