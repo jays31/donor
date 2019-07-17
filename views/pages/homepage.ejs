@@ -21,9 +21,7 @@
 	<script  src="js/subscribe_api.js"></script>
 	<script  src="js/login_api.js"></script>
 	<!-- <script type="text/javascript" src="js/initmap_api.js"></script> -->
-
-
-
+	
 	<!-- From Tutorial 2 -->
 	<script  src="js/validate_form.js"></script>
 	<script  src="js/autoaddress_api.js"></script>
@@ -35,7 +33,7 @@
 
 	<!-- Added by Jonathan Harris B00418947 --> 
 	<!-- https://code.tutsplus.com/tutorials/working-with-data-in-sailsjs--net-31525 -->
-	
+	<script src="js/results.js"></script>
 	
 
 	<title>Donor+</title>
@@ -261,14 +259,15 @@
 						</form>
 						
 						<!-- START: Added by Jonathan Harris B00418947 -->
-						<div class="input-group">
-							<input class="form-control" style="border-radius: 4px" type="text" id="query" placeholder="Search for donations" required>
-							<div class="input-group-btn">
-								<button value="search" id="search" class="btn btn-info">Search</button>
+						<form action="/results" method="post">
+							<div class="input-group">
+								<input  name="query" class="form-control" style="border-radius: 4px" type="text" id="query" placeholder="Search for donations" required>
+								<div class="input-group-btn">
+									<button value="searchButton" id="searchButton" class="btn btn-info" type="submit">Search</button>
+								</div>
 							</div>
-						</div>
 						<!-- END: Added by Jonathan Harris B00418947 -->
-						
+						</form>
 					</div>
 				</div>
 				<br>
