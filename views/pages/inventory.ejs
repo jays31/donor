@@ -108,37 +108,58 @@
     </nav>
   </div><br><br><br>
 
+  <div class="modal fade" id="reserve_item" tabindex="-1" role="dialog" aria-labelledby="reserve_item" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Item Reservation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+        <div class="modal-body">
+          Please enter your email id below to reserve this item:
+          <input name="email_res" type="email" class="form-control mb-2 mr-sm-2" id="email_res" placeholder="email@example.com" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button onclick="reserve()" type="submit" class="btn btn-primary">Reserve</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <div class="mr-auto"><h2 class="mr-auto" style="text-align: center;">Atlantic Superstore</h2><br></div>
 
     <div class="container">
       <div class="row">
-
         <div class="col-sm-3">
-
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="http://localhost:1337/images/item1.png" alt="Card image cap">
             <div class="card-body">
-              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
-              <h5 class="card-title mt-2">Sabra Hummus</h5>
-              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Sabra Hummus</h5></center>
+              <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve_item">Reserve Item</button></center>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="http://localhost:1337/images/item5.png" alt="Card image cap">
             <div class="card-body">
-              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
-              <h5 class="card-title mt-2">Kurkure</h5>
-              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Kurkure</h5></center>
+              <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve_item">Reserve Item</button></center>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="http://localhost:1337/images/item9.png" alt="Card image cap">
             <div class="card-body">
-              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
-              <h5 class="card-title mt-2">Mama Noodles</h5>
-              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Mama Noodles</h5></center>
+              <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve_item">Reserve Item</button></center>
             </div>
           </div><br>
 
@@ -149,27 +170,27 @@
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="http://localhost:1337/images/item2.png" alt="Card image cap">
             <div class="card-body">
-              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
-              <h5 class="card-title mt-2">Coconut Milk</h5>
-              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Coconut Milk</h5></center>
+              <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve_item">Reserve Item</button></center>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="http://localhost:1337/images/item6.png" alt="Card image cap">
             <div class="card-body">
-              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
-              <h5 class="card-title mt-2">Mango Tofu</h5>
-              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Mango Tofu</h5></center>
+              <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve_item">Reserve Item</button></center>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="http://localhost:1337/images/item10.png" alt="Card image cap">
             <div class="card-body">
-              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
-              <h5 class="card-title mt-2">Coconut Water</h5>
-              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Coconut Water</h5></center>
+              <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve_item">Reserve Item</button></center>
             </div>
           </div><br>
 
@@ -180,27 +201,27 @@
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="http://localhost:1337/images/item3.png" alt="Card image cap">
             <div class="card-body">
-              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
-              <h5 class="card-title mt-2">Shrimp Crackers</h5>
-              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Shrimp Crackers</h5></center>
+              <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve_item">Reserve Item</button></center>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="http://localhost:1337/images/item7.png" alt="Card image cap">
             <div class="card-body">
-              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
-              <h5 class="card-title mt-2">Chick Peas</h5>
-              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Chick Peas</h5></center>
+              <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve_item">Reserve Item</button></center>
             </div>
           </div><br>
-
+          
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="http://localhost:1337/images/item11.png" alt="Card image cap">
             <div class="card-body">
-              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
-              <h5 class="card-title mt-2">Plantain Chips</h5>
-              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Plantain Chips</h5></center>
+              <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve_item">Reserve Item</button></center>
             </div>
           </div><br>
 
@@ -211,27 +232,27 @@
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="http://localhost:1337/images/item4.png" alt="Card image cap">
             <div class="card-body">
-              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
-              <h5 class="card-title mt-2">Ginger Beer</h5>
-              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Ginger Beer</h5></center>
+              <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve_item">Reserve Item</button></center>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="http://localhost:1337/images/item8.png" alt="Card image cap">
             <div class="card-body">
-              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
-              <h5 class="card-title mt-2">BillyBee Honey</h5>
-              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">BillyBee Honey</h5></center>
+              <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve_item">Reserve Item</button></center>
             </div>
           </div><br>
 
           <div class="card" style="width: 15rem;">
             <img class="card-img-top" src="http://localhost:1337/images/item12.png" alt="Card image cap">
             <div class="card-body">
-              <button type="button" class="btn btn-outline-dark" disabled>Available: 15</button>
-              <h5 class="card-title mt-2">Icelandic Water</h5>
-              <a onclick="reserve()" class="btn btn-info mt-2">Reserve Item</a>
+              <center><button type="button" class="btn btn-outline-dark" disabled>Available: 15</button></center>
+              <center><h5 class="card-title mt-2">Icelandic Water</h5></center>
+              <center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve_item">Reserve Item</button></center>
             </div>
           </div><br>
 
