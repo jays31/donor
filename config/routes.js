@@ -13,5 +13,6 @@ module.exports.routes = {
   
   // Added by Jonathan Harris B00418947
   // '/results': { controller: 'results', action: 'results' },
-  'post /results': 'ResultsController.results'
+  'post /results': 'ResultsController.results',
+  'post /alerts': 'AlertController.alerts'
 };

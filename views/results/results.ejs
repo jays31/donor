@@ -129,11 +129,15 @@
   <!-- This link was helpful for determining how to iterate through multiple table rows and present them on the results page. -->
   <!-- https://ionicabizau.github.io/ejs-playground/ -->
   <% for(var i = 0; i < donations.length; ++i) {%>
-  <%=donations[i].name%>
-  <%=donations[i].description%>
-  <%=donations[i].quantity%>
+  <form action="/alerts" method="post">
+	<%=donations[i].name%>
+	<input type="hidden" value="<%=donations[i].name%>" name="name">
+	<%=donations[i].description%>
+	<%=donations[i].quantity%>
+	<input  name="emailAddress" class="form-control" style="border-radius: 4px" type="text" placeholder="Enter alert email address" required>
+	<button type="submit"> Set Alert </button>
+  </form>
   <% } %>
-  
 
   <br><br><br><br>
 
