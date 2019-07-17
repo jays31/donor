@@ -1,4 +1,6 @@
-# Assignment 4 (Amirul Sunesara B00813456)
+# Assignment 4 (Individual Submission)
+# Amirul Sunesara B00813456 
+
 
 ## Features
 There were two features choosed in assignment 3
@@ -29,21 +31,23 @@ Inventory and reservation records were manually inserted in database for the mon
 
 ----
 
-## Folder Structure
+## Folder Structure and Files
 Web service and web application are standalone and deployed separately on bluenose. Since the application is developed on sails.js, the folder structure follows different hierarchy.
 ### Web Service
 - Controllers:
->  WebService -> API -> Controllers
+>  WebService -> API -> Controllers -> ReportController.js
 - Models: 
-> WebService -> API -> Models
+> WebService -> API -> Models -> InventoryReport.js \
+> WebService -> API -> Models -> ReservationReport.js
+
 ### Web Application
 - CSS: 
-> WebApplication -> Assets -> styles
+> WebApplication -> Assets -> styles -> style.css
 - Javascript files: 
-> WebApplication -> Assets -> js
+> WebApplication -> Assets -> js -> report.js
 - HTML (.ejs files): 
-> WebApplication -> views -> layouts\
-> WebApplication -> views -> pages
+> WebApplication -> views -> layouts -> layout.ejs \
+> WebApplication -> views -> pages -> reports.ejs
 
 
 ----

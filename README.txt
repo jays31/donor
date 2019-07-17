@@ -1,9 +1,11 @@
-# Assignment 4 (Amirul Sunesara B00813456)
+# Assignment 4 (Individual Submission)
+# Amirul Sunesara B00813456 
+
 
 ## Features
 There were two features choosed in assignment 3
 1) Dashboard.
-2) Reports: (View report and download). 
+2) Reports: (View report and download).
 
 In assignment 4, for back-end implementation, report feature is selected.
 
@@ -29,21 +31,23 @@ Inventory and reservation records were manually inserted in database for the mon
 
 ----
 
-## Folder Structure
+## Folder Structure and Files
 Web service and web application are standalone and deployed separately on bluenose. Since the application is developed on sails.js, the folder structure follows different hierarchy.
 ### Web Service
 - Controllers:
->  WebService -> API -> Controllers
+>  WebService -> API -> Controllers -> ReportController.js
 - Models: 
-> WebService -> API -> Models
+> WebService -> API -> Models -> InventoryReport.js 
+> WebService -> API -> Models -> ReservationReport.js
+
 ### Web Application
 - CSS: 
-> WebApplication -> Assets -> styles
+> WebApplication -> Assets -> styles -> style.css
 - Javascript files: 
-> WebApplication -> Assets -> js
+> WebApplication -> Assets -> js -> report.js
 - HTML (.ejs files): 
-> WebApplication -> views -> layouts\
-> WebApplication -> views -> pages
+> WebApplication -> views -> layouts -> layout.ejs 
+> WebApplication -> views -> pages -> reports.ejs
 
 
 ----
@@ -64,7 +68,7 @@ $( function() {
 });
 
 ````
-- JsPDF for converting HTML to pdf report: https://github.com/MrRio/jsPDF \
+- JsPDF for converting HTML to pdf report: https://github.com/MrRio/jsPDF 
 This source was used to give functionality of downloading report. The code is modified with text name and file name in text() and save() function.
 
 ````
@@ -119,7 +123,6 @@ function showModal(title, body) {
 This source provides template for sample navigation bar. This code is not entirely used. However, the code of navigation items is customized and implemented in layout.ejs file.
 
 ````
-````
  <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="#">Dashboard</a>
@@ -134,8 +137,6 @@ This source provides template for sample navigation bar. This code is not entire
                 <a class="nav-link" href="#">Reports <span class="sr-only">(current)</span></a>
               </li>
   </ul>
-````
-
 ````
 - HTML date pattern (YYYY-MM-DD) : http://html5pattern.com/Dates
 This source does not provide any source code but provides a guide to implement date pattern in HTML form.
