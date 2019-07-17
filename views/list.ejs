@@ -104,11 +104,11 @@ h1.display-4 {
                 <td>
                     <!-- <a href="/gallery/edit/<%= gal.image_uid %>" class="btn btn-primary">Edit</a> -->
                     <form class="d-inline" action="/gallery/edit" method="post">
-                        <input type="hidden" id="unique_edit_ID" name="unique_edit_ID" value='<%= gal.id %>'>
+                        <input type="hidden" name="unique_edit_ID" value='<%= gal.id %>'>
                         <input type="submit" value="Edit" class="btn btn-info edit my-2 my-sm-0">
                     </form>
                     <form class="d-inline" action="/gallery/delete" method="post">
-                        <input type="hidden" id="unique_delete_ID" name="unique_delete_ID" value='<%= gal.id %>'>
+                        <input type="hidden" name="unique_delete_ID" value='<%= gal.id %>'>
                         <input type="submit" value="Delete" class="btn btn-info delete my-2 my-sm-0">
                     </form>
                 </td>
