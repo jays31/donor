@@ -14,7 +14,7 @@ module.exports = {
 		
 		var donations = await Alert.create({name: name, emailAddress: email});
 		
-		return res.redirect("/");
+		return res.redirect("/inventory");
 	}
 
 };
