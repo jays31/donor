@@ -15,4 +15,5 @@ module.exports.routes = {
   // '/results': { controller: 'results', action: 'results' },
   'post /results': 'ResultsController.results',
   'post /alerts': 'AlertController.alerts'
+
 };
