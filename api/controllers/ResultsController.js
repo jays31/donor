@@ -13,7 +13,8 @@ module.exports = {
 	
 	results: async function(req, res){
 		var query = req.param("query");
-		var donations = await Donation.find({where: {name: query}});
+		//var donations = await Donation.find({where: {name: query}});
+		var donations = await Itemlist.find({where: {name: query}});
 		res.view({query: query, donations: donations});
 	}
   
