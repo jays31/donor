@@ -14,6 +14,16 @@ module.exports.routes = {
   // Added by Jonathan Harris B00418947
   // '/results': { controller: 'results', action: 'results' },
   'post /results': 'ResultsController.results',
-  'post /alerts': 'AlertController.alerts'
+  'post /alerts': 'AlertController.alerts',
 
-};
+  'post /gallery/upload' : 'GalleryController.create',
+  'get /gallery/list' : 'GalleryController.list',
+  'post /gallery/delete' : 'GalleryController.delete',
+  'post /gallery/edit' : 'GalleryController.edit',
+  'post /gallery/update' : 'GalleryController.update',
+  'get /gallery/add' : 'GalleryController.add',
+  '/minventory': { view: 'pages/minventory' },
+  '/report': { view: 'pages/reports' },
+  '/inventoryReport':'ReportController.getInventoryReport',
+  '/reservationReport':'ReportController.getReservationReport',
+ };
