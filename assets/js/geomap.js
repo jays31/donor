@@ -1,7 +1,4 @@
-// source: https://www.codexworld.com/autocomplete-location-search-box-google-maps-javascript-api-jquery-ui/
-// source: https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple
-// source: https://developers.google.com/maps/documentation/javascript/events
-// source: https://developers.google.com/maps/documentation/javascript/markers
+// source : https://www.codexworld.com/autocomplete-location-search-box-google-maps-javascript-api-jquery-ui/
 
 var geocoder;
 var map;
@@ -24,7 +21,6 @@ function initialize() {
 
     geocoder = new google.maps.Geocoder();
 
-    // source: https://developers.google.com/maps/documentation/javascript/markers
     marker = new google.maps.Marker({
         map: map,
         draggable: true,
@@ -42,6 +38,7 @@ function initialize() {
             }
         });
     });
+
 }
 
 $(document).ready(function () {
@@ -110,6 +107,3 @@ $(document).ready(function () {
 
 
 // source: https://www.codexworld.com/autocomplete-location-search-box-google-maps-javascript-api-jquery-ui/
-// source: https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple
-// source: https://developers.google.com/maps/documentation/javascript/events
-// source: https://developers.google.com/maps/documentation/javascript/markers

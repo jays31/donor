@@ -36,13 +36,20 @@
     h2 {
       color: #0e6382;
     }
-    footer {
-      background-color: #dce7ea;
-      color: #000;
-    }
+  	.footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+			background-color: #dce7ea;
+			color: #000;
+		}
     .dropdown-menu {
       width: 250px !important;
       width: 250px !important;
+      padding-right: 10px;
+      padding-left: 10px;
     }
     div {
       padding-top:0px;
@@ -114,7 +121,7 @@
             </div>
             <input class="btn btn-primary" type="submit" value = "Sign in">
             <!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
-            <button type="button" onclick="window.location.href = './forgot';" class="btn btn-warning mt-3">Forgot Password? </button><br>
+            <a href = './forgot'>Forgot Password? </a><br>
           </form>
         </div>
       </div>
@@ -176,23 +183,20 @@
 
   <br><br><br><br>
 
-  <footer id="footer" class="footer" style="position:fixed; overflow: hidden; bottom: 0; width:100%;">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-7">
-            <br><h5>Questions? Drop in your email and we'll get in touch with you!</h5>
-          </div>
-          <div class="col-sm-5">
-            <div style="margin-top: 10px;">
-            <form class="form-inline">
-
-              <div style="float: left; width: 100%">       <input class="form-control" id="email" type="email" placeholder="Enter Email" required>  <button onclick="contact()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
-
-              </div>
-            </form>
-            </div>
-          </div>
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <br><h5>Subscribe to Donor+ for weekly donations!</h5>
         </div>
+        <div class="col-sm-4">
+          <form class="form-inline">
+            <br><br><br>
+            <input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
+            <button onclick="subscribe()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
     </div>
     </footer>
   

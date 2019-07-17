@@ -46,6 +46,8 @@
     }
     .dropdown-menu {
       width: 250px !important;
+      padding-left: 10px;
+      padding-right: 10px;
     }
     .footer {
       position: fixed;
@@ -108,7 +110,7 @@
             </div>
             <input class="btn btn-primary mr-auto" type="submit" value = "Sign in">
             <!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
-            <button type="button" onclick="window.location.href = './forgot';" class="btn mr-auto btn-warning mt-3">Forgot Password? </button><br>
+            <a href = './forgot' >Forgot Password? </a><br>
           </form>
         </div>
       </div>
@@ -181,22 +183,22 @@
     <br><br>
   </form>
 
-  <footer id="footer" class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8">
-            <br><h5>Questions? Drop in your email and we'll get in touch with you!</h5>
-          </div>
-          <div class="col-sm-4">
-            <form class="form-inline">
-              <br><br><br>
-              <input class="form-control mr-sm-2" type="email" placeholder="Enter Email" required>
-              <button onclick="contact()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
-            </form>
-          </div>
+	<footer id="footer" class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <br><h5>Subscribe to Donor+ for weekly donations!</h5>
         </div>
-    </div>
-    </footer>
+        <div class="col-sm-4">
+          <form class="form-inline">
+            <br><br><br>
+            <input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
+            <button onclick="subscribe()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+  </div>
+  </footer>
   
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
   
