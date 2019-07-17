@@ -10,6 +10,8 @@ module.exports.routes = {
   '/help': { view: 'pages/help' },
   '/inventory': { view: 'pages/inventory' },
   '/signup': { view: 'pages/signup' },
-  '/results': { view: 'pages/results' },
+  
+  // Added by Jonathan Harris B00418947
+  '/results': { controller: 'results', action: 'results' },
 
 };
