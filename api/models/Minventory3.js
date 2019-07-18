@@ -1,7 +1,5 @@
-// Author: Dinesh Bayireddi (B00791584)
-
 /**
- * Minventory2.js
+ * Minventory3.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
