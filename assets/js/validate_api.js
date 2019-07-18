@@ -1,3 +1,5 @@
+// Author: Jay Sharma (B00824331)
+
 function validate(){
 	if (document.getElementById("password").value!=document.getElementById("confirmPassword").value){
 		alert("Oops! Passwords do not match! Try again!");

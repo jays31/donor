@@ -1,3 +1,6 @@
+// Author: Dinesh Bayireddi (B00791584)
+// Author: Jay Sharma (B00824331)
+
 //https://developers.google.com/maps/documentation/javascript/places-autocomplete
 function autocompleteAddress() {
     var  address = new google.maps.places.Autocomplete(

@@ -1,3 +1,4 @@
+// Author: Jay Sharma (B00824331)
 // Source: https://www.youtube.com/watch?v=NB71vyCj2X4
 
 var nodemailer = require('nodemailer');

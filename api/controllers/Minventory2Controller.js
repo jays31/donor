@@ -1,3 +1,5 @@
+// Author: Dinesh Bayireddi (B00791584)
+
 /**
  * Minventory2Controller
  *
@@ -6,7 +8,4 @@
  */
 
 module.exports = {
-  
-
 };
-

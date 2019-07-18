@@ -1,3 +1,4 @@
+// Author: Jay Sharma (B00824331)
 /**
  * Default model settings
  * (sails.config.models)
@@ -53,7 +54,7 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
 
-  // migrate: 'alter',
+  migrate: 'alter',
 
 
   /***************************************************************************

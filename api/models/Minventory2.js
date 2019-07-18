@@ -1,3 +1,5 @@
+// Author: Dinesh Bayireddi (B00791584)
+
 /**
  * Minventory2.js
  *
