@@ -131,17 +131,17 @@
   <table class="table">
   <tr>
 	<th>Name</th>
-	<th>Description</th>
-	<th>Quantity</th>
-	<th>Alert Email Address</th>
+	<th>Available</th>
+	<th>Store</th>
+	<th>Email</th>
   </tr>
   <% for(var i = 0; i < donations.length; ++i) {%>
   <form action="/alerts" method="post">
 	<tr>
 	<td><%=donations[i].name%></td>
 	<input type="hidden" value="<%=donations[i].name%>" name="name">
-	<td><%=donations[i].description%></td>
-	<td><%=donations[i].quantity%></td>
+	<td><%=donations[i].available%></td>
+	<td><%=donations[i].store%></td>
 	<td><input  name="emailAddress" class="form-control" style="border-radius: 4px" type="text" placeholder="Enter alert email address" required></td>
 	<td><button type="submit" class="btn btn-info my-2 my-sm-0"> Set Alert </button></td>
   </tr>

@@ -12,7 +12,7 @@ module.exports = {
 		var name = req.param("name");
 		var email = req.param("emailAddress");
 		
-		var donations = await Alert.create({name: name, emailAddress: email});
+		var newAlert = await Alert.create({name: name, emailAddress: email});
 		
 		return res.redirect("/inventory");
 	}
