@@ -38,7 +38,9 @@ Web service and web application are standalone and deployed separately on blueno
 >  WebService -> API -> Controllers -> ReportController.js
 - Models: 
 > WebService -> API -> Models -> InventoryReport.js 
-> WebService -> API -> Models -> ReservationReport.js
+> WebService -> API -> Models -> ReservationReport.js 
+> WebService -> config -> routes.js 
+> WebService -> config -> datastores.js 
 
 ### Web Application
 - CSS: 
