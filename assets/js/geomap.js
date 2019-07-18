@@ -1,3 +1,6 @@
+// Author: Dinesh Bayireddi (B00791584)
+// Author: Jay Sharma (B00824331)
+
 // source : https://www.codexworld.com/autocomplete-location-search-box-google-maps-javascript-api-jquery-ui/
 
 var geocoder;

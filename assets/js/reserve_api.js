@@ -1,3 +1,5 @@
+// Author: Jay Sharma (B00824331)
+
 function reserve(){
 	if(document.getElementById('email_res').value==''){
 		alert("Email cannot be blank")

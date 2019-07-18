@@ -1,3 +1,5 @@
+// Author: Jay Sharma (B00824331)
+
 function popup(city) {
 	if (city==''){
 		var city2 = document.getElementById("search_location").value;
