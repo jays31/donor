@@ -28,7 +28,7 @@ module.exports = {
 		PlantainChips	15	atlantic
 		**/
 		
-		var SabraHummus = await Itemlistjon.create({name: "SabraHummus", available: 15, store: "atlantic"});
+		/**var SabraHummus = await Itemlistjon.create({name: "SabraHummus", available: 15, store: "atlantic"});
 		var CoconutMilk = await Itemlistjon.create({name: "CoconutMilk", available: 15, store: "atlantic"});
 		var ShrimpCrackers = await Itemlistjon.create({name: "ShrimpCrackers", available: 15, store: "atlantic"});
 		var GingerBeer = await Itemlistjon.create({name: "GingerBeer", available: 15, store: "atlantic"});
@@ -40,6 +40,7 @@ module.exports = {
 		var CoconutWater = await Itemlistjon.create({name: "CoconutWater", available: 15, store: "atlantic"});
 		var PlantainChips = await Itemlistjon.create({name: "PlantainChips", available: 15, store: "atlantic"});
 		var SabraHummus = await Itemlistjon.create({name: "SabraHummus", available: 15, store: "atlantic"});
+		**/
 		
 		var query = req.param("query");
 		var donations = await Itemlistjon.find({where: {name: query}});
