@@ -5,13 +5,13 @@
 ## Features
 There were two features choosed in assignment 3
 1) Dashboard.
-2) Reports: (View report and download).
+2) Reports: (View and download report).
 
 In assignment 4, for back-end implementation, report feature is selected.
 
 ## Feature Completeness
 
-The report feature provides user with a mechanism to view report and download. User can view report by specifying 'from date' and 'to date' then pressing view report button. User can either choose to view inventory report or reservation report between these two dates. Once user viewed the choosen report, user will then able to download this report.
+The report feature provides user with a mechanism to View and download report. User can view report by specifying 'from date' and 'to date' then pressing view report button. User can either choose to view inventory report or reservation report between these two dates. Once user viewed the choosen report, user will then able to download this report.
 
 All functions specified above are implemented including form validation and validation messages.
 
@@ -22,7 +22,7 @@ The application is based on Node.js hosted on bluenose with following URL
 
 ----
 ## Source code on GitLab
-Source code for 'view report and download' feature can be found in branch "amirulSunesara".
+Source code for 'View and download report' feature can be found in branch "amirulSunesara".
 > https://git.cs.dal.ca/jays/donor.git
 
 ----
