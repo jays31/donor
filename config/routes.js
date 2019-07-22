@@ -20,4 +20,10 @@ module.exports.routes = {
   '/report': { view: 'pages/reports' },
   '/inventoryReport':'ReportController.getInventoryReport',
   '/reservationReport':'ReportController.getReservationReport',
+  
+    // Added by Jonathan Harris B00418947
+  // '/results': { controller: 'results', action: 'results' },
+  'post /results': 'ResultsController.results',
+  'post /alerts': 'EmailAlertController.alerts',
+
  };
