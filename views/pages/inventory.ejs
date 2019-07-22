@@ -120,6 +120,13 @@
 	</form>
   <!-- END: Added by Jonathan Harris B00418947 -->
 
+  <!-- https://blog.joeandrieu.com/2013/10/16/how-to-conditionally-display-variables-with-ejs/ -->
+  <!-- https://github.com/tj/ejs/issues/90 -->
+  
+  <% if (typeof alertMessage == 'object' && alertMessage){ %>
+  <h2 style="text-align: center;"> <%= alertMessage %> </h2>
+  <% } %>
+
   <div class="modal fade" id="reserve_item" tabindex="-1" role="dialog" aria-labelledby="reserve_item" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">

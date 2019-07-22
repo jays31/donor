@@ -13,10 +13,13 @@ module.exports = {
 		
 		var name = req.param("name");
 		var email = req.param("emailAddress");
+		var alertMessage = "Alert created for " + email;
 		
 		var newAlert = await Emailalert.create({name: name, emailAddress: email});
 		
-		return res.redirect("/inventory");
+ 		return res.redirect("/inventory");
+
+		//return res.view("\\pages\\inventory", {alertMessage : alertMessage});
 	}
 
 };
