@@ -1,4 +1,4 @@
-// Author: Jonathan Harris
+// Author: Jonathan Harris (B00418947)
 
 /**
  * Donor.js
