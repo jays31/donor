@@ -17,10 +17,10 @@ module.exports = {
 		
 		var result = await Donor.findOne({email: email, org_password: org_password});
 		
-		// If the login fails, redisplay the current page.
+		// If the login fails, re-display the current page.
 		if(!result){
 			
-			return res.view();
+			return res.view({loginFailMessage: "Login Failed!"});
 		}
              
 		// Otherwise, display the dashboard page.
