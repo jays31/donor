@@ -12,7 +12,7 @@ Chart.defaults.global.defaultFontSize = 16;
 var options = {
     title: {
         display: true,
-        text: 'Reservations by food bank',
+        text: 'Number of Reserved items from Donor',
         position: 'bottom'
     },
     rotation: -0.7 * Math.PI
@@ -140,7 +140,7 @@ $.ajax({
                     fill: true,
                     backgroundColor: [
                         'black',
-                        'white','red','green','yellow','orange'],
+                        'green','red','yellow','blue'],
                     data: Object.values(dict),
         
                     borderColor:	['black', 'black'],
