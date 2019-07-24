@@ -3,8 +3,6 @@
 var pageInitialized = false;
 $('[data-toggle="tooltip"]').tooltip();
 // var globalid = null;
-
-
        $(function() {
         if(pageInitialized) return;
         pageInitialized = true;   
