@@ -17,7 +17,7 @@ module.exports.routes = {
   'post /gallery/update' : 'GalleryController.update',
   'get /gallery/add' : 'GalleryController.add',
   '/minventory': { view: 'pages/minventory' },
-  '/report': { view: 'pages/reports' },
+  '/report': { view: 'pages/reports', locals: {layout: 'reportLayout'} },
   '/inventoryReport':'ReportController.getInventoryReport',
   '/reservationReport':'ReportController.getReservationReport',
  };
