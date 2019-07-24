@@ -4,7 +4,7 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
   '/about': { view: 'pages/about' },
-  '/dashboard': { view: 'pages/dashboard' },
+  '/dashboard': { view: 'pages/dashboard' ,locals: {layout: 'reportLayout'}  },
   '/donor_profile': { view: 'pages/donor_profile' },
   '/forgot': { view: 'pages/forgot' },
   '/help': { view: 'pages/help' },
@@ -20,4 +20,6 @@ module.exports.routes = {
   '/report': { view: 'pages/reports', locals: {layout: 'reportLayout'} },
   '/inventoryReport':'ReportController.getInventoryReport',
   '/reservationReport':'ReportController.getReservationReport',
+  '/dashboardWeeklyReservation':'DashboardController.getReservationInWeek',
+  '/dashboardStores':'DashboardController.getReservationStoresInWeek',
  };
