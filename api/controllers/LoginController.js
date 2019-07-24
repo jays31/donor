@@ -19,8 +19,8 @@ module.exports = {
 		
 		// If the login fails, re-display the current page.
 		if(!result){
-			
-			return res.view("pages/homepage", {loginFailedMessage: "Login Failed!"});
+			// https://stackoverflow.com/questions/31776471/ejs-template-variable-is-not-defined-on-page-load-and-errors
+			return res.redirect("/");
 		}
              
 		// Otherwise, display the dashboard page.
