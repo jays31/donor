@@ -50,7 +50,7 @@ $('#formReport').submit(function (e) {
             reportName = 'InventoryReport';
             $.ajax({
                 type: "POST",
-                url: document.location.href + "inventoryReport",
+                url: window.location.origin + "/inventoryReport",
                 data: JSON.stringify({ "fromDate": $('#fromDate').val(), "toDate": $('#toDate').val() }),
                 dataType: "json",
                 contentType: "application/json",
@@ -70,10 +70,7 @@ $('#formReport').submit(function (e) {
                         //dynamically generate table from backend
                         let html = '<table class="table table-bordered"><thead><tr><th>Name</th><th>Quantity</th></tr></thead><tbody>';
                         for (i = 0; i < obj.length; i++) {
-                            if (obj[i].weight == null) {
-                                obj[i].weight = 'Not Applicable'
-                            }
-                            obj[i].date_added = obj[i].date_added.split('T')[0];
+                           
                             html = html + '<tr><th>' + obj[i].name + '</th><td>' + obj[i].quantity + '</td></tr>';
                             currArr = [obj[i].name, obj[i].quantity];
                             arrBody.push(currArr);
@@ -107,7 +104,7 @@ $('#formReport').submit(function (e) {
             reportName = "ReservationReport";
             $.ajax({
                 type: "POST",
-                url: document.location.href + "reservationReport",
+                url: window.location.origin + "/reservationReport",
                 data: JSON.stringify({ "fromDate": $('#fromDate').val(), "toDate": $('#toDate').val() }),
                 dataType: "json",
                 contentType: "application/json",
@@ -125,14 +122,11 @@ $('#formReport').submit(function (e) {
 
                     if (obj.length > 0) {
                         //dynamically generate table from backend
-                        let html = '<table class="table table-bordered"><thead><tr><th>Reservation Number</th><th>Reserved By</th><th>Reserved Items</th><th>Reserved on (yyyy-mm-dd)</th></tr></thead><tbody>';
+                        let html = '<table class="table table-bordered"><thead><tr><th>Email</th><th>Store</th></tr></thead><tbody>';
                         for (i = 0; i < obj.length; i++) {
-                            if (obj[i].weight == null) {
-                                obj[i].weight = 'Not Applicable'
-                            }
-                            obj[i].reserved_on = obj[i].reserved_on.split('T')[0];
-                            html = html + '<tr><th>' + obj[i].reservation_number + '</th><td>' + obj[i].reserved_by + '</td><td>' + obj[i].reserved_items + '</td><td>' + obj[i].reserved_on + '</td></tr>';
-                            currArr = [obj[i].reservation_number, obj[i].reserved_by, obj[i].reserved_items, obj[i].reserved_on];
+                           
+                            html = html + '<tr><th>' + obj[i].email + '</th><td>' + obj[i].store + '</td></tr>';
+                            currArr = [obj[i].email, obj[i].store];
                             arrBody.push(currArr);
                             $('#dlReport').show();
                         }
@@ -140,7 +134,7 @@ $('#formReport').submit(function (e) {
                         //setting the paramter for table in report
                         doc.autoTable({
                             startY: 40,
-                            head: [['Reservation Number', 'Reserved By', 'Reserved Items', 'Reserved on (yyyy-mm-dd)']],
+                            head: [['Email', 'Store']],
                             body: arrBody
                         });
                         $('#dlReport').show();
