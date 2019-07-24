@@ -20,7 +20,7 @@ module.exports = {
 		// If the login fails, re-display the current page.
 		if(!result){
 			
-			return res.view();
+			return res.view("pages/homepage", {loginFailedMessage: "Login Failed!"});
 		}
              
 		// Otherwise, display the dashboard page.
