@@ -21,4 +21,5 @@ module.exports.routes = {
   '/inventoryReport':'ReportController.getInventoryReport',
   '/reservationReport':'ReportController.getReservationReport',
   'post /register' : 'RegistrationController.register',
+  'post /login' : 'LoginController.login',
  };
