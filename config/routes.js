@@ -20,4 +20,5 @@ module.exports.routes = {
   '/report': { view: 'pages/reports', locals: {layout: 'reportLayout'} },
   '/inventoryReport':'ReportController.getInventoryReport',
   '/reservationReport':'ReportController.getReservationReport',
+  'post /register' : 'RegistrationController.register',
  };

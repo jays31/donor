@@ -121,7 +121,7 @@
 
   <br>
 
-  <form name="donorForm">
+  <form name="donorForm" action = "/register">
     <div class="container">
       <div><h2 class="mr-auto" style="text-align: center;">Sign Up</h2>
 
@@ -133,7 +133,7 @@
 
           <h5>Organization's Name</h5>
           <div class="input-group">
-            <input type="text" name="orgName" id="orgName" placeholder="Full Name" class="form-control" required>
+            <input type="text" name="orgname" id="orgname" placeholder="Organization's name" class="form-control" required>
             <div class="input-group-append">
             </div>
           </div><br>
@@ -147,7 +147,7 @@
 
           <h5>Address</h5>
           <div class="input-group">
-            <input type="text" name="search_location" id="search_location" placeholder="Search an address" class="form-control" required>
+            <input type="text" name="address" id="address" placeholder="Address" class="form-control" required>
             <div class="input-group-append">
             </div>
           </div>
@@ -158,7 +158,7 @@
 
           <h5>Password</h5>
           <div class="input-group">
-            <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
+            <input type="password" name="org_password" id="org_password" placeholder="Password" class="form-control" required>
             <div class="input-group-append">
             </div>
           </div><br>
@@ -172,12 +172,12 @@
 
           <h5>Phone Number</h5>
           <div class="input-group">
-            <input type="number" name="phone" id="phone" placeholder="Enter a 10 digit number" class="form-control" required>
+            <input type="number" name="phone_number" id="phone_number" placeholder="Enter a 10 digit number" class="form-control" required>
             <div class="input-group-append">
             </div>
           </div>
           <br>
-          <button onclick="validate()" class="mr-auto btn btn-info my-2 my-lg-3" type="submit">Submit</button>
+          <button class="mr-auto btn btn-info my-2 my-lg-3" type="submit">Submit</button>
         </div>
       </div>
     </div>
