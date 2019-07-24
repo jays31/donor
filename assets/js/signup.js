@@ -288,7 +288,7 @@ $(document).ready(function(){
     });
 
     $("#SignupSuccessModal").on('hide.bs.modal', function(){
-       window.location.href = "index.html";
+       window.location.href = 'http://localhost:1337/';
     });
 });
 //https://developers.google.com/maps/documentation/javascript/places-autocomplete

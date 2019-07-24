@@ -8,7 +8,8 @@ $('[data-toggle="tooltip"]').tooltip();
        $(function() {
         if(pageInitialized) return;
         pageInitialized = true;   
-        var geturl = "https://donorplus.azurewebsites.net/minventory3/";
+        // var geturl = "http://donorplus.azurewebsites.net/minventory3/";
+        var geturl = "http://localhost:1337/minventory3/";
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open( "GET", geturl, false ); // false for synchronous request
         xmlHttp.send(null);
