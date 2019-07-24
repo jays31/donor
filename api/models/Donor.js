@@ -26,7 +26,7 @@ module.exports = {
     },
 
     address : {
-      type: 'number',
+      type: 'string',
 	  unique: true,
 	  required: true
     },
