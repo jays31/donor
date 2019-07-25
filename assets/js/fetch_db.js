@@ -1,5 +1,5 @@
 function fetch_name(id){
-    var geturl = "http://donorplus.azurewebsites.net//minventory3?id="+id;
+    var geturl = "http://localhost:1337/minventory3?id="+id;
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", geturl, false ); // false for synchronous request
     xmlHttp.send(null);
@@ -9,7 +9,7 @@ function fetch_name(id){
     return(name)
 }
 function fetch_available(id){
-    var geturl = "http://donorplus.azurewebsites.net//minventory3?id="+id;
+    var geturl = "http://localhost:1337/minventory3?id="+id;
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", geturl, false ); // false for synchronous request
     xmlHttp.send(null);

@@ -6,7 +6,7 @@ $('[data-toggle="tooltip"]').tooltip();
        $(function() {
         if(pageInitialized) return;
         pageInitialized = true;   
-        var geturl = "https://donorplus.azurewebsites.net/minventory3/";
+        var geturl = "http://localhost:1337/minventory3/";
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open( "GET", geturl, false ); // false for synchronous request
         xmlHttp.send(null);
@@ -57,7 +57,7 @@ $('[data-toggle="tooltip"]').tooltip();
             });
         var getname=document.getElementById("Name").value;
         var getquantity=document.getElementById("Quantity").value;
-        var addurl = "https://donorplus.azurewebsites.net/minventory3/create?name="+getname+"&quantity="+getquantity;
+        var addurl = "http://localhost:1337/minventory3/create?name="+getname+"&quantity="+getquantity;
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open( "GET", addurl, false ); // false for synchronous request
         xmlHttp.send(null);	
@@ -79,7 +79,7 @@ $('[data-toggle="tooltip"]').tooltip();
             $(".add-new").removeAttr("disabled");
             var getname=document.getElementById("Name").value;
         var getquantity=document.getElementById("Quantity").value;
-        var addurl = "https://donorplus.azurewebsites.net/minventory3/create?name="+getname+"&quantity="+getquantity;
+        var addurl = "http://localhost:1337/minventory3/create?name="+getname+"&quantity="+getquantity;
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open( "GET", addurl, false ); // false for synchronous request
         xmlHttp.send(null);
