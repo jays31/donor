@@ -49,7 +49,7 @@ $.ajax({
         var todaysDate = new Date();
         var currentWeek = ISO8601_week_no(todaysDate);
 
-        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         var daysCount = [0,0,0,0,0,0,0];
 
         for(i=0;i<=obj.length-1;i++)
