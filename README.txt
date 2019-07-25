@@ -81,4 +81,4 @@ All the pages are completely responsive which means it fits perfectly in smaller
 [5] "Bootstrap Grid Basic", W3schools.com, 2019. [Online]. Available: https://www.w3schools.com/bootstrap/bootstrap_grid_basic.asp. [Accessed: 19- Jun- 2019].
 [6] "Bootstrap 4 Cheat Sheet - The ultimate list of Bootstrap classes", Hackerthemes.com, 2019. [Online]. Available: https://hackerthemes.com/bootstrap-cheatsheet/#btn-outline-light. [Accessed: 19- Jun- 2019].
 [7] "The W3C Markup Validation Service", Validator.w3.org, 2019. Available: https://validator.w3.org/.
-[8] "Daily Bread Food Bank", Dailybread.ca, 2019. Available: https://www.dailybread.ca/.
+[8] "Daily Bread Food Bank", Dailybread.ca, 2019. Available: https://www.dailybread.ca/. 
