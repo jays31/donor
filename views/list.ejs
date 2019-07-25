@@ -2,6 +2,12 @@
 
 <!DOCTYPE html>
 <style>
+   body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    h5 {
+			color: #0e6382;
+		}
 table {
   border-collapse: collapse;
   width: 100%;
@@ -33,6 +39,16 @@ input.btn.btn-info.delete.my-2.my-sm-0{
     border-color: #b21f2d;
 }
 
+.footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+			background-color: #dce7ea;
+			color: #000;
+		}
+
 h1.display-4 {
     text-align: center;
     font-size: 2rem;
@@ -43,45 +59,33 @@ h1.display-4 {
 }
 
 </style>
-
+<body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="/dashboard">Donor+</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" style="padding-left: 0px; padding-right: 0px;" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-    </ul>
-      <button type="button" style="float:right; margin-top: 5px;" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</button>
-
+  <a class="navbar-brand" href="#">Donor+</a>
+  <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      </ul>
+      &nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
+      &nbsp;&nbsp;<button type="button" style="float:right; margin-top: 5px;" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</button>
       <div class="btn-group nav top-nav">
-        <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
-
-        <div class="dropdown-menu dropdown-menu-right">
-
-          <ul class="nav top-nav">
-            <li class="dropdown show" style="margin-right: 56px;">
-
-              <ul class="dropdown-menu show">
-				<li><a href="/gallery/add" style="text-decoration:none;"> Donor Management</a></li>
-                <li><a href="#" style="text-decoration:none;"> Notification Settings</a></li>
-                <li><a href="#" style="text-decoration:none;"> Change Password</a></li>
-                <li><a href="/" style="text-decoration:none;"> Logout</a></li>
+          <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+          <div class="dropdown-menu dropdown-menu-right">
+              <ul class="nav top-nav">
+                  <li class="dropdown show">
+                      <li><a href="#" class="dropdown-item" style="text-decoration:none;"> Notification Settings</a></li>
+                      <li><a href="/dashboard" class="dropdown-item" style="text-decoration:none;"> Dashboard</a></li>
+                      <li><a href="#" class="dropdown-item" style="text-decoration:none;"> Change Password</a></li>
+                      <li><a href="/" class="dropdown-item" style="text-decoration:none;"> Logout</a></li>
               </ul>
-            </li>
-          </ul>
-
-        </div>
+          </div>
       </div>
-    </div>
-  </nav>
+  </div>
+</nav>
 
-<ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/gallery/add">Add Inventories</a></li>
-        <li class="breadcrumb-item active">Add</li>
-    </ol>
-    <h1 class="display-4">Donor Records</h1>
-    <hr>
+<br><br><br>
+  <h2 style="text-align: center;">Donor Records</h2>
+
+<hr>
     <div class="container">
 <table class="table table-striped">
     <thead>
@@ -123,4 +127,22 @@ h1.display-4 {
     </tbody>
 </table>
 </div>
+
+<footer id="footer" class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <br><h5>Subscribe to Donor+ for weekly donations!</h5>
+      </div>
+      <div class="col-sm-4">
+        <form class="form-inline">
+          <br><br><br>
+          <input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
+          <button onclick="subscribe()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+</div>
+</footer>
+</body>
 </html>

@@ -22,4 +22,5 @@ module.exports.routes = {
   '/reservationReport':'ReportController.getReservationReport',
   '/dashboardWeeklyReservation':'DashboardController.getReservationInWeek',
   '/dashboardStores':'DashboardController.getReservationStoresInWeek',
+  'post /create' : 'ReservelistController.create',
  };
