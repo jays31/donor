@@ -16,14 +16,16 @@ module.exports = {
 		var org_password = req.param('org_password');
 		
 		var result = await Donor.findOne({email: email, org_password: org_password});
-		
-		var alertMessages = require('./assets/js/alertMessages.js');
-		
+				
 		// If the login fails, re-display the current page.
 		if(!result){
 			// https://stackoverflow.com/questions/31776471/ejs-template-variable-is-not-defined-on-page-load-and-errors
-			alertMessages.loginFailed();
+			
 			return res.redirect("/");
+			
+			// return res.render("pages/homepage", {loginError: true});
+			//res.send("Invalid username and password combination.", 500);
+			//res.redirect("/?loginError=true");
 		}
              
 		// Otherwise, display the dashboard page.
