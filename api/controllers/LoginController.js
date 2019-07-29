@@ -21,10 +21,6 @@ module.exports = {
 		if(!result){
 			// https://stackoverflow.com/questions/31776471/ejs-template-variable-is-not-defined-on-page-load-and-errors
 			
-			//return res.redirect("/");
-			
-			// return res.view("pages/homepage", {loginError: true});
-			//res.send("Invalid username and password combination.", 500);
 			return res.redirect("/?loginError=true");
 		}
              
