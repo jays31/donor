@@ -13,7 +13,7 @@ module.exports = {
     register: async function (req, res) {
 		
 		var orgname = req.param('orgname');
-		var email = req.param('email');
+		var email = req.param('orgemail');
 		var address = req.param('address');
 		var org_password = req.param('org_password');
 		var phone_number = req.param('phone_number');
