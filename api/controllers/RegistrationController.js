@@ -20,7 +20,7 @@ module.exports = {
 		
 		var outcome = await Donor.create({orgname: orgname, email: email, address: address, org_password: org_password, phone_number: phone_number});
                  
-	return res.redirect("/");},
+	return res.redirect("/?registrationSuccess=true");},
 
 };
 
