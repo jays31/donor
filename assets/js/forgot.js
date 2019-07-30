@@ -53,7 +53,7 @@ $(document).ready(function(){
         }
 
     });
-   // http://bootstrapvalidator.votintsev.ru/getting-started/
+   // http://bootstrapValidator.votintsev.ru/getting-started/
     $('#frmGetSecurityCode').bootstrapValidator({
         fields: {
             email: {
@@ -77,7 +77,7 @@ $(document).ready(function(){
 
         }
     });
-   // http://bootstrapvalidator.votintsev.ru/getting-started/
+   // http://bootstrapValidator.votintsev.ru/getting-started/
     $('#frmSubmitNewPassword').bootstrapValidator({
         fields: {
             txtPassword: {
