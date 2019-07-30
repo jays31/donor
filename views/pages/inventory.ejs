@@ -1,0 +1,190 @@
+<!-- Author: Jay Sharma (B00824331) -->
+
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/importer.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+  <!-- From Tutorial 2 -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
+  <script  src="js/validate_form.js"></script>
+  <script  src="js/autoaddress_api.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script  src="js/subscribe_api.js"></script>
+  <script  src="js/login_api.js"></script>
+  <script  src="js/reserve_api.js"></script>
+  <script  src="js/fetch_db.js"></script>
+
+  <title>Inventory</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    h5 {
+      color: #0e6382;
+    }
+    h4 {
+      color: #0e6382;
+    }
+    h3 {
+      color: #0e6382;
+    }
+    h2 {
+      color: #0e6382;
+    }
+    footer {
+      background-color: #dce7ea;
+      color: #000;
+    }
+    .dropdown-menu {
+      width: 250px !important;
+    }
+    div {
+      padding-top:0px;
+      padding-right: 10px;
+      padding-bottom: 0px;
+      padding-left: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/navbar/ -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Donor+</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="signup">Signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="help">Help</a>
+          </li>
+        </ul>
+
+
+        &nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
+
+        <!-- https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+        <div class="btn-group">
+          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <form name="loginForm" action = "./dashboard" onsubmit="return(login());" method = "post" >
+              <div class="form-group">
+                <h6>Username/Email</h6>
+                <input name="username" type="email" class="form-control mb-2 mr-sm-2" id="dropemail" placeholder="email@example.com" required>
+              </div>
+              <div class="form-group">
+                <h6>Password</h6>
+                <input name = "password" type="password" class="form-control mb-2 mr-sm-2" id="droppassword" placeholder="Password" required>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="mr-auto form-check-input" id="dropdownCheck">
+                <label class="form-check-label mr-auto" for="dropdownCheck">Remember me</label><br>
+              </div>
+              <input class="btn btn-primary mr-auto" type="submit" value = "Sign in">
+              <!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
+              <button type="button" onclick="window.location.href = './forgot';" class="btn mr-auto btn-warning mt-3">Forgot Password? </button><br>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div><br><br><br>
+
+  <div class="modal fade" id="reserve_item" tabindex="-1" role="dialog" aria-labelledby="reserve_item" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Item Reservation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+        <div class="modal-body">
+          Please enter your email id below to reserve this item:
+          <input name="email_res" type="email" class="form-control mb-2 mr-sm-2" id="email_res" placeholder="email@example.com" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button onclick="reserve()" type="submit" class="btn btn-primary">Reserve</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us3.list-manage.com","uuid":"58ef12f161f2c7678d78ab109","lid":"1e3b555ea4","uniqueMethods":true}) })</script>
+
+  <div class="mr-auto"><h2 class="mr-auto" style="text-align: center;">Atlantic Superstore</h2><br></div>
+
+    <div class="container">
+      <div class="row">
+        <script>
+          for (i=0;i<12;i++){
+            if(i==0||i%4==0){
+              document.write('<div class="col-sm-3">');
+            }  
+            document.write('<div class="card" style="width: 15rem;">');
+            document.write('<img class="card-img-top" src="https://donorplus.azurewebsites.net/images/item'+(i+1)+'.png" alt="Card image cap">');
+            document.write('<div class="card-body">');
+            document.write('<center><button type="button" class="btn btn-outline-dark" disabled>Available: '+fetch_available(i+1)+'</button></center>');
+            document.write('<center><h5 class="card-title mt-2">'+fetch_name(i+1)+'</h5></center>');
+            document.write('<center><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reserve_item">Reserve Item</button></center>');
+            document.write('</div></div><br>')
+            if(i==0||i%4==0){
+              document.write('</div>');
+            }
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer id="footer" class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            <br><h5>Subscribe to Donor+ for weekly donations!</h5>
+          </div>
+          <div class="col-sm-4">
+            <form class="form-inline">
+              <br><br><br>
+              <input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
+              <button onclick="subscribe()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+    </div>
+    </footer>
+  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

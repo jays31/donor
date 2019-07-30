@@ -1,0 +1,40 @@
+/* Author: Zeel Patel (B00824757) */
+
+.hide
+{
+    display: none;
+
+}
+.twidth
+{
+    width:100px;
+}
+.help-block{
+    color:#a94442;
+}
+.has-error .form-control {
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+#map {
+    height: 400px;
+    width: 100%;
+}
+.userprofile:hover
+{
+    color:#d8d6d6;
+}
+.selecteditem
+{
+
+   background-color: #E6E4E4
+}
+.bottomAlign
+{
+    vertical-align:-moz-middle-with-baseline;
+}
+.cicon
+{
+    border: 1px solid #ced4da;
+}

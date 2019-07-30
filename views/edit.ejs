@@ -1,0 +1,217 @@
+<!-- Author: Zeel Patel (B00824757) -->
+
+<html>
+
+  <style>
+ img {
+  max-width: 100%;
+  height: auto;
+padding-top: 70px; }
+
+h2 {
+  line-height: 1.66;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  color: #222;
+  font-family: 'Montserrat';
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 32px; }
+
+.clear {
+  clear: both; }
+
+body {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #222;
+  font-weight: 400;
+  background: #282828;
+  padding: 90px 0; }
+
+.container {
+  width: 1400px;
+  position: relative;
+  margin: 0 auto;
+  background: #fff; }
+
+.signup-img, .signup-form {
+  width: 50%; }
+
+.signup-img {
+  margin-bottom: -7px; }
+
+.register-form {
+  padding: 50px 100px 50px 70px; }
+
+.form-row {
+  margin: 0 -15px; }
+  .form-row .form-group {
+    width: 50%;
+    padding: 0 15px; }
+
+.form-group {
+  margin-bottom: 23px;
+  position: relative; }
+
+input {
+  display: block;
+  width: 100%;
+  border: 1px solid #ebebeb;
+  padding: 11px 20px;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 13px; }
+  input:focus, select:focus {
+    border: 1px solid #ff6801; }
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  margin-bottom: 2px;
+  display: block; }
+
+
+.form-submit {
+  text-align: right;
+  padding-top: 27px; }
+
+.submit {
+  width: 140px;
+  height: 40px;
+  display: inline-block;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 13px;
+  padding: 10px;
+  border: none;
+  cursor: pointer; }
+
+#submit {
+  background: #17a2b8;
+  color: #fff; }
+  #submit:hover {
+    background-color: #138496;
+    border-color: #117a8b; }
+
+@media screen and (max-width: 992px) {
+  .container {
+    width: calc(100% - 40px);
+    max-width: 100%; }
+
+  .signup-content {
+    flex-direction: column;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -o-flex-direction: column;
+    -ms-flex-direction: column; }
+
+  .signup-img, .signup-form {
+    width: 100%; } }
+@media screen and (max-width: 575px) {
+  .form-row {
+    flex-direction: column;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -o-flex-direction: column;
+    -ms-flex-direction: column;
+    margin: 0px; }
+
+  .form-row .form-group {
+    width: 100%;
+    padding: 0px; } }
+
+  </style>
+    
+   <link rel="stylesheet" href="/styles/inventory.css">
+
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="/dashboard">Donor+</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" style="padding-left: 0px; padding-right: 0px;" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+    </ul>
+      <button type="button" style="float:right; margin-top: 5px;" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</button>
+
+      <div class="btn-group nav top-nav">
+        <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+
+        <div class="dropdown-menu dropdown-menu-right">
+
+          <ul class="nav top-nav">
+            <li class="dropdown show" style="margin-right: 56px;">
+
+              <ul class="dropdown-menu show">
+				<li><a href="/gallery/add" style="text-decoration:none;"> Donor Management</a></li>
+                <li><a href="#" style="text-decoration:none;"> Notification Settings</a></li>
+                <li><a href="#" style="text-decoration:none;"> Change Password</a></li>
+                <li><a href="/" style="text-decoration:none;"> Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+   <div class="main">
+      <div class="container">
+          <div class="signup-content">
+              <div class="signup-img">
+                  <img alt="image" src="/images/donor.gif">
+              </div>
+              <div class="signup-form">
+                  <form action="/gallery/update" method="post" enctype="multipart/form-data" class="register-form" id="register-form">
+                      <h2>Edit Inventory Details</h2>
+                        <input type="hidden" id="unique_ID" name="unique_ID" value='<%= gallery.id %>'>
+                        <div class="form-group">
+                            <label for="dname">Donor Name</label>
+                            <input type="text" id="dname" name="dname"  value="<%= gallery.dname %>" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address :</label>
+                            <input type="text" id="address" name="address" value="<%= gallery.address %>" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity :</label>
+                            <input type="number" id="quantity" name="quantity"  value="<%= gallery.quantity %>" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Date :</label>
+                            <input type="date" id="time" name="time" value="<%= gallery.time %>" required/>
+                        </div>
+                        
+                      <div class="form-row">
+                          <div class="form-group">
+                              <label for="start_time">Start Time :</label>
+                              <input type="time" id="start_time" name="start_time"  value="<%= gallery.start_time %>" required/>
+                          </div>
+                          <div class="form-group">
+                              <label for="end_time">End Time :</label>
+                              <input type="time" id="end_time" name="end_time"  value="<%= gallery.end_time %>" required/>
+                          </div>
+                      </div>
+                      <div class="form-submit">
+                          
+                          <input type="submit" value="Submit Form" class="btn btn-info dropdown-toggle" name="submit" id="submit" />
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+  <script>
+      var today = new Date().toISOString().split('T')[0];
+      document.getElementsByName("time")[0].setAttribute('min', today);
+  </script>
+
+
+</html>
