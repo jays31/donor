@@ -2,125 +2,130 @@
 
 <!DOCTYPE html>
 <style>
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
 
-th, td {
-  text-align: left;
-  padding: 8px;
-}
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+  }
 
-table.table th:last-child {
+  table.table th:last-child {
     width: auto !important;
-}
+  }
 
-tr:nth-child(even){background-color: #f2f2f2}
+  tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
 
-th {
-  background-color: #17a2b8;
-  color: white;
-}
+  th {
+    background-color: #17a2b8;
+    color: white;
+  }
 
-input.btn.btn-info.edit.my-2.my-sm-0{
+  input.btn.btn-info.edit.my-2.my-sm-0 {
     background-color: #0c893e;
     border-color: #0c893e;
-}
+  }
 
-input.btn.btn-info.delete.my-2.my-sm-0{
+  input.btn.btn-info.delete.my-2.my-sm-0 {
     background-color: #bd2130;
     border-color: #b21f2d;
-}
+  }
 
-h1.display-4 {
+  h1.display-4 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: .5rem;
     line-height: 1.2;
     font-weight: 500;
     color: #0e6382;
-}
-
+  }
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="/dashboard">Donor+</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" style="padding-left: 0px; padding-right: 0px;" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+  <a class="navbar-brand" href="/dashboard">Donor+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" style="padding-left: 0px; padding-right: 0px;" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
     </ul>
-      <button type="button" style="float:right; margin-top: 5px;" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</button>
+    <button type="button" style="float:right; margin-top: 5px;" class="btn btn-info dropdown-toggle"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</button>
 
-      <div class="btn-group nav top-nav">
-        <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
+    <div class="btn-group nav top-nav">
+      <!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
 
-        <div class="dropdown-menu dropdown-menu-right">
+      <div class="dropdown-menu dropdown-menu-right">
 
-          <ul class="nav top-nav">
-            <li class="dropdown show" style="margin-right: 56px;">
+        <ul class="nav top-nav">
+          <li class="dropdown show" style="margin-right: 56px;">
 
-              <ul class="dropdown-menu show">
-				<li><a href="/gallery/add" style="text-decoration:none;"> Donor Management</a></li>
-                <li><a href="#" style="text-decoration:none;"> Notification Settings</a></li>
-                <li><a href="#" style="text-decoration:none;"> Change Password</a></li>
-                <li><a href="/" style="text-decoration:none;"> Logout</a></li>
-              </ul>
-            </li>
-          </ul>
+            <ul class="dropdown-menu show">
+              <li><a href="/gallery/add" style="text-decoration:none;"> Donor Management</a></li>
+              <li><a href="#" style="text-decoration:none;"> Notification Settings</a></li>
+              <li><a href="#" style="text-decoration:none;"> Change Password</a></li>
+              <li><a href="/" style="text-decoration:none;"> Logout</a></li>
+            </ul>
+          </li>
+        </ul>
 
-        </div>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
 <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/gallery/add">Add Inventories</a></li>
-        <li class="breadcrumb-item active">Add</li>
-    </ol>
-    <h1 class="display-4">Donor Records</h1>
-    <hr>
-    <div class="container">
-<table class="table table-striped">
+  <li class="breadcrumb-item"><a href="/gallery/add">Add Inventories</a></li>
+  <li class="breadcrumb-item active">Add</li>
+</ol>
+<h1 class="display-4">Donor Records</h1>
+<hr>
+<div class="container">
+  <table class="table table-striped">
     <thead>
-        <tr>
-            
-            <th>Donor Name</th>
-            <th>Address</th>
-            <th>Quantity</th>
-            <th>Available Date</th>
-            <th>Start Time</th>
-            <th>End Time</th>
-            <th>Action</th>
-    
-        </tr>
+      <tr>
+
+        <th>Donor Name</th>
+        <th>Address</th>
+        <th>Quantity</th>
+        <th>Available Date</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Action</th>
+
+      </tr>
     </thead>
     <tbody>
-        <% gallery.forEach(function(gal){ %>
-            <tr>
-               
-                <td><%= gal.dname %></td>
-                <td><%= gal.address %></td>
-                <td><%= gal.quantity %></td>
-                <td><%= gal.time %></td>
-                <td><%= gal.start_time %></td>
-                <td><%= gal.end_time %></td>
-                <td>
-                    <!-- <a href="/gallery/edit/<%= gal.image_uid %>" class="btn btn-primary">Edit</a> -->
-                    <form class="d-inline" action="/gallery/edit" method="post">
-                        <input type="hidden" name="unique_edit_ID" value='<%= gal.id %>'>
-                        <input type="submit" value="Edit" class="btn btn-info edit my-2 my-sm-0">
-                    </form>
-                    <form class="d-inline" action="/gallery/delete" method="post">
-                        <input type="hidden" name="unique_delete_ID" value='<%= gal.id %>'>
-                        <input type="submit" value="Delete" class="btn btn-info delete my-2 my-sm-0">
-                    </form>
-                </td>
-            </tr>
-        <% }) %>
+      <% gallery.forEach(function(gal){ %>
+      <tr>
+
+        <td><%= gal.dname %></td>
+        <td><%= gal.address %></td>
+        <td><%= gal.quantity %></td>
+        <td><%= gal.time %></td>
+        <td><%= gal.start_time %></td>
+        <td><%= gal.end_time %></td>
+        <td>
+          <!-- <a href="/gallery/edit/<%= gal.image_uid %>" class="btn btn-primary">Edit</a> -->
+          <form class="d-inline" action="/gallery/edit" method="post">
+            <input type="hidden" name="unique_edit_ID" value='<%= gal.id %>'>
+            <input type="submit" value="Edit" class="btn btn-info edit my-2 my-sm-0">
+          </form>
+          <form class="d-inline" action="/gallery/delete" method="post">
+            <input type="hidden" name="unique_delete_ID" value='<%= gal.id %>'>
+            <input type="submit" value="Delete" class="btn btn-info delete my-2 my-sm-0">
+          </form>
+        </td>
+      </tr>
+      <% }) %>
     </tbody>
-</table>
+  </table>
 </div>
+
 </html>

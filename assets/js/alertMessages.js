@@ -1,5 +1,3 @@
-function loginFailed(){
-
+function loginFailed() {
 	alert("Login failed!");
-
 }

@@ -1,24 +1,23 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-    $("#ForgetSuccessModal").on('hide.bs.modal', function(){
-        if($("#modalTitle").html()=='Success')
-        window.location.href = "index.html";
+    $("#ForgetSuccessModal").on('hide.bs.modal', function () {
+        if ($("#modalTitle").html() == 'Success')
+            window.location.href = "index.html";
     });
-    $('#btnGetSecurityCode').click(function() {
+    $('#btnGetSecurityCode').click(function () {
 
         $("#frmGetSecurityCode").submit();
         let isValid = true;
-        $('.form-group').each(function(){
-            if($(this).hasClass('has-error')){
+        $('.form-group').each(function () {
+            if ($(this).hasClass('has-error')) {
                 isValid = false;
             }
         });
-        if(isValid)
-        {
-            $("#txtEmail").attr('disabled',true);
-            $("#btnGetSecurityCode").attr('disabled',true);
+        if (isValid) {
+            $("#txtEmail").attr('disabled', true);
+            $("#btnGetSecurityCode").attr('disabled', true);
             $("#txtSecurityCode").prop('disabled', false);
-            populateModal("ForgetSuccessModal","Action Required","Please check your email. A security code has been sent on your email.");
+            populateModal("ForgetSuccessModal", "Action Required", "Please check your email. A security code has been sent on your email.");
 
         }
 
@@ -27,33 +26,33 @@ $(document).ready(function(){
     $("#btnSubmitSecurityCode").click(function () {
         $("#frmGetSecurityCode").submit();
         let isValid = true;
-        $('.form-group').each(function(){
-            if($(this).hasClass('has-error')){
+        $('.form-group').each(function () {
+            if ($(this).hasClass('has-error')) {
                 isValid = false;
             }
         });
-        if(isValid) {
+        if (isValid) {
             $("#step1").fadeOut(500);
             $("#step2").fadeIn(500);
         }
 
     });
 
-    $("#frmSubmitNewPassword").submit(function(e){
-       e.preventDefault();
+    $("#frmSubmitNewPassword").submit(function (e) {
+        e.preventDefault();
         let isValid = true;
-        $('.form-group').each(function(){
-            if($(this).hasClass('has-error')){
+        $('.form-group').each(function () {
+            if ($(this).hasClass('has-error')) {
                 isValid = false;
             }
         });
-        if(isValid) {
-            populateModal("ForgetSuccessModal","Success","Successfully Changed Password");
+        if (isValid) {
+            populateModal("ForgetSuccessModal", "Success", "Successfully Changed Password");
 
         }
 
     });
-   // http://bootstrapValidator.votintsev.ru/getting-started/
+    // http://bootstrapValidator.votintsev.ru/getting-started/
     $('#frmGetSecurityCode').bootstrapValidator({
         fields: {
             email: {
@@ -66,7 +65,7 @@ $(document).ready(function(){
                     }
                 }
             },
-            txtSecurityCode:{
+            txtSecurityCode: {
                 validators: {
                     notEmpty: {
                         message: 'Please enter the security code. '
@@ -77,7 +76,7 @@ $(document).ready(function(){
 
         }
     });
-   // http://bootstrapValidator.votintsev.ru/getting-started/
+    // http://bootstrapValidator.votintsev.ru/getting-started/
     $('#frmSubmitNewPassword').bootstrapValidator({
         fields: {
             txtPassword: {

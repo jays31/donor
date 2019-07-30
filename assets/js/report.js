@@ -13,10 +13,10 @@
 
 
 
-$( function() {
+$(function () {
     //bind date picker to html elements
-    $( "#fromDate" ).datepicker({ dateFormat: 'yy-mm-dd' });
-    $( "#toDate" ).datepicker({ dateFormat: 'yy-mm-dd' });
+    $("#fromDate").datepicker({ dateFormat: 'yy-mm-dd' });
+    $("#toDate").datepicker({ dateFormat: 'yy-mm-dd' });
 });
 
 //validate form on two buttons of view report
@@ -28,7 +28,7 @@ var doc = new jsPDF();
 var reportName = ''
 $('#dlReport').click(function () {
     //prompt report to download
-    doc.save(reportName+'.pdf');
+    doc.save(reportName + '.pdf');
 });
 
 
@@ -70,7 +70,7 @@ $('#formReport').submit(function (e) {
                         //dynamically generate table from backend
                         let html = '<table class="table table-bordered"><thead><tr><th>Name</th><th>Quantity</th></tr></thead><tbody>';
                         for (i = 0; i < obj.length; i++) {
-                           
+
                             html = html + '<tr><th>' + obj[i].name + '</th><td>' + obj[i].quantity + '</td></tr>';
                             currArr = [obj[i].name, obj[i].quantity];
                             arrBody.push(currArr);
@@ -124,7 +124,7 @@ $('#formReport').submit(function (e) {
                         //dynamically generate table from backend
                         let html = '<table class="table table-bordered"><thead><tr><th>Email</th><th>Store</th></tr></thead><tbody>';
                         for (i = 0; i < obj.length; i++) {
-                           
+
                             html = html + '<tr><th>' + obj[i].email + '</th><td>' + obj[i].store + '</td></tr>';
                             currArr = [obj[i].email, obj[i].store];
                             arrBody.push(currArr);

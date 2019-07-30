@@ -6,37 +6,41 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/js/bootstrapValidator.js"></script>
 
 	<link rel="stylesheet" href="/styles/importer.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 	<link rel="stylesheet" href="css/geomap.css">
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
-	<script  src="js/validate_api.js"></script>
-	<script  src="js/autoaddress_api.js"></script>
-	
-	<script  src="js/popup_api.js"></script>
-	<script  src="js/rss_api.js"></script>
-	<script  src="js/subscribe_api.js"></script>
-	<script  src="js/login_api.js"></script>
-	<script src = "js/login_failed.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address"
+		async defer></script>
+	<script src="js/validate_api.js"></script>
+	<script src="js/autoaddress_api.js"></script>
+
+	<script src="js/popup_api.js"></script>
+	<script src="js/rss_api.js"></script>
+	<script src="js/subscribe_api.js"></script>
+	<script src="js/login_api.js"></script>
+	<script src="js/login_failed.js"></script>
 
 	<!-- <script type="text/javascript" src="js/initmap_api.js"></script> -->
 
 
 	<!-- From Tutorial 2 -->
-	<script  src="js/validate_form.js"></script>
-	<script  src="js/autoaddress_api.js"></script>
+	<script src="js/validate_form.js"></script>
+	<script src="js/autoaddress_api.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-	<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtAXnSywh7PyS0VXU-HlFQF8kb4jg2u2I"></script>
-	<script  src="js/geomap.js"></script>
-	
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtAXnSywh7PyS0VXU-HlFQF8kb4jg2u2I"></script>
+	<script src="js/geomap.js"></script>
+
 
 
 	<title>Donor+</title>
@@ -45,15 +49,18 @@
 		body {
 			font-family: Arial, Helvetica, sans-serif;
 		}
+
 		div {
-			padding-top:0px;
+			padding-top: 0px;
 			padding-right: 0px;
 			padding-bottom: 0px;
 			padding-left: 10px;
 		}
+
 		h5 {
 			color: #0e6382;
 		}
+
 		.footer {
 			position: fixed;
 			left: 0;
@@ -63,16 +70,20 @@
 			background-color: #dce7ea;
 			color: #000;
 		}
+
 		.dropdown-menu {
 			width: 250px !important;
 			padding-left: 10px;
 			padding-right: 10px;
 		}
+
 		#map {
-        height: 100%;
+			height: 100%;
 		}
+
 		/* Optional: Makes the sample page fill the window. */
-		html, body {
+		html,
+		body {
 			height: 100%;
 			margin: 0;
 			padding: 0;
@@ -103,29 +114,28 @@
 				</ul>
 
 
-					&nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
+				&nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
 
 				<!-- Edited by Jonathan Harris (B00418947) to support posting to /login for login logic. -->
 				<!-- https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
 				<div class="btn-group">
-					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
+					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">Login</button>
 					<div class="dropdown-menu dropdown-menu-right">
-						<form name="loginForm" action = "/login" method = "post" >
+						<form name="loginForm" action="/login" method="post">
 							<div class="form-group">
 								<h6>Username/Email</h6>
-								<input name="email" type="email" class="form-control mb-2 mr-sm-2" id="email" placeholder="email@example.com" required>
+								<input name="email" type="email" class="form-control mb-2 mr-sm-2" id="email"
+									placeholder="email@example.com" required>
 							</div>
 							<div class="form-group">
 								<h6>Password</h6>
-								<input name = "org_password" type="password" class="form-control mb-2 mr-sm-2" id="org_password" placeholder="Password" required>
+								<input name="org_password" type="password" class="form-control mb-2 mr-sm-2"
+									id="org_password" placeholder="Password" required>
 							</div>
-							<div class="form-check">
-								<input type="checkbox" class="mr-auto form-check-input" id="dropdownCheck">
-								<label class="form-check-label mr-auto" for="dropdownCheck">Remember me</label><br>
-							</div>
-						<input class="btn btn-primary mr-auto" type="submit" value = "Sign in">
-							<!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
-							<a href = './forgot'>Forgot Password?</a> <br>
+							<center><input class="btn btn-primary mr-auto" type="submit" value="Sign in">
+								<!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
+								<a href='./forgot'>Forgot Password?</a></center><br>
 						</form>
 					</div>
 				</div>
@@ -143,12 +153,18 @@
 				</div>
 
 				<div class="row">
-					<button onclick="popup('Halifax')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Halifax</button>
-					<button onclick="popup('Yarmouth')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Yarmouth</button>
-					<button onclick="popup('Dartmouth')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Dartmouth</button>
-					<button onclick="popup('Lunenburg')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Lunenburg</button>
-					<button onclick="popup('Truro')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Truro</button>
-					<button onclick="popup('Wolfville')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Wolfville</button>
+					<button onclick="popup('Halifax')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Halifax</button>
+					<button onclick="popup('Yarmouth')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Yarmouth</button>
+					<button onclick="popup('Dartmouth')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Dartmouth</button>
+					<button onclick="popup('Lunenburg')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Lunenburg</button>
+					<button onclick="popup('Truro')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Truro</button>
+					<button onclick="popup('Wolfville')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Wolfville</button>
 				</div>
 				<br>
 
@@ -157,12 +173,18 @@
 				</div>
 
 				<div class="row">
-					<button onclick="popup('Toronto')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Toronto</button>
-					<button onclick="popup('Mississauga')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Mississauga</button>
-					<button onclick="popup('Ottawa')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Ottawa</button>
-					<button onclick="popup('Kingston')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Kingston</button>
-					<button onclick="popup('Windsor')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Windsor</button>
-					<button onclick="popup('London')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">London</button>
+					<button onclick="popup('Toronto')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Toronto</button>
+					<button onclick="popup('Mississauga')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Mississauga</button>
+					<button onclick="popup('Ottawa')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Ottawa</button>
+					<button onclick="popup('Kingston')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Kingston</button>
+					<button onclick="popup('Windsor')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Windsor</button>
+					<button onclick="popup('London')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">London</button>
 				</div>
 				<br>
 
@@ -171,8 +193,10 @@
 				</div>
 
 				<div class="row">
-					<button onclick="popup('Calgary')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Calgary</button>
-					<button onclick="popup('Edmonton')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Edmonton</button>
+					<button onclick="popup('Calgary')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Calgary</button>
+					<button onclick="popup('Edmonton')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Edmonton</button>
 				</div>
 				<br>
 
@@ -181,9 +205,12 @@
 				</div>
 
 				<div class="row">
-					<button onclick="popup('Vancouver')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Vancouver</button>
-					<button onclick="popup('Kelowna')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Kelowna</button>
-					<button onclick="popup('Victoria')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Victoria</button>
+					<button onclick="popup('Vancouver')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Vancouver</button>
+					<button onclick="popup('Kelowna')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Kelowna</button>
+					<button onclick="popup('Victoria')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Victoria</button>
 				</div>
 				<br>
 
@@ -192,10 +219,14 @@
 				</div>
 
 				<div class="row">
-					<button onclick="popup('Montreal')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Montreal</button>
-					<button onclick="popup('Quebec City')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Quebec City</button>
-					<button onclick="popup('Sherbrooke')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Sherbrooke</button>
-					<button onclick="popup('Trois-Rivières')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Trois-Rivières</button>
+					<button onclick="popup('Montreal')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Montreal</button>
+					<button onclick="popup('Quebec City')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Quebec City</button>
+					<button onclick="popup('Sherbrooke')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Sherbrooke</button>
+					<button onclick="popup('Trois-Rivières')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Trois-Rivières</button>
 				</div>
 				<br>
 
@@ -204,9 +235,12 @@
 				</div>
 
 				<div class="row">
-					<button onclick="popup('Regina')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Regina</button>
-					<button onclick="popup('Saskatoon')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Saskatoon</button>
-					<button onclick="popup('Yorkton')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Yorkton</button>
+					<button onclick="popup('Regina')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Regina</button>
+					<button onclick="popup('Saskatoon')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Saskatoon</button>
+					<button onclick="popup('Yorkton')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Yorkton</button>
 				</div>
 				<br>
 
@@ -215,9 +249,12 @@
 				</div>
 
 				<div class="row">
-					<button onclick="popup('Winnipeg')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Winnipeg</button>
-					<button onclick="popup('Brandon')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Brandon</button>
-					<button onclick="popup('Thompson')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Thompson</button>
+					<button onclick="popup('Winnipeg')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Winnipeg</button>
+					<button onclick="popup('Brandon')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Brandon</button>
+					<button onclick="popup('Thompson')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Thompson</button>
 				</div>
 				<br>
 
@@ -226,8 +263,10 @@
 				</div>
 
 				<div class="row">
-					<button onclick="popup('Fredericton')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Fredericton</button>
-					<button onclick="popup('Saint John')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Saint John</button>
+					<button onclick="popup('Fredericton')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Fredericton</button>
+					<button onclick="popup('Saint John')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Saint John</button>
 				</div>
 				<br>
 
@@ -236,13 +275,15 @@
 				</div>
 
 				<div class="row">
-					<button onclick="popup('St. Johns')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">St. John's</button>
-					<button onclick="popup('Labrador')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">Labrador</button>
+					<button onclick="popup('St. Johns')" type="button" class="btn btn-outline-info mr-sm-2 mb-sm-2">St.
+						John's</button>
+					<button onclick="popup('Labrador')" type="button"
+						class="btn btn-outline-info mr-sm-2 mb-sm-2">Labrador</button>
 				</div>
 				<br>
 
 
-			
+
 			</div>
 			<div class="col-sm-8">
 				<div class="row">
@@ -250,27 +291,31 @@
 						<div class="row no-gutters">
 							<!-- <div id="geomap"></div> -->
 							<script async defer
-							src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&callback=initMap"></script>
+								src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&callback=initMap"></script>
 						</div>
 					</div>
-				</div> 
+				</div>
 				<br>
 				<div class="row">
 					<div class="col-md-12">
 						<form accept-charset="UTF-8" method="get">
 							<div class="input-group">
-								<input class="form-control search_addr" style="border-radius: 4px" type="text" id="search_location"  placeholder="Search Location" required>
+								<input class="form-control search_addr" style="border-radius: 4px" type="text"
+									id="search_location" placeholder="Search Location" required>
 								<div class="input-group-btn">
-									<button value="Locate" id="locate" class="btn btn-info my-2 my-sm-0 btn-default get_map" type="submit">Locate</button>
+									<button value="Locate" id="locate"
+										class="btn btn-info my-2 my-sm-0 btn-default get_map"
+										type="submit">Locate</button>
 								</div>
 							</div>
 						</form>
 					</div>
 				</div>
 				<br>
-				
-				<br><h5 id="address-tag">Available Food Banks</h5><br>
-				
+
+				<br>
+				<h5 id="address-tag">Available Food Banks</h5><br>
+
 				<div class="row">
 					<div class="card" style="width: auto;">
 						<div class="row no-gutters">
@@ -279,19 +324,22 @@
 							</div>
 							<div class="col-auto">
 								<div class="card-body">
-									<br><h5 class="card-title">Superstore</h5>
+									<br>
+									<h5 class="card-title">Superstore</h5>
 									<h6 class="card-subtitle mb-2 text-muted">Barrington St.</h6>
 									<p class="card-text">09:00 - 13:00</p>
 								</div>
 							</div>
 							<div class="col-auto">
 								<div class="card-body">
-									<br><br><h6 class="card-subtitle text-muted my-auto">577 Items Available</h6>
+									<br><br>
+									<h6 class="card-subtitle text-muted my-auto">577 Items Available</h6>
 								</div>
 							</div>
 							<div class="col">
 								<div class="card-body">
-									<br><br><h6 class="card-subtitle my-auto">200 m</h6>
+									<br><br>
+									<h6 class="card-subtitle my-auto">200 m</h6>
 								</div>
 							</div>
 							<div class="col">
@@ -314,25 +362,28 @@
 							</div>
 							<div class="col-auto">
 								<div class="card-body">
-									<br><h5 class="card-title">Sobey's</h5>
+									<br>
+									<h5 class="card-title">Sobey's</h5>
 									<h6 class="card-subtitle mb-2 text-muted">Green St.</h6>
 									<p class="card-text">11:00 - 17:00</p>
 								</div>
 							</div>
 							<div class="col-auto">
 								<div class="card-body">
-									<br><br><h6 class="card-subtitle text-muted my-auto">321 Items Available</h6>
+									<br><br>
+									<h6 class="card-subtitle text-muted my-auto">321 Items Available</h6>
 								</div>
 							</div>
 							<div class="col">
 								<div class="card-body">
-									<br><br><h6 class="card-subtitle my-auto">700 m</h6>
+									<br><br>
+									<h6 class="card-subtitle my-auto">700 m</h6>
 								</div>
 							</div>
 							<div class="col">
 								<div class="card-body"><br>
 									<form action="inventory">
-									<button type="submit" class="btn btn-warning mt-3">View</button>
+										<button type="submit" class="btn btn-warning mt-3">View</button>
 									</form>
 								</div>
 							</div>
@@ -350,19 +401,22 @@
 							</div>
 							<div class="col-auto">
 								<div class="card-body">
-									<br><h5 class="card-title">Dal Food</h5>
+									<br>
+									<h5 class="card-title">Dal Food</h5>
 									<h6 class="card-subtitle mb-2 text-muted">South St.</h6>
 									<p class="card-text">09:00 - 13:00</p>
 								</div>
 							</div>
 							<div class="col-auto">
 								<div class="card-body">
-									<br><br><h6 class="card-subtitle text-muted my-auto">112 Items Available</h6>
+									<br><br>
+									<h6 class="card-subtitle text-muted my-auto">112 Items Available</h6>
 								</div>
 							</div>
 							<div class="col">
 								<div class="card-body">
-									<br><br><h6 class="card-subtitle my-auto">2.0 km</h6>
+									<br><br>
+									<h6 class="card-subtitle my-auto">2.0 km</h6>
 								</div>
 							</div>
 							<div class="col">
@@ -386,19 +440,22 @@
 							</div>
 							<div class="col-auto">
 								<div class="card-body">
-									<br><h5 class="card-title">Walmart</h5>
+									<br>
+									<h5 class="card-title">Walmart</h5>
 									<h6 class="card-subtitle mb-2 text-muted">Chain Lake Dr.</h6>
 									<p class="card-text">09:00 - 13:00</p>
 								</div>
 							</div>
 							<div class="col-auto">
 								<div class="card-body">
-									<br><br><h6 class="card-subtitle text-muted my-auto">253 Items Available</h6>
+									<br><br>
+									<h6 class="card-subtitle text-muted my-auto">253 Items Available</h6>
 								</div>
 							</div>
 							<div class="col">
 								<div class="card-body">
-									<br><br><h6 class="card-subtitle my-auto">7.3 km</h6>
+									<br><br>
+									<h6 class="card-subtitle my-auto">7.3 km</h6>
 								</div>
 							</div>
 							<div class="col">
@@ -422,19 +479,22 @@
 							</div>
 							<div class="col-auto">
 								<div class="card-body">
-									<br><h5 class="card-title">Saint Mary's</h5>
+									<br>
+									<h5 class="card-title">Saint Mary's</h5>
 									<h6 class="card-subtitle mb-2 text-muted">Tower Rd.</h6>
 									<p class="card-text">12:00 - 14:00</p>
 								</div>
 							</div>
 							<div class="col-auto">
 								<div class="card-body">
-									<br><br><h6 class="card-subtitle text-muted my-auto">293 Items Available</h6>
+									<br><br>
+									<h6 class="card-subtitle text-muted my-auto">293 Items Available</h6>
 								</div>
 							</div>
 							<div class="col">
 								<div class="card-body">
-									<br><br><h6 class="card-subtitle my-auto">8.1 km</h6>
+									<br><br>
+									<h6 class="card-subtitle my-auto">8.1 km</h6>
 								</div>
 							</div>
 							<div class="col">
@@ -455,27 +515,34 @@
 	</div>
 
 	<footer id="footer" class="footer">
-      <div class="container">
-      	<div class="row">
-	      	<div class="col-sm-8">
-	      		<br><h5>Subscribe to Donor+ for weekly donations!</h5>
-	      	</div>
-	      	<div class="col-sm-4">
-	      		<form class="form-inline">
-	      			<br><br><br>
-	      			<input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
-	      			<button onclick="subscribe()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
-	      		</form>
-	      	</div>
-      	</div>
-  	</div>
-    </footer>
-	
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-	
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8">
+					<br>
+					<h5>Subscribe to Donor+ for weekly donations!</h5>
+				</div>
+				<div class="col-sm-4">
+					<form class="form-inline">
+						<br><br><br>
+						<input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
+						<button onclick="subscribe()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+		integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+		crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
 
 </body>
 

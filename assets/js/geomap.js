@@ -11,7 +11,7 @@ var marker;
  * Google Map with marker
  */
 function initialize() {
-    
+
     var latlng = new google.maps.LatLng(44.6374247, -63.5872094);
     var options = {
         zoom: 15,
@@ -33,7 +33,7 @@ function initialize() {
     google.maps.event.addListener(marker, "dragend", function () {
         var point = marker.getPosition();
         map.panTo(point);
-        geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
+        geocoder.geocode({ 'latLng': marker.getPosition() }, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 map.setCenter(results[0].geometry.location);
                 marker.setPosition(results[0].geometry.location);
@@ -47,7 +47,7 @@ function initialize() {
 $(document).ready(function () {
     //load google map
     initialize();
-    
+
     /*
      * autocomplete location search
      */
@@ -78,13 +78,13 @@ $(document).ready(function () {
             }
         });
     });
-    
+
     /*
      * Point location on google map
      */
     $('.get_map').click(function (e) {
         var address = $(PostCodeid).val();
-        geocoder.geocode({'address': address}, function (results, status) {
+        geocoder.geocode({ 'address': address }, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 map.setCenter(results[0].geometry.location);
                 marker.setPosition(results[0].geometry.location);
@@ -98,7 +98,7 @@ $(document).ready(function () {
 
     //Add listener to marker for reverse geocoding
     google.maps.event.addListener(marker, 'drag', function () {
-        geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
+        geocoder.geocode({ 'latLng': marker.getPosition() }, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 if (results[0]) {
                     $('.search_addr').val(results[0].formatted_address);

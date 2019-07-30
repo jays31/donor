@@ -1,8 +1,8 @@
 // Author: Jay Sharma (B00824331)
 
-function subscribe(){
+function subscribe() {
 	var email = document.getElementById("email").value;
-	if (email==''){}
+	if (email == '') { }
 	else
-		alert(email+" will be subscribed to weekly newsletter!");
+		alert(email + " will be subscribed to weekly newsletter!");
 }

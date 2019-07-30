@@ -1,12 +1,12 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-   $("#signUpAsFoodDonor").click(function () {
+    $("#signUpAsFoodDonor").click(function () {
         $("#lblSignupHeading").html("Signup as Donor");
         $("#buttons").fadeOut(500);
         $("#donor").fadeIn(500);
-       adjustFooter();
+        adjustFooter();
 
-   });
+    });
     $("#signUpAsConsumer").click(function () {
         $("#lblSignupHeading").html("Signup to reserve food");
         $("#buttons").fadeOut(500);
@@ -150,7 +150,7 @@ $(document).ready(function(){
 
         }
     });
-   // http://bootstrapvalidator.votintsev.ru/getting-started/
+    // http://bootstrapvalidator.votintsev.ru/getting-started/
     $('#RegisterConsumer').bootstrapValidator({
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
@@ -262,38 +262,38 @@ $(document).ready(function(){
         }
     });
 
-    $('#RegisterConsumer').submit(function(e) {
+    $('#RegisterConsumer').submit(function (e) {
         e.preventDefault();
         let isValid = true;
-        $('.form-group').each(function(){
-            if($(this).hasClass('has-error')){
-               isValid = false;
+        $('.form-group').each(function () {
+            if ($(this).hasClass('has-error')) {
+                isValid = false;
             }
         });
-        if(isValid)
+        if (isValid)
             $("#SignupSuccessModal").modal('show');
     });
-    $('#RegisterDonor').submit(function(e) {
+    $('#RegisterDonor').submit(function (e) {
         e.preventDefault();
         let isValid = true;
-        $('.form-group').each(function(){
-            if($(this).hasClass('has-error')){
-               isValid = false;
+        $('.form-group').each(function () {
+            if ($(this).hasClass('has-error')) {
+                isValid = false;
             }
         });
 
-        if(isValid)
+        if (isValid)
             $("#SignupSuccessModal").modal('show');
 
     });
 
-    $("#SignupSuccessModal").on('hide.bs.modal', function(){
-       window.location.href = "index.html";
+    $("#SignupSuccessModal").on('hide.bs.modal', function () {
+        window.location.href = "index.html";
     });
 });
 //https://developers.google.com/maps/documentation/javascript/places-autocomplete
 function autocompleteAddress() {
-    var  address = new google.maps.places.Autocomplete(
+    var address = new google.maps.places.Autocomplete(
         (document.getElementById('txtAddressLine2')),
-        {types: ['geocode']});
+        { types: ['geocode'] });
 }

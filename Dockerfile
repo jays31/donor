@@ -1,4 +1,4 @@
-FROM node:8.11.4
+FROM node:10.16.0
 RUN npm install sails -g
 ENV NODE_ENV development
 WORKDIR /Users/Jay/Documents/Dal/Sem\ 2/Web\ 5709/Donor

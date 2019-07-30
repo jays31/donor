@@ -5,19 +5,19 @@
 // https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
 // This site was helpful in determining how to make javascript functions run against form content.
 // https://www.tutorialspoint.com/javascript/javascript_form_validations.htm
-function login(){
+function login() {
 
 	var usernameVar = document.loginForm.username.value;
 	var passwordVar = document.loginForm.password.value;
 
-	if((usernameVar == "admin@fake.com") && (passwordVar == "admin")){
+	if ((usernameVar == "admin@fake.com") && (passwordVar == "admin")) {
 
 		window.location.href = "dashboard.html";
 	}
-	else{
+	else {
 
 		alert("Login failed.");
-		
+
 		return false;
 	}
 

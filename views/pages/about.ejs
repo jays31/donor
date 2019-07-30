@@ -6,24 +6,28 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
 
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="/styles/importer.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 	<link href="css/about.css" rel="stylesheet">
 
 	<!-- From Tutorial 2 -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address" async defer></script>
-	<script  src="js/validate_form.js"></script>
-	<script  src="js/autoaddress_api.js"></script>
-	<script  src="js/rss_api.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjbyGu4GTaz7Kg3LgB_sQ9pSJIM33PbQg&libraries=places&callback=autofill_address"
+		async defer></script>
+	<script src="js/validate_form.js"></script>
+	<script src="js/autoaddress_api.js"></script>
+	<script src="js/rss_api.js"></script>
 
-	<script  src="js/popup_api.js"></script>
-	<script  src="js/rss_api.js"></script>
-	<script  src="js/subscribe_api.js"></script>
-	<script  src="js/login_api.js"></script>
+	<script src="js/popup_api.js"></script>
+	<script src="js/rss_api.js"></script>
+	<script src="js/subscribe_api.js"></script>
+	<script src="js/login_api.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<title>Donor+ About</title>
@@ -32,9 +36,11 @@
 		body {
 			font-family: Arial, Helvetica, sans-serif;
 		}
+
 		h5 {
 			color: #0e6382;
 		}
+
 		.footer {
 			position: fixed;
 			left: 0;
@@ -44,20 +50,26 @@
 			background-color: #dce7ea;
 			color: #000;
 		}
+
 		.dropdown-menu {
 			width: 250px !important;
 			padding-right: 10px;
 			padding-left: 10px;
 		}
-		.img{
+
+		.img {
 			width: 100%;
 			padding-left: 0px;
 		}
-		#NavBar{
+
+		#NavBar {
 			padding-left: 10px;
-		}
-		#NavBar2{
 			padding-right: 10px;
+		}
+
+		#NavBar2 {
+			padding-right: 10px;
+			padding-left: 10px;
 		}
 	</style>
 
@@ -85,118 +97,127 @@
 				</ul>
 
 
-					&nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
+				&nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
 
 				<!-- https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
-				<div class="btn-group">
-					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</button>
-					<div class="dropdown-menu dropdown-menu-right">
-						<form name="loginForm" action = "./dashboard" onsubmit="return(login());" method = "post" >
-							<div class="form-group">
-								<h6>Username/Email</h6>
-								<input name="username" type="email" class="form-control mb-2 mr-sm-2" id="dropemail" placeholder="email@example.com" required>
-							</div>
-							<div class="form-group">
-								<h6>Password</h6>
-								<input name = "password" type="password" class="form-control mb-2 mr-sm-2" id="droppassword" placeholder="Password" required>
-							</div>
-							<div class="form-check">
-							<input type="checkbox" class="form-check-input" id="dropdownCheck">
-									<label class="form-check-label" for="dropdownCheck">Remember me</label><br>
-							</div>
-							<input class="btn btn-primary mr-auto" type="submit" value = "Sign in">
-							<!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
-							<a href = './forgot' >Forgot Password? </a><br>
-						</form>
-					</div>
-				</div>
-			</div>
 		</nav>
 	</div><br><br>
 
 
-  <div class="wrapper ">
-    
+	<div class="wrapper ">
 
-    <div class="main_body" id="main_body">
 
-      <div id="banner" class="banner">
-          <img alt="image" src="https://donorplus.azurewebsites.net/images/about_banner.png">
-       </div>
-        <div id="about">
-            <!-- <h1 class="text-center hide">About Us</h1> -->
-            <div class="row mg-20">
-                <div class="col-lg-5 col-md-5 col-sm-12">
-                        <img  alt="image"  src="https://donorplus.azurewebsites.net/images/about_subtitle1.jpg">
-                </div>
-                <div class="col-lg-7 col-md-7 col-sm-12">
-                    <h3>Donor Plus</h3>
-                        Donor+ connects people with food.
-                        <br>
-                        <br>
-                        At Donor+, we work hard to make sure that food does not go to waste. Through our platform, we link food donors with food recipients, thereby eliminating food waste and keeping people satisfied.
-                        <br>
-                        
-                </div>
-            </div>
-			
-            <div class="row mg-20">
-			<div class="col-lg-5 col-md-5 col-sm-12">
-                            <img  alt="image"  src="https://donorplus.azurewebsites.net/images/about_subtitle2.jpg">
-                    </div>
-                    <div class="col-lg-7 col-md-7 col-sm-12">
-                            <h4>Giving Back to the Community</h4>
-                            In its first year, Donor+ has helped to find recipients for more than 5000 donations. And that's just the start. In the future, we hope to expand beyond Nova Scotia to serve the rest of the Atlantic Provinces and Canada. Join us for the journey!
-                            <br>
-                           
-                   
-            </div>
-            <div class="row mg-20">
-                <div class="col">
-                <h4>How to Help?</h4>
-                Do you know of any donors who might like to join our service? Encourage them to get in touch! Any new donor can sign up using their email address, company name and a short description. It takes about 10 minutes, and will do a world of good!
-                <br>
-				
-                </div>
-            </div>
-            <div class="row mg-20">
-                <div class="col">
-                    
-                </div> 
+		<div class="main_body" id="main_body">
+
+			<div id="banner" class="banner">
+				<img alt="image" src="https://donorplus.azurewebsites.net/images/about_banner.png">
 			</div>
-			
-        </div>
-    </div>
-  </div>
-  
-  <div class="banner">
-	  <img  alt="image"  src="https://donorplus.azurewebsites.net/images/about_subtitle.png"><br><br><br><br>
-  </div>
+			<div id="about">
+				<!-- <h1 class="text-center hide">About Us</h1> -->
+				<div class="row mg-20">
+					<div class="col-lg-5 col-md-5 col-sm-12">
+						<img alt="image" src="https://donorplus.azurewebsites.net/images/about_subtitle1.jpg">
+					</div>
+					<div class="col-lg-7 col-md-7 col-sm-12">
+						<h3>Donor Plus</h3>
+						The purpose of this project is to provide users a website that allows users to donate food that
+						is excess, or they are going to throw away. Most of the times food is still consumable even
+						though it is expired. So, instead of throwing away such food it can be given to the needy. Not
+						only that, it is quite common for people to throw away food products just because they do not
+						like the taste. Our website is a platform for anyone to post food that they want to donate and
+						the people who are interested or in need can contact them and receive the food. Also, people who
+						are in need can post that they are looking out for food or donors. Our platform does not need
+						the involvement of any third party for this distribution of food and anyone with the willingness
+						to donate can use our website. We envision that our platform can be used by anyone and there is
+						no particular target audience. But we do think that super markets and restaurants might be the
+						most prominent users(donors) of our website. <br>
+						<br>
+						Donor+ provide users a website that allows users to donate food that is excess, or they are
+						going to throw away. Most of the times food is still consumable even though it is expired. So,
+						instead of throwing away such food it can be given to the needy. Not only that, it is quite
+						common for people to throw away food products just because they do not like the taste. Donor+
+						website is a platform for anyone to post food that they want to donate and the people who are
+						interested or in need can contact them and receive the food.
+						<br>
+					</div>
+				</div>
 
-  <footer id="footer" class="footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-8">
-				<br><h5>Subscribe to Donor+ for weekly donations!</h5>
-			</div>
-			<div class="col-sm-4">
-				<form class="form-inline">
-					<br><br><br>
-					<input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
-					<button onclick="subscribe()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
-				</form>
+				<div class="row mg-20">
+					<div class="col-lg-5 col-md-5 col-sm-12">
+						<img alt="image" src="https://donorplus.azurewebsites.net/images/about_subtitle2.jpg">
+					</div>
+					<div class="col-lg-7 col-md-7 col-sm-12">
+						<h4>Purpose</h4>
+						Our primary goal will be bringing wholesalers and restaurant owners to a platform where they can
+						post information about availability of excess food. With such information, food items can be
+						searched, located and reserved by foodbank and needy people. Not only we will be allowing
+						reservation of food items, but also, we will be building strong relations between industries and
+						organizations who will together work for eliminating crisis of food waste. <br>
+						<br>
+						The motive and soul purpose behind this website is to reduce food waste and instead provide it
+						to the one who actually can consume that food rather than just throwing it off. Food can be
+						donated by anyone ranging from small local stores to giant manufacturers. The sources can be
+						restaurants, grocery manufacturers, retailers, superstores, food banks etcetera. The giveaway
+						food items can be posted by donors on our website with the description of food and quantity or
+						number of people it can be served along with the pickup location. These will then be collected
+						from that particular location mentioned by the needful people.
+						<br>
+
+
+					</div>
+					<div class="row mg-20">
+						<div class="col">
+							<h4>Target</h4>
+							The platform can be used by anyone and there is no particular target audience. But super
+							markets and restaurants might be the most prominent users(donors) of the Donor+ website.
+							Only the donors are required to register with the platform and the receivers are not. The
+							platform is designed to be flexible enough for any receiver or needy person to contact the
+							donor and meet him/her for the transfer of food. In addition to that, the platform also
+							allows a donor to maintain an inventory for efficient management of food that is to be
+							donated.
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-  </footer>
-	
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-	
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
-  </div>
+		<div class="banner">
+			<img alt="image" src="https://donorplus.azurewebsites.net/images/about_subtitle.png"><br><br><br><br>
+		</div>
+
+		<footer id="footer" class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8">
+						<br>
+						<h5>Subscribe to Donor+ for weekly donations!</h5>
+					</div>
+					<div class="col-sm-4">
+						<form class="form-inline">
+							<br><br><br>
+							<input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email"
+								required>
+							<button onclick="subscribe()" class="btn btn-info my-2 my-sm-0"
+								type="submit">Subscribe</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+			integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+			crossorigin="anonymous"></script>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+			crossorigin="anonymous"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+			crossorigin="anonymous"></script>
+
+	</div>
 </body>
 
 </html>
