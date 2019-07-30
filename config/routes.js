@@ -23,6 +23,7 @@ module.exports.routes = {
 
   'post /register': 'RegistrationController.register',
   'post /login': 'LoginController.login',
+  'post /create': 'ReservelistController.create',
 
   '/dashboardWeeklyReservation': 'DashboardController.getReservationInWeek',
   '/dashboardStores': 'DashboardController.getReservationStoresInWeek',
