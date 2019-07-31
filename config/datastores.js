@@ -2,10 +2,9 @@
 
 module.exports.datastores = {
 
-
   default: {
     adapter: 'sails-mysql',
-    url: 'mysql://jays@dal-fcs:Test1234@dal-fcs.mysql.database.azure.com:3306/donor_app',
+    url: 'mysql://jays@dal-azure:Test1234@dal-azure.mysql.database.azure.com:3306/donor',
   },
 
 };
