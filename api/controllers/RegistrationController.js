@@ -15,7 +15,7 @@ module.exports = {
 		var orgname = req.param('orgname');
 		var email = req.param('orgemail');
 		var address = req.param('address');
-		var org_password = req.param('org_password');
+		var org_password = req.param('org_password_signup');
 		var phone_number = req.param('phone_number');
 		
 		var outcome = await Donor.create({orgname: orgname, email: email, address: address, org_password: org_password, phone_number: phone_number});

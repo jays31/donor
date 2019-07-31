@@ -32,7 +32,20 @@
 	<title>Edit Profile</title>
 
 	<style>
-		footer {
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		h5 {
+			color: #0e6382;
+		}
+
+		.footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
 			background-color: #dce7ea;
 			color: #000;
 		}
@@ -50,12 +63,7 @@
 		<!-- Bootstrap Documentation: https://getbootstrap.com/docs/4.0/components/navbar/ -->
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 			<a class="navbar-brand" href="#">Donor+</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" style="padding-left: 0px; padding-right: 0px;"
-				id="navbarSupportedContent">
+			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 					<li class="nav-item">
 						<a class="nav-link" href="/">Home</a>
@@ -69,35 +77,7 @@
 					<li class="nav-item">
 						<a class="nav-link" href="help">Help</a>
 					</li>
-				</ul>
-				&nbsp;&nbsp;<button onclick="rss('')" type="button" class="btn btn-outline-light">RSS</button>
-				<!-- https://getbootstrap.com/docs/4.0/components/dropdowns/ -->
-				<div class="btn-group">
-					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"
-						aria-haspopup="true" aria-expanded="false">Login</button>
-					<div class="dropdown-menu dropdown-menu-right">
-						<form name="loginForm" action="./dashboard" onsubmit="return(login());" method="post">
-							<div class="form-group">
-								<h6>Username/Email</h6>
-								<input name="username" type="email" class="form-control mb-2 mr-sm-2" id="dropemail"
-									placeholder="email@example.com" required>
-							</div>
-							<div class="form-group">
-								<h6>Password</h6>
-								<input name="password" type="password" class="form-control mb-2 mr-sm-2"
-									id="droppassword" placeholder="Password" required>
-							</div>
-							<div class="form-check">
-								<input type="checkbox" class="form-check-input" id="dropdownCheck">
-								<label class="form-check-label" for="dropdownCheck">Remember me</label><br>
-							</div>
-							<input class="btn btn-primary" type="submit" value="Sign in">
-							<!-- https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
-							<button type="button" onclick="window.location.href = './forgot';"
-								class="btn btn-warning mt-3">Forgot Password? </button><br>
-						</form>
-					</div>
-				</div>
+				</ul>				
 			</div>
 		</nav>
 	</div>
@@ -134,21 +114,7 @@
 				</form>
 			</div>
 		</div>
-		<!--	<div class="row hide" id="step2">
-			<div class="col-md-6 mx-auto">
-				<form id="frmSubmitNewPassword">
-					<div class="form-group">
-						<input type="password" id="txtPassword" name="txtPassword"  class="form-control" placeholder="Enter new password *" value="" />
-					</div>
-					<div class="form-group">
-						<input type="password" id="txtConfirmPassword" name="txtConfirmPassword"  class="form-control" placeholder="Enter confirm password *" value=""/>
-					</div>
-					<div class="row">
-						<input id="btnChangePassword" type="submit" class="btn btn-primary mx-auto"  value="Submit"/>
-					</div>
-				</form>
-			</div>
-		</div>-->
+
 		<!--https://getbootstrap.com/docs/4.0/components/modal/ -->
 		<div class="modal fade" id="ForgetSuccessModal" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -206,25 +172,19 @@
 	<!-- The style below comes from this link: https://hackerthemes.com/bootstrap-cheatsheet/#flex-row -->
 	<br><br><br><br>
 
-	<footer id="footer" class="footer" style="position:fixed; overflow: hidden; bottom: 0; width:100%;">
+	<footer id="footer" class="footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-7">
+				<div class="col-sm-8">
 					<br>
-					<h5>Questions? Drop in your email and we'll get in touch with you!</h5>
+					<h5>Subscribe to Donor+ for weekly donations!</h5>
 				</div>
-				<div class="col-sm-5">
-					<div style="margin-top: 10px;">
-						<form class="form-inline">
-
-							<div style="float: left; width: 100%">
-								<input class="form-control" id="email" type="email" placeholder="Enter Email" required>
-								<button onclick="contact()" class="btn btn-info my-2 my-sm-0"
-									type="submit">Subscribe</button>
-
-							</div>
-						</form>
-					</div>
+				<div class="col-sm-4">
+					<form class="form-inline">
+						<br><br><br>
+						<input class="form-control mr-sm-2" id="email" type="email" placeholder="Enter Email" required>
+						<button onclick="subscribe()" class="btn btn-info my-2 my-sm-0" type="submit">Subscribe</button>
+					</form>
 				</div>
 			</div>
 		</div>

@@ -6,7 +6,7 @@ $('[data-toggle="tooltip"]').tooltip();
 $(function () {
     if (pageInitialized) return;
     pageInitialized = true;
-    var geturl = "https://donorplus.azurewebsites.net/minventory3/";
+    var geturl = "https://donor-plus.azurewebsites.net/minventory3/";
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", geturl, false); // false for synchronous request
     xmlHttp.send(null);
@@ -48,7 +48,7 @@ $(document).on("click", ".add", function () {
     });
     var getname = document.getElementById("Name").value;
     var getquantity = document.getElementById("Quantity").value;
-    var addurl = "https://donorplus.azurewebsites.net/minventory3/create?name=" + getname + "&quantity=" + getquantity;
+    var addurl = "https://donor-plus.azurewebsites.net/minventory3/create?name=" + getname + "&quantity=" + getquantity;
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", addurl, false); // false for synchronous request
     xmlHttp.send(null);
@@ -61,7 +61,7 @@ $(document).on("click", ".add", function () {
         $(".add-new").removeAttr("disabled");
         var getname = document.getElementById("Name").value;
         var getquantity = document.getElementById("Quantity").value;
-        var addurl = "https://donorplus.azurewebsites.net/minventory3/create?name=" + getname + "&quantity=" + getquantity;
+        var addurl = "https://donor-plus.azurewebsites.net/minventory3/create?name=" + getname + "&quantity=" + getquantity;
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open("GET", addurl, false); // false for synchronous request
         xmlHttp.send(null);
@@ -80,14 +80,14 @@ $(document).on("click", ".edit", function () {
 // Delete row on delete button click
 $(document).on("click", ".delete", function () {
     var row = $(this).closest('tr').find('td:first-child').html();
-    var geturl = "https://donorplus.azurewebsites.net/minventory3?name=" + row;
+    var geturl = "https://donor-plus.azurewebsites.net/minventory3?name=" + row;
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", geturl, false); // false for synchronous request
     xmlHttp.send(null);
     var tdata = xmlHttp.responseText;
     var parsetdata = $.parseJSON(tdata);
     var id = parsetdata[0].id;
-    var delurl = "https://donorplus.azurewebsites.net/minventory3?id=" + id;
+    var delurl = "https://donor-plus.azurewebsites.net/minventory3?id=" + id;
     var xmlHttp2 = new XMLHttpRequest();
     xmlHttp2.open("DELETE", delurl, false); // false for synchronous request
     xmlHttp2.send(null);

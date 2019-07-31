@@ -174,8 +174,8 @@
 
           <h5>&ensp;Password</h5>
           <div class="input-group">
-            <input type="password" name="org_password" id="org_password" placeholder="Password" class="form-control"
-              required>
+            <input type="password" name="org_password_signup" id="org_password_signup" placeholder="Password"
+              class="form-control" required>
             <div class="input-group-append">
             </div>
           </div><br>
@@ -198,7 +198,7 @@
           <br>
         </div>
       </div>
-      <center><button onclick="validate()" class="mr-auto btn btn-info my-2 my-lg-3" type="button">Submit</button>
+      <center><button id="btnSignup" class="mr-auto btn btn-info my-2 my-lg-3" type="button">Submit</button>
       </center>
     </div>
     <br><br>
@@ -233,6 +233,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
+
+  <script>
+
+    $("#btnSignup").click(function () {
+
+
+      if ($("#org_password_signup").val() != $("#confirmPassword").val()) {
+        swal("Oops! Passwords do not match! Try again!");
+      }
+      else if ($("#org_password_signup").val() != '' && $("#confirmPassword").val() != '' && $("#orgname").val() != '' && $("#orgemail").val() != '' && $("#address").val() != '' && $("#phone_number").val() != '') {
+        document.getElementById("donorForm").submit();
+
+      }
+    });
+  </script>
 
 </body>
 
